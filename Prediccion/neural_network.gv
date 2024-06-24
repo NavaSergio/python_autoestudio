@@ -1,0 +1,12 @@
+// Neural Network
+digraph {
+	A [label=Retornos_IPC]
+	B [label="Hidden Layer 1000"]
+	C [label="Hidden Layer 100"]
+	D [label="Hidden Layer 10"]
+	E [label=Valor_Retorno]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+}
