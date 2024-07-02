@@ -1,3 +1,13 @@
+try:
+  import yfinance
+except ImportError:
+    %pip install yfinance
+
+try:
+  import matplotlib
+except ImportError:
+    %pip install matplotlib
+
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -27,6 +37,20 @@ for componente in componentes_ipc:
 
 # Combinar los precios de cierre en un DataFrame
 close_prices_df = pd.DataFrame(close_prices)
+
+print(close_prices_df.index)
+
+print(close_prices_df.index.dtype)
+
+
+close_prices_df.index = pd.to_datetime(close_prices_df.index)
+
+
+# Resample by month and calculate proportion of NA's
+monthly_na_proportion = close_prices_df.resample('M').apply(lambda x: x.isna().mean())
+
+# Print the result
+print(monthly_na_proportion)
 
 # Guardar los datos en un archivo CSV (opcional)
 close_prices_df.to_csv('ipc_close_prices.csv')
