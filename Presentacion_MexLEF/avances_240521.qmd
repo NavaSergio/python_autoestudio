@@ -1,13 +1,11 @@
 ---
 title: "Analysis of systems’ performance in natural language processing competitions"
-author: "Sergio M. Nava Muñoz"
-institute:  "CIMAT / INFOTEC"
+author: "Sergio Nava-Muñoz/ Mario Graff/ Hugo Jair Escalante"
+institute:  "CIMAT / INFOTEC / INAOE"
 date: "Oct 2024"
 format: 
   revealjs:
     slide-number: true
-    theme: "black"
-    highlight: "pygments"
 toc: TRUE
 ---
 
@@ -18,9 +16,9 @@ toc: TRUE
 
 ### Challenge 
 
-![Challenge](figs/Competencia.png)
+![Challenge](figs/Competencia.png){#fig-Challenge}
 
-## Challenge Restrictions
+## Challenge Restrictions {.smaller}
 
 
 - Comparison of multiple participants (systems)
@@ -45,9 +43,10 @@ toc: TRUE
 | 3    | against       | none      | ...   | against  |
 | 4    | none          | none      | ...   | none     |
 | ...  | ...           | ...       | ...   | ...      |
-| \(n_{test}\) | none    | favor     | ...   | against  |
+| $n_{test}$ | none    | favor     | ...   | against  |
 
-*Table: Results for VaxxStance Close track - contextual.*
+:  Results for VaxxStance Close track - contextual. {#tbl-VaxxStance1 .striped .hover}
+
 :::
 
 ::: {.column width="25%"  .fragment }
@@ -59,7 +58,7 @@ toc: TRUE
 | SQYQP.01            | 0.4256  |
 | MultiAztertest.02   | 0.3428  |
 
-*Table: Results using Macro-averaged F1 Score for "favor" and "against".*
+:  Results using Macro-averaged F1 Score for "favor" and "against". {#tbl-VaxxStance2 .striped .hover}
 :::
 
 ::::
@@ -70,9 +69,9 @@ toc: TRUE
 
 ## Comparison of Classifiers {.smaller}
 
-Results Table for Basque and Spanish
 
-::: {.small-table}
+
+
 |                | LCI    | Mean   | UCI    |        |                | LCI    | Mean   | UCI    |
 |----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
 | **Basque**     |        |        |        |        | **Spanish**    |        |        |        |
@@ -81,17 +80,20 @@ Results Table for Basque and Spanish
 | **MultiAztertest.01** | 0.4287 | 0.5007 | 0.5726 |        | **MultiAztertest.01** | 0.6987 | 0.7400 | 0.7814 |
 | SQYQP.01       | 0.3497 | 0.4237 | 0.4976 |        | SQYQP.01       | 0.6310 | 0.6730 | 0.7149 |
 | **MultiAztertest.02** | 0.2664 | 0.3402 | 0.4139 |        | **MultiAztertest.02** | 0.5945 | 0.6391 | 0.6837 |
-:::
 
-![Independent Samples](figs/ordenado2.png){width="600" height="300"}
+
+:  Results Table for Basque and Spanish {#tbl-independent .striped .hover}
+
+
+![Independent Samples](figs/ordenado2.png){#fig-independent-samples width="600" height="300"}
 
 ---
 
 ##   {.smaller}
 
-Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 
-::: {.small-table}
+
+
 |                | LCI    | Mean   | UCI    |        |                | LCI    | Mean   | UCI    |
 |----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
 | **Basque (WordUp.01)** |        |        |        |        | **Spanish (WordUp.02)** |        |        |        |
@@ -99,26 +101,30 @@ Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 | MultiAztertest.01 | -0.0152| 0.0713 | 0.1578 |        | MultiAztertest.01 | 0.0211 | 0.0680 | 0.1149 |
 | **SQYQP.01**   | 0.0543 | 0.1485 | 0.2427 |        | **SQYQP.01**   | 0.0877 | 0.1351 | 0.1825 |
 | MultiAztertest.02 | 0.1405 | 0.2314 | 0.3222 |        | MultiAztertest.02 | 0.1165 | 0.1687 | 0.2210 |
-:::
 
-![Paired Samples](figs/mejorordenado2.png){width="600" height="300"}
+:  Results Table for Basque (WordUp.01) and Spanish (WordUp.02) {#tbl-Paired .striped .hover}
+
+![Paired Samples](figs/mejorordenado2.png){#fig-paired-samples width="600" height="300"}
 
 ## Hypothesis Testing {.smaller}
 
-*Differences of F₁ score for Basque*
 
+::: footer
 *Note: † p<.1, * p<.05, ** p<.1, and *** p<.001.*
+:::
 
-::: {.small-table}
+
 |                     | WordUp.01  | WordUp.02  | MultiAztertest.01 | SQYQP.01  |
 |---------------------|------------|------------|-------------------|-----------|
 | **WordUp.02**        | 0.027      |            |                   |           |
 | MultiAztertest.01    | 0.071 †    | 0.044      |                   |           |
 | **SQYQP.01**         | 0.148 ***  | 0.121 **   | 0.077 *           |           |
 | MultiAztertest.02    | 0.231 ***  | 0.204 ***  | 0.160 ***         | 0.083 *   |
-:::
 
-![histogram of differences ](figs/histogram2.png){width="600" height="250"}
+
+:  Differences of F₁ score for Basque {#tbl-Basque .striped .hover}
+
+![histogram of differences ](figs/histogram2.png){#fig-histogram width="600" height="250"}
 
 ## Multiple Testing
 
@@ -128,11 +134,12 @@ Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 Multiple hypothesis testing increases the risk of Type I errors—the false rejection of a true null hypothesis.
 :::
 
-### Correction Methods
+### Correction Methods {.smaller}
 
-1. **Bonferroni correction**: Divides the significance level by the number of comparisons.
-2. **Holm's step-down procedure**: Adjusts p-values sequentially.
-3. **Benjamini-Hochberg (BH) procedure**: Controls the false discovery rate (FDR).
+
+- **Bonferroni correction**: Divides the significance level by the number of comparisons.
+- **Holm's step-down procedure**: Adjusts p-values sequentially.
+- **Benjamini-Hochberg (BH) procedure**: Controls the false discovery rate (FDR).
 
 ---
 
@@ -140,9 +147,9 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 
 **Estimated p-values for F1 difference **
 
-*Table: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.*
 
-::: {.small-table}
+
+
 |                   |                   | Difference | p-value  | Bonferroni | Holm     | BH       |
 |-------------------|-------------------|------------|----------|------------|----------|----------|
 | WordUp.01         | WordUp.02          | 0.027      | **0.2030** | **0.8120** | **0.2030** | **0.2030** |
@@ -155,13 +162,13 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 | MultiAztertest.01 | SQYQP.01           | 0.077      | 0.0330   | **0.0660** | 0.0330   | 0.0330   |
 | MultiAztertest.01 | MultiAztertest.02  | 0.160      | 0.0003   | 0.0006     | 0.0006   | 0.0006   |
 | SQYQP.01          | MultiAztertest.02  | 0.083      | 0.0427   | 0.0427     | 0.0427   | 0.0427   |
-:::
+
+: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments. {#tbl-p-values  .striped .hover}
 
 ## Analysis of NLP Competitions  {.smaller .scrollable transition="slide"}
 
 
 
-:::{.small-table}
 | Competition        | Subtask / Language                                       | Metric Used                              | Data Considered                          |
 |--------------------|----------------------------------------------------------|------------------------------------------|------------------------------------------|
 | MEX-A3T 2019       | Author Profiling (Spanish, text and images)               | Macro-averaged F1 Score                  | All participants                         |
@@ -177,17 +184,16 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 | REST-MEX 2022      | Sentiment Analysis (Mexican Spanish)                     | $Measure_S$                                | All participants (majority class)        |
 |                    | Epidemiological Semaphore (Mexican Spanish)              | $Measure_C$                                | All participants (majority class)        |
 | PAR-MEX 2022       | Paraphrase Identification (Mexican Spanish)              | F1 Score                                 | All participants (Best Runs)             |
-:::
 
+:  Table Metrics and data considered across various competitions {#tbl-Competitions .striped .hover}
 
-*Table: Metrics and data considered across various competitions.*
+---
+
 
 ## Results for the Various Challenges {.smaller .scrollable transition="slide"}
 
 
-*Table: Results for the Various Challenges.*
 
-:::{.small-table}
 | Challenge          | DETOXIS 2021 | PAR-MEX 2022 | MeOffendEs 2021 | MEX-A3T 2019 (Agg) | MEX-A3T 2019 (author profiling) |
 |--------------------|--------------|--------------|-----------------|-------------------|--------------------------------|
 | **Task**           | Toxicity detection | Paraphrase Identification | Non-contextual | Aggressiveness Detection | Author Profiling |
@@ -201,6 +207,7 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 | **$|win.-med|$**   | 0.223        | 0.061        | 0.078           | 0.098             | 0.164                         |
 | **$CV$**           | 42.600       | 4.722        | 16.070          | 19.620            | 46.491                        |
 | **PPI**            | 35.390       | 5.758        | 28.46           | 52.038            | 42.581                        |
-:::
+
+:  Results for the Various Challenges {#tbl-Results .striped .hover}
 
 

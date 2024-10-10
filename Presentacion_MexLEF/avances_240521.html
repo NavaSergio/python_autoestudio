@@ -7,10 +7,10 @@
 <link href="avances_240521_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="avances_240521_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="avances_240521_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="avances_240521_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="avances_240521_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="Sergio M. Nava Muñoz">
+  <meta name="author" content="Sergio Nava-Muñoz/ Mario Graff/ Hugo Jair Escalante">
   <meta name="dcterms.date" content="2024-10-01">
   <title>Analysis of systems’ performance in natural language processing competitions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -322,7 +322,7 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -332,10 +332,10 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Sergio M. Nava Muñoz 
+Sergio Nava-Muñoz/ Mario Graff/ Hugo Jair Escalante 
 </div>
         <p class="quarto-title-affiliation">
-            CIMAT / INFOTEC
+            CIMAT / INFOTEC / INAOE
           </p>
     </div>
 </div>
@@ -380,8 +380,10 @@ Sergio M. Nava Muñoz
 
 <h3 id="challenge">Challenge</h3>
 
-<img data-src="figs/Competencia.png" class="r-stretch quarto-figure-center"><p class="caption">Challenge</p></section>
-<section id="challenge-restrictions" class="slide level2">
+<img data-src="figs/Competencia.png" class="r-stretch quarto-figure-center"><p class="caption">
+Figure&nbsp;1: Challenge
+</p></section>
+<section id="challenge-restrictions" class="slide level2 smaller">
 <h2>Challenge Restrictions</h2>
 <ul>
 <li>Comparison of multiple participants (systems)</li>
@@ -396,7 +398,13 @@ Sergio M. Nava Muñoz
 <h2>Results for VaxxStance Close track - contextual</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
-<table class="caption-top">
+<div id="tbl-VaxxStance1" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-VaxxStance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Results for VaxxStance Close track - contextual.
+</figcaption>
+<div aria-describedby="tbl-VaxxStance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <thead>
 <tr class="header">
 <th>Obs</th>
@@ -443,7 +451,7 @@ Sergio M. Nava Muñoz
 <td>…</td>
 </tr>
 <tr class="even">
-<td>(n_{test})</td>
+<td><span class="math inline">\(n_{test}\)</span></td>
 <td>none</td>
 <td>favor</td>
 <td>…</td>
@@ -451,9 +459,17 @@ Sergio M. Nava Muñoz
 </tr>
 </tbody>
 </table>
-<p><em>Table: Results for VaxxStance Close track - contextual.</em></p>
+</div>
+</figure>
+</div>
 </div><div class="column fragment" style="width:25%;">
-<table class="caption-top">
+<div id="tbl-VaxxStance2" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-VaxxStance2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “against”.
+</figcaption>
+<div aria-describedby="tbl-VaxxStance2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <thead>
 <tr class="header">
 <th>System</th>
@@ -483,7 +499,9 @@ Sergio M. Nava Muñoz
 </tr>
 </tbody>
 </table>
-<p><em>Table: Results using Macro-averaged F1 Score for “favor” and “against”.</em></p>
+</div>
+</figure>
+</div>
 </div></div>
 </section></section>
 <section>
@@ -493,9 +511,13 @@ Sergio M. Nava Muñoz
 </section>
 <section id="comparison-of-classifiers" class="slide level2 smaller">
 <h2>Comparison of Classifiers</h2>
-<p>Results Table for Basque and Spanish</p>
-<div class="small-table">
-<table class="caption-top">
+<div id="tbl-independent" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-independent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Results Table for Basque and Spanish
+</figcaption>
+<div aria-describedby="tbl-independent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <colgroup>
 <col style="width: 18%">
 <col style="width: 9%">
@@ -590,18 +612,28 @@ Sergio M. Nava Muñoz
 </tbody>
 </table>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figs/ordenado2.png" width="600" height="300"></p>
-<figcaption>Independent Samples</figcaption>
+</figure>
+</div>
+<div id="fig-independent-samples" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-independent-samples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/ordenado2.png" width="600" height="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-independent-samples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Independent Samples
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="section" class="slide level2 smaller">
 <h2></h2>
-<p>Results Table for Basque (WordUp.01) and Spanish (WordUp.02)</p>
-<div class="small-table">
-<table class="caption-top">
+<div id="tbl-Paired" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
+</figcaption>
+<div aria-describedby="tbl-Paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <colgroup>
 <col style="width: 18%">
 <col style="width: 9%">
@@ -685,19 +717,31 @@ Sergio M. Nava Muñoz
 </tbody>
 </table>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figs/mejorordenado2.png" width="600" height="300"></p>
-<figcaption>Paired Samples</figcaption>
+</figure>
+</div>
+<div id="fig-paired-samples" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-paired-samples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/mejorordenado2.png" width="600" height="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paired-samples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Paired Samples
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="hypothesis-testing" class="slide level2 smaller">
 <h2>Hypothesis Testing</h2>
-<p><em>Differences of F₁ score for Basque</em></p>
+<div class="footer">
 <p><em>Note: † p&lt;.1, </em> p&lt;.05, ** p&lt;.1, and *** p&lt;.001.*</p>
-<div class="small-table">
-<table class="caption-top" style="width:100%;">
+</div>
+<div id="tbl-Basque" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Basque-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Differences of F₁ score for Basque
+</figcaption>
+<div aria-describedby="tbl-Basque-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 15%">
@@ -746,10 +790,16 @@ Sergio M. Nava Muñoz
 </tbody>
 </table>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figs/histogram2.png" width="600" height="250"></p>
-<figcaption>histogram of differences</figcaption>
+</figure>
+</div>
+<div id="fig-histogram" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/histogram2.png" width="600" height="250">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: histogram of differences
+</figcaption>
 </figure>
 </div>
 </section>
@@ -769,19 +819,23 @@ Sergio M. Nava Muñoz
 </div>
 </div>
 </div>
-<h3 id="correction-methods">Correction Methods</h3>
-<ol type="1">
+<h3 class="smaller" id="correction-methods">Correction Methods</h3>
+<ul>
 <li><strong>Bonferroni correction</strong>: Divides the significance level by the number of comparisons.</li>
 <li><strong>Holm’s step-down procedure</strong>: Adjusts p-values sequentially.</li>
 <li><strong>Benjamini-Hochberg (BH) procedure</strong>: Controls the false discovery rate (FDR).</li>
-</ol>
+</ul>
 </section>
 <section id="section-1" class="slide level2 smaller">
 <h2></h2>
 <p><strong>Estimated p-values for F1 difference </strong></p>
-<p><em>Table: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.</em></p>
-<div class="small-table">
-<table class="caption-top">
+<div id="tbl-p-values" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-p-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.
+</figcaption>
+<div aria-describedby="tbl-p-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -896,11 +950,18 @@ Sergio M. Nava Muñoz
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section>
 <section id="analysis-of-nlp-competitions" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>Analysis of NLP Competitions</h2>
-<div class="small-table">
-<table class="caption-top">
+<div id="tbl-Competitions" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Table Metrics and data considered across various competitions
+</figcaption>
+<div aria-describedby="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 35%">
@@ -997,13 +1058,18 @@ Sergio M. Nava Muñoz
 </tbody>
 </table>
 </div>
-<p><em>Table: Metrics and data considered across various competitions.</em></p>
+</figure>
+</div>
 </section>
 <section id="results-for-the-various-challenges" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>Results for the Various Challenges</h2>
-<p><em>Table: Results for the Various Challenges.</em></p>
-<div class="small-table">
-<table class="caption-top">
+<div id="tbl-Results" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: Results for the Various Challenges
+</figcaption>
+<div aria-describedby="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <colgroup>
 <col style="width: 17%">
 <col style="width: 12%">
@@ -1113,6 +1179,8 @@ Sergio M. Nava Muñoz
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
 </div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
