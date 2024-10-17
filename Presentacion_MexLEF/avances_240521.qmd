@@ -211,3 +211,20 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 :  Results for the Various Challenges {#tbl-Results .striped .hover}
 
 
+---
+
+## MeOffendEs subtask3 {.smaller .scrollable transition="slide"}
+```{python}
+#| echo: false
+
+import pickle
+from CompStats import plot_performance_multiple, plot_difference_multiple, difference_multiple
+# Recuperar el objeto del archivo
+with open("datos/MeOffendEs_subtask3.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
+
+face_grid = plot_performance_multiple(perf)
+diff = difference_multiple(perf) 
+face_grid_diff = plot_difference_multiple(diff)
+
+```
