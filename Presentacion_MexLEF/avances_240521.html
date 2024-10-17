@@ -30,8 +30,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="avances_240521_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="logo.css">
   <link href="avances_240521_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="avances_240521_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="avances_240521_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -347,27 +413,24 @@ Sergio Nava-Muñoz/ Mario Graff/ Hugo Jair Escalante
 <ul>
 <li><a href="#/introduction" id="/toc-introduction">Introduction</a>
 <ul>
-<li>
-<ul>
 <li><a href="#/challenge" id="/toc-challenge">Challenge</a></li>
-</ul></li>
-<li><a href="#/challenge-restrictions" id="/toc-challenge-restrictions">Challenge Restrictions</a></li>
 <li><a href="#/results-for-vaxxstance-close-track---contextual" id="/toc-results-for-vaxxstance-close-track---contextual">Results for VaxxStance Close track - contextual</a></li>
 </ul></li>
 <li><a href="#/proposed-methodology" id="/toc-proposed-methodology">Proposed methodology</a>
 <ul>
+<li><a href="#/bootstrapping" id="/toc-bootstrapping">Bootstrapping</a></li>
 <li><a href="#/comparison-of-classifiers" id="/toc-comparison-of-classifiers">Comparison of Classifiers</a></li>
 
 <li><a href="#/hypothesis-testing" id="/toc-hypothesis-testing">Hypothesis Testing</a></li>
-<li><a href="#/multiple-testing" id="/toc-multiple-testing">Multiple Testing</a>
-<ul>
-<li><a href="#/multiple-testing" id="/toc-risk-of-multiple-testing">Risk of Multiple Testing</a></li>
-<li><a href="#/multiple-testing" id="/toc-correction-methods">Correction Methods</a></li>
-</ul></li>
+<li><a href="#/multiple-testing" id="/toc-multiple-testing">Multiple Testing</a></li>
 
+</ul></li>
+<li><a href="#/analysed-competitions" id="/toc-analysed-competitions">Analysed Competitions</a>
+<ul>
 <li><a href="#/analysis-of-nlp-competitions" id="/toc-analysis-of-nlp-competitions">Analysis of NLP Competitions</a></li>
 <li><a href="#/results-for-the-various-challenges" id="/toc-results-for-the-various-challenges">Results for the Various Challenges</a></li>
-<li><a href="#/meoffendes-subtask3" id="/toc-meoffendes-subtask3">MeOffendEs subtask3</a></li>
+<li><a href="#/some-examples" id="/toc-some-examples">Some Examples</a></li>
+<li><a href="#/compstats" id="/toc-compstats">CompStats</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -377,22 +440,24 @@ Sergio Nava-Muñoz/ Mario Graff/ Hugo Jair Escalante
 <h1>Introduction</h1>
 
 </section>
-<section class="slide level2">
-
-<h3 id="challenge">Challenge</h3>
-
-<img data-src="figs/Competencia.png" class="r-stretch quarto-figure-center"><p class="caption">
+<section id="challenge" class="slide level2 smaller">
+<h2>Challenge</h2>
+<div id="fig-Challenge" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-Challenge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/scheme.png" width="600" height="250">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Challenge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Challenge
-</p></section>
-<section id="challenge-restrictions" class="slide level2 smaller">
-<h2>Challenge Restrictions</h2>
+</figcaption>
+</figure>
+</div>
 <ul>
 <li>Comparison of multiple participants (systems)</li>
 <li>Selected performance metrics</li>
 <li>A test dataset of fixed size ( <span class="math inline">\(n\)</span> )</li>
 <li>A limited number of submissions per participant</li>
 <li>The Reference (Gold Standard) is known just for the organizers</li>
-<li>The objective can be to choose the best or to rank the participants</li>
 </ul>
 </section>
 <section id="results-for-vaxxstance-close-track---contextual" class="slide level2 smaller">
@@ -402,7 +467,7 @@ Figure&nbsp;1: Challenge
 <div id="tbl-VaxxStance1" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-VaxxStance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Results for VaxxStance Close track - contextual.
+Table&nbsp;1: Results for VaxxStance Close track - contextual
 </figcaption>
 <div aria-describedby="tbl-VaxxStance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
@@ -510,6 +575,20 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 <h1>Proposed methodology</h1>
 
 </section>
+<section id="bootstrapping" class="slide level2 smaller">
+<h2>Bootstrapping</h2>
+<p>In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size</p>
+<div id="fig-bootstrap" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-bootstrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/bootstrap.png" width="600" height="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bootstrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Bootstrapping
+</figcaption>
+</figure>
+</div>
+</section>
 <section id="comparison-of-classifiers" class="slide level2 smaller">
 <h2>Comparison of Classifiers</h2>
 <div id="tbl-independent" class="striped hover quarto-float quarto-figure quarto-figure-center">
@@ -534,12 +613,12 @@ Table&nbsp;3: Results Table for Basque and Spanish
 <tr class="header">
 <th></th>
 <th>LCI</th>
-<th>Mean</th>
+<th>Score</th>
 <th>UCI</th>
 <th></th>
 <th></th>
 <th>LCI</th>
-<th>Mean</th>
+<th>Score</th>
 <th>UCI</th>
 </tr>
 </thead>
@@ -621,7 +700,7 @@ Table&nbsp;3: Results Table for Basque and Spanish
 <img data-src="figs/ordenado2.png" width="600" height="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-independent-samples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Independent Samples
+Figure&nbsp;3: Independent Samples
 </figcaption>
 </figure>
 </div>
@@ -650,12 +729,12 @@ Table&nbsp;4: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 <tr class="header">
 <th></th>
 <th>LCI</th>
-<th>Mean</th>
+<th>Diff</th>
 <th>UCI</th>
 <th></th>
 <th></th>
 <th>LCI</th>
-<th>Mean</th>
+<th>Diff</th>
 <th>UCI</th>
 </tr>
 </thead>
@@ -726,7 +805,7 @@ Table&nbsp;4: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 <img data-src="figs/mejorordenado2.png" width="600" height="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paired-samples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Paired Samples
+Figure&nbsp;4: Paired Samples
 </figcaption>
 </figure>
 </div>
@@ -799,12 +878,12 @@ Table&nbsp;5: Differences of F₁ score for Basque
 <img data-src="figs/histogram2.png" width="600" height="250">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: histogram of differences
+Figure&nbsp;5: histogram of differences
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="multiple-testing" class="slide level2">
+<section id="multiple-testing" class="slide level2 smaller">
 <h2>Multiple Testing</h2>
 <h3 id="risk-of-multiple-testing">Risk of Multiple Testing</h3>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -851,7 +930,7 @@ Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and w
 <th></th>
 <th></th>
 <th>Difference</th>
-<th>p-value</th>
+<th><span class="math inline">\(p-value\)</span></th>
 <th>Bonferroni</th>
 <th>Holm</th>
 <th>BH</th>
@@ -953,6 +1032,11 @@ Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and w
 </div>
 </figure>
 </div>
+</section></section>
+<section>
+<section id="analysed-competitions" class="title-slide slide level1 center">
+<h1>Analysed Competitions</h1>
+
 </section>
 <section id="analysis-of-nlp-competitions" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>Analysis of NLP Competitions</h2>
@@ -1184,25 +1268,226 @@ Table&nbsp;8: Results for the Various Challenges
 </figure>
 </div>
 </section>
-<section id="meoffendes-subtask3" class="slide level2 smaller scrollable" data-transition="slide">
-<h2>MeOffendEs subtask3</h2>
-<div id="27f49fb3" class="cell" data-execution_count="1">
+<section id="some-examples" class="slide level2 smaller scrollable" data-transition="slide">
+<h2>Some Examples</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">MeOffendEs subtask3</a></li><li><a href="#tabset-1-2">DETOXIS 2021</a></li><li><a href="#tabset-1-3">PAR-MEX 2022</a></li><li><a href="#tabset-1-4">BoW</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell" data-execution_count="1">
+<div id="fig-meoffendes" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-meoffendes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="avances_240521_files/figure-revealjs/cell-2-output-1.png" width="485" height="475"></p>
+<div id="fig-meoffendes-1" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-meoffendes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="avances_240521_files/figure-revealjs/fig-meoffendes-output-1.png" data-ref-parent="fig-meoffendes" alt="Confidence intervals" width="485" height="475">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-meoffendes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Confidence intervals
+</figcaption>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="avances_240521_files/figure-revealjs/cell-2-output-2.png" width="559" height="490"></p>
+<div id="fig-meoffendes-2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals" height="490" width="559">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-meoffendes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="avances_240521_files/figure-revealjs/fig-meoffendes-output-2.png" id="fig-meoffendes-2" data-ref-parent="fig-meoffendes" alt="Confidence intervals" width="559" height="490">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-meoffendes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
 </figure>
 </div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-meoffendes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell" data-execution_count="2">
+<div id="fig-detoxis" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="2">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-detoxis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+<div id="fig-detoxis-1" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-detoxis-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="avances_240521_files/figure-revealjs/fig-detoxis-output-1.png" data-ref-parent="fig-detoxis" alt="Confidence intervals" width="482" height="475">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-detoxis-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Confidence intervals
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig-detoxis-2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals" height="490" width="558">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-detoxis-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="avances_240521_files/figure-revealjs/fig-detoxis-output-2.png" id="fig-detoxis-2" data-ref-parent="fig-detoxis" alt="Confidence intervals" width="558" height="490">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-detoxis-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-detoxis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell" data-execution_count="3">
+<div id="fig-parmex" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="3">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-parmex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+<div id="fig-parmex-1" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="avances_240521_files/figure-revealjs/fig-parmex-output-1.png" data-ref-parent="fig-parmex" alt="Confidence intervals" width="486" height="475">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Confidence intervals
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig-parmex-2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals" height="490" width="560">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="avances_240521_files/figure-revealjs/fig-parmex-output-2.png" id="fig-parmex-2" data-ref-parent="fig-parmex" alt="Confidence intervals" width="560" height="490">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-parmex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tabset-1-4">
+<div id="fig-BoW-IC" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-BoW-IC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/IC.png" width="300" height="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BoW-IC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Confidence Intervals
+</figcaption>
+</figure>
+</div>
+<div id="fig-BoW-ICD" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-BoW-ICD-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/ICD.png" width="300" height="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BoW-ICD-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Confidence Intervals of Differences
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="compstats" class="slide level2 smaller scrollable" data-transition="slide">
+<h2>CompStats</h2>
+<p>The package <em>CompStats</em> <a href="http://compstats.readthedocs.org">(compstats.readthedocs.org)</a> implements the ideas presented in this contribution.</p>
+<h3 id="installation">Installation</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>pip install CompStats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="libraries">libraries</h3>
+<p>Once CompStats is installed, one must load a few libraries.</p>
+<div id="9947a0d9" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> CompStats <span class="im">import</span> performance, difference, plot_performance, plot_difference, difference_p_value</span>
+<span id="cb2-2"><a href=""></a><span class="im">from</span> statsmodels.stats.multitest <span class="im">import</span> multipletests</span>
+<span id="cb2-3"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> f1_score</span>
+<span id="cb2-4"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="data">Data</h3>
+<p>Let us assume <em>PARMEX_2022.csv</em> is a csv file where the column <span class="math inline">\(y\)</span> has the ground truth, and the other columns are the systems’outputs.</p>
+<div id="75a8b0d8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>DATA <span class="op">=</span> <span class="st">'PARMEX_2022.csv'</span></span>
+<span id="cb3-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The performance metric used is the F1 score.</p>
+<h3 id="metric">Metric</h3>
+<div id="e2454c5c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>score <span class="op">=</span> <span class="kw">lambda</span> y, hy: f1_score(y, hy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h3 id="performance">Performance</h3>
+<div id="06a4c752" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>perf <span class="op">=</span> performance(df, score<span class="op">=</span>score)</span>
+<span id="cb5-2"><a href=""></a>ins <span class="op">=</span> plot_performance(perf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="avances_240521_files/figure-revealjs/cell-8-output-1.png" width="486" height="470"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="performance-differences-against-the-winner">Performance Differences Against the Winner</h3>
+<div id="4b082377" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>diff <span class="op">=</span> difference(perf)</span>
+<span id="cb6-2"><a href=""></a>ins <span class="op">=</span> plot_difference(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="avances_240521_files/figure-revealjs/cell-9-output-1.png" width="560" height="490"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="performance-differences-against-the-winner-1">Performance Differences Against the Winner</h3>
+<div id="8991887c" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>p_values <span class="op">=</span> difference_p_value(diff)</span>
+<span id="cb7-2"><a href=""></a>p_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>{'baseline': 0.0,
+ 'temu_bsc': 0.0,
+ 'UC3M-DEEPNLP': 0.0,
+ 'FRSCIC': 0.0,
+ 'Abu': 0.0,
+ 'Thang CIC': 0.0,
+ 'Tü Par': 0.306}</code></pre>
+</div>
+</div>
+<h3 id="bonferroni-correction">Bonferroni Correction</h3>
+<div id="7495996a" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>result <span class="op">=</span> multipletests(<span class="bu">list</span>(p_values.values()), method<span class="op">=</span><span class="st">'bonferroni'</span>)</span>
+<span id="cb9-2"><a href=""></a>p_valuesC <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(p_values.keys(), result[<span class="dv">1</span>]))</span>
+<span id="cb9-3"><a href=""></a>p_valuesC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>{'baseline': 0.0,
+ 'temu_bsc': 0.0,
+ 'UC3M-DEEPNLP': 0.0,
+ 'FRSCIC': 0.0,
+ 'Abu': 0.0,
+ 'Thang CIC': 0.0,
+ 'Tü Par': 1.0}</code></pre>
 </div>
 </div>
 <div class="quarto-auto-generated-content">
+<p><img src="figs/logo-infotec.jpeg" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>

@@ -6,7 +6,11 @@ date: "Oct 2024"
 format: 
   revealjs:
     slide-number: true
+    theme: default
+    logo: figs/logo-infotec.jpeg
+    css: logo.css
 toc: TRUE
+toc-depth: 2
 ---
 
 
@@ -14,11 +18,10 @@ toc: TRUE
 
 ---
 
-### Challenge 
+## Challenge {.smaller}
 
-![Challenge](figs/Competencia.png){#fig-Challenge}
+![Challenge](figs/scheme.png){#fig-Challenge width="600" height="250"}
 
-## Challenge Restrictions {.smaller}
 
 
 - Comparison of multiple participants (systems)
@@ -26,7 +29,7 @@ toc: TRUE
 - A test dataset of fixed size \( $n$ \)
 - A limited number of submissions per participant
 - The Reference (Gold Standard) is known just for the organizers
-- The objective can be to choose the best or to rank the participants
+
 
 
 
@@ -45,7 +48,7 @@ toc: TRUE
 | ...  | ...           | ...       | ...   | ...      |
 | $n_{test}$ | none    | favor     | ...   | against  |
 
-:  Results for VaxxStance Close track - contextual. {#tbl-VaxxStance1 .striped .hover}
+:  Results for VaxxStance Close track - contextual {#tbl-VaxxStance1 .striped .hover }
 
 :::
 
@@ -65,14 +68,19 @@ toc: TRUE
 
 # Proposed methodology
 
----
+## Bootstrapping {.smaller}
+
+In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size 
+
+![Bootstrapping](figs/bootstrap.png){#fig-bootstrap width="600" height="300"}
+
 
 ## Comparison of Classifiers {.smaller}
 
 
 
 
-|                | LCI    | Mean   | UCI    |        |                | LCI    | Mean   | UCI    |
+|                | LCI    | Score   | UCI    |        |                | LCI    | Score   | UCI    |
 |----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
 | **Basque**     |        |        |        |        | **Spanish**    |        |        |        |
 | **WordUp.01**  | 0.5031 | 0.5716 | 0.6401 |        | **WordUp.02**  | 0.7734 | 0.8086 | 0.8437 |
@@ -94,7 +102,7 @@ toc: TRUE
 
 
 
-|                | LCI    | Mean   | UCI    |        |                | LCI    | Mean   | UCI    |
+|                | LCI    | Diff   | UCI    |        |                | LCI    | Diff   | UCI    |
 |----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
 | **Basque (WordUp.01)** |        |        |        |        | **Spanish (WordUp.02)** |        |        |        |
 | **WordUp.02**  | -0.0371| 0.0269 | 0.0910 |        | **WordUp.01**  | -0.0120| 0.0184 | 0.0488 |
@@ -126,7 +134,7 @@ toc: TRUE
 
 ![histogram of differences ](figs/histogram2.png){#fig-histogram width="600" height="250"}
 
-## Multiple Testing
+## Multiple Testing {.smaller}
 
 ### Risk of Multiple Testing
 
@@ -150,7 +158,7 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 
 
 
-|                   |                   | Difference | p-value  | Bonferroni | Holm     | BH       |
+|                   |                   | Difference | $p-value$  | Bonferroni | Holm     | BH       |
 |-------------------|-------------------|------------|----------|------------|----------|----------|
 | WordUp.01         | WordUp.02          | 0.027      | **0.2030** | **0.8120** | **0.2030** | **0.2030** |
 | WordUp.01         | MultiAztertest.01  | 0.071      | **0.0551** | **0.2204** | **0.1102** | **0.0735** |
@@ -164,6 +172,8 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 | SQYQP.01          | MultiAztertest.02  | 0.083      | 0.0427   | 0.0427     | 0.0427   | 0.0427   |
 
 : Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments. {#tbl-p-values  .striped .hover}
+
+# Analysed Competitions
 
 ## Analysis of NLP Competitions  {.smaller .scrollable transition="slide"}
 
@@ -211,12 +221,18 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 :  Results for the Various Challenges {#tbl-Results .striped .hover}
 
 
----
 
-## MeOffendEs subtask3 {.smaller .scrollable transition="slide"}
+
+## Some Examples {.smaller .scrollable transition="slide"}
+
+::: panel-tabset
+### MeOffendEs subtask3
+
 ```{python}
 #| echo: false
-
+#| label: fig-MeOffendEs
+#| fig-cap: "Confidence intervals"
+#| fig-alt: "Confidence intervals"
 import pickle
 from CompStats import plot_performance_multiple, plot_difference_multiple, difference_multiple
 # Recuperar el objeto del archivo
@@ -228,3 +244,130 @@ diff = difference_multiple(perf)
 face_grid_diff = plot_difference_multiple(diff)
 
 ```
+
+### DETOXIS 2021
+
+```{python}
+#| echo: false
+#| label: fig-detoxis
+#| fig-cap: "Confidence intervals"
+#| fig-alt: "Confidence intervals"
+
+import pickle
+from CompStats import plot_performance_multiple, plot_difference_multiple, difference_multiple
+# Recuperar el objeto del archivo
+with open("datos/detoxis_subtask1.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
+
+face_grid = plot_performance_multiple(perf)
+diff = difference_multiple(perf) 
+face_grid_diff = plot_difference_multiple(diff)
+
+```
+
+###  PAR-MEX 2022
+
+```{python}
+#| echo: false
+#| label: fig-parmex
+#| fig-cap: "Confidence intervals"
+#| fig-alt: "Confidence intervals"
+
+import pickle
+from CompStats import plot_performance_multiple, plot_difference_multiple, difference_multiple
+# Recuperar el objeto del archivo
+with open("datos/PARMEX_2022.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
+
+face_grid = plot_performance_multiple(perf)
+diff = difference_multiple(perf) 
+face_grid_diff = plot_difference_multiple(diff)
+
+```
+
+
+###  BoW
+
+
+![Confidence Intervals](figs/IC.png){#fig-BoW-IC width="300" height="300"}
+
+![Confidence Intervals of Differences](figs/ICD.png){#fig-BoW-ICD width="300" height="300"}
+
+
+
+:::
+
+
+## CompStats {.smaller .scrollable transition="slide"}
+
+
+The package _CompStats_ [(compstats.readthedocs.org)](http://compstats.readthedocs.org) implements the ideas presented in this contribution.
+
+### Installation
+
+```python
+pip install CompStats
+```
+### libraries
+Once CompStats is installed, one must load a few libraries.
+
+```{python}
+#| echo: true
+from CompStats import performance, difference, plot_performance, plot_difference, difference_p_value
+from statsmodels.stats.multitest import multipletests
+from sklearn.metrics import f1_score
+import pandas as pd
+```
+
+### Data
+Let us assume *PARMEX_2022.csv* is a csv file where the column $y$ has the ground truth, and the other columns are the systems'outputs.
+
+```{python}
+#| echo: true
+DATA = 'PARMEX_2022.csv'
+df = pd.read_csv(DATA)
+```
+The performance metric used is the F1 score.
+
+
+
+### Metric
+```{python}
+#| echo: true
+score = lambda y, hy: f1_score(y, hy)
+```
+
+### Performance
+```{python}
+#| echo: true
+perf = performance(df, score=score)
+ins = plot_performance(perf)
+```
+
+
+
+### Performance Differences Against the Winner
+```{python}
+#| echo: true
+diff = difference(perf)
+ins = plot_difference(diff)
+```
+
+
+
+### Performance Differences Against the Winner
+```{python}
+#| echo: true
+p_values = difference_p_value(diff)
+p_values
+```
+
+### Bonferroni Correction
+```{python}
+#| echo: true
+result = multipletests(list(p_values.values()), method='bonferroni')
+p_valuesC = dict(zip(p_values.keys(), result[1]))
+p_valuesC
+
+```
+
