@@ -1,0 +1,408 @@
+---
+title: "Analysis of systems’ performance in natural language processing competitions"
+author: "Sergio Nava-Muñoz/ Mario Graff/ Hugo Jair Escalante"
+institute:  "CIMAT / INFOTEC / INAOE"
+date: "Oct 2024"
+format: 
+  revealjs:
+    slide-number: true
+    theme: default
+    logo: figs/logo-infotec.jpeg
+    css: logo.css
+toc: TRUE
+toc-depth: 2
+---
+
+
+# Introduction
+
+---
+
+## Challenge {.smaller}
+
+![Challenge](figs/scheme.png){#fig-Challenge width="600" height="250"}
+
+
+
+- Comparison of multiple participants (systems)
+- Selected performance metrics
+- A test dataset of fixed size \( $n$ \)
+- A limited number of submissions per participant
+- The Reference (Gold Standard) is known just for the organizers
+
+
+
+
+## Results for VaxxStance Close track - contextual {.smaller}
+
+
+:::: {.columns}
+
+::: {.column width="70%"}
+| Obs  | Gold Standard | WordUp.01 | ...   | SQYQP.01 |
+|------|---------------|-----------|-------|----------|
+| 1    | favor         | favor     | ...   | favor    |
+| 2    | favor         | favor     | ...   | none     |
+| 3    | against       | none      | ...   | against  |
+| 4    | none          | none      | ...   | none     |
+| ...  | ...           | ...       | ...   | ...      |
+| $n_{test}$ | none    | favor     | ...   | against  |
+
+:  Results for VaxxStance Close track - contextual {#tbl-VaxxStance1 .striped .hover }
+
+:::
+
+::: {.column width="25%"  .fragment }
+| System              | Basque  |
+|---------------------|---------|
+| WordUp.01           | 0.5734  |
+| WordUp.02           | 0.5465  |
+| MultiAztertest.01   | 0.5024  |
+| SQYQP.01            | 0.4256  |
+| MultiAztertest.02   | 0.3428  |
+
+:  Results using Macro-averaged F1 Score for "favor" and "against". {#tbl-VaxxStance2 .striped .hover}
+:::
+
+::::
+
+# Proposed methodology
+
+## Bootstrapping {.smaller}
+
+In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size 
+
+![Bootstrapping](figs/bootstrap.png){#fig-bootstrap width="600" height="300"}
+
+
+## Comparison of Classifiers {.smaller}
+
+
+
+
+|                | LCI    | Score   | UCI    |        |                | LCI    | Score   | UCI    |
+|----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
+| **Basque**     |        |        |        |        | **Spanish**    |        |        |        |
+| **WordUp.01**  | 0.5031 | 0.5716 | 0.6401 |        | **WordUp.02**  | 0.7734 | 0.8086 | 0.8437 |
+| WordUp.02      | 0.4751 | 0.5444 | 0.6138 |        | WordUp.01      | 0.7537 | 0.7899 | 0.8261 |
+| **MultiAztertest.01** | 0.4287 | 0.5007 | 0.5726 |        | **MultiAztertest.01** | 0.6987 | 0.7400 | 0.7814 |
+| SQYQP.01       | 0.3497 | 0.4237 | 0.4976 |        | SQYQP.01       | 0.6310 | 0.6730 | 0.7149 |
+| **MultiAztertest.02** | 0.2664 | 0.3402 | 0.4139 |        | **MultiAztertest.02** | 0.5945 | 0.6391 | 0.6837 |
+
+
+:  Results Table for Basque and Spanish {#tbl-independent .striped .hover}
+
+
+![Independent Samples](figs/ordenado2.png){#fig-independent-samples width="600" height="300"}
+
+---
+
+##   {.smaller}
+
+
+
+
+|                | LCI    | Diff   | UCI    |        |                | LCI    | Diff   | UCI    |
+|----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
+| **Basque (WordUp.01)** |        |        |        |        | **Spanish (WordUp.02)** |        |        |        |
+| **WordUp.02**  | -0.0371| 0.0269 | 0.0910 |        | **WordUp.01**  | -0.0120| 0.0184 | 0.0488 |
+| MultiAztertest.01 | -0.0152| 0.0713 | 0.1578 |        | MultiAztertest.01 | 0.0211 | 0.0680 | 0.1149 |
+| **SQYQP.01**   | 0.0543 | 0.1485 | 0.2427 |        | **SQYQP.01**   | 0.0877 | 0.1351 | 0.1825 |
+| MultiAztertest.02 | 0.1405 | 0.2314 | 0.3222 |        | MultiAztertest.02 | 0.1165 | 0.1687 | 0.2210 |
+
+:  Results Table for Basque (WordUp.01) and Spanish (WordUp.02) {#tbl-Paired .striped .hover}
+
+![Paired Samples](figs/mejorordenado2.png){#fig-paired-samples width="600" height="300"}
+
+## Hypothesis Testing {.smaller}
+
+
+::: footer
+*Note: † p<.1, * p<.05, ** p<.1, and *** p<.001.*
+:::
+
+
+|                     | WordUp.01  | WordUp.02  | MultiAztertest.01 | SQYQP.01  |
+|---------------------|------------|------------|-------------------|-----------|
+| **WordUp.02**        | 0.027      |            |                   |           |
+| MultiAztertest.01    | 0.071 †    | 0.044      |                   |           |
+| **SQYQP.01**         | 0.148 ***  | 0.121 **   | 0.077 *           |           |
+| MultiAztertest.02    | 0.231 ***  | 0.204 ***  | 0.160 ***         | 0.083 *   |
+
+
+:  Differences of F₁ score for Basque {#tbl-Basque .striped .hover}
+
+![histogram of differences ](figs/histogram2.png){#fig-histogram width="600" height="250"}
+
+## Multiple Testing {.smaller}
+
+### Risk of Multiple Testing
+
+::: {.callout-note}
+Multiple hypothesis testing increases the risk of Type I errors—the false rejection of a true null hypothesis.
+:::
+
+### Correction Methods {.smaller}
+
+
+- **Bonferroni correction**: Divides the significance level by the number of comparisons.
+- **Holm's step-down procedure**: Adjusts p-values sequentially.
+- **Benjamini-Hochberg (BH) procedure**: Controls the false discovery rate (FDR).
+
+---
+
+## {.smaller}
+
+**Estimated p-values for F1 difference **
+
+
+
+
+|                   |                   | Difference | $p-value$  | Bonferroni | Holm     | BH       |
+|-------------------|-------------------|------------|----------|------------|----------|----------|
+| WordUp.01         | WordUp.02          | 0.027      | **0.2030** | **0.8120** | **0.2030** | **0.2030** |
+| WordUp.01         | MultiAztertest.01  | 0.071      | **0.0551** | **0.2204** | **0.1102** | **0.0735** |
+| WordUp.01         | SQYQP.01           | 0.148      | 0.0012   | 0.0048     | 0.0036   | 0.0024   |
+| WordUp.01         | MultiAztertest.02  | 0.231      | 0.0000   | 0.0000     | 0.0000   | 0.0000   |
+| WordUp.02         | MultiAztertest.01  | 0.044      | **0.1490** | **0.4470** | **0.1490** | **0.1490** |
+| WordUp.02         | SQYQP.01           | 0.121      | 0.0039   | 0.0117     | 0.0078   | 0.0058   |
+| WordUp.02         | MultiAztertest.02  | 0.204      | 0.0000   | 0.0000     | 0.0000   | 0.0000   |
+| MultiAztertest.01 | SQYQP.01           | 0.077      | 0.0330   | **0.0660** | 0.0330   | 0.0330   |
+| MultiAztertest.01 | MultiAztertest.02  | 0.160      | 0.0003   | 0.0006     | 0.0006   | 0.0006   |
+| SQYQP.01          | MultiAztertest.02  | 0.083      | 0.0427   | 0.0427     | 0.0427   | 0.0427   |
+
+: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments. {#tbl-p-values  .striped .hover}
+
+# Analysed Competitions
+
+## Analysis of NLP Competitions  {.smaller .scrollable transition="slide"}
+
+
+
+| Competition        | Subtask / Language                                       | Metric Used                              | Data Considered                          |
+|--------------------|----------------------------------------------------------|------------------------------------------|------------------------------------------|
+| MEX-A3T 2019       | Author Profiling (Spanish, text and images)               | Macro-averaged F1 Score                  | All participants                         |
+|                    | Aggressiveness Detection (Spanish)                       | F1 Score                                 | All participants                         |
+| TASS 2020          | General Polarity (Spanish)                               | Macro-averaged F1 Score                  | All participants (Best Runs)             |
+| **VaxxStance 2021**| **Stance Detection (Basque, Spanish)**                   | **Macro-averaged F1 Score for "favor" and "against"** | **All participants** |
+| EXIST 2021         | Sexism Identification (English, Spanish)                 | Accuracy                                 | Top 10 for each language (Best Runs)     |
+|                    | Sexism Categorization (English, Spanish)                 | Macro-averaged F1 Score                  | Top 10 for each language (Best Runs)     |
+| DETOXIS 2021       | Toxicity Detection (Spanish)                             | F1 Score                                 | All participants (Best Runs)             |
+| MeOffendEs 2021    | Offensive Language Identification (Mexican Spanish)      | F1 Score (offensive class)               | All participants (Best Runs)             |
+| REST-MEX 2021      | Recommendation System (Mexican Spanish)                  | MAE                                      | All participants (baseline)              |
+|                    | Sentiment Analysis (Mexican Spanish)                     | MAE                                      | All participants (baseline)              |
+| REST-MEX 2022      | Sentiment Analysis (Mexican Spanish)                     | $Measure_S$                                | All participants (majority class)        |
+|                    | Epidemiological Semaphore (Mexican Spanish)              | $Measure_C$                                | All participants (majority class)        |
+| PAR-MEX 2022       | Paraphrase Identification (Mexican Spanish)              | F1 Score                                 | All participants (Best Runs)             |
+
+:  Table Metrics and data considered across various competitions {#tbl-Competitions .striped .hover}
+
+---
+
+
+## Results for the Various Challenges {.smaller .scrollable transition="slide"}
+
+
+
+| Challenge          | DETOXIS 2021 | PAR-MEX 2022 | MeOffendEs 2021 | MEX-A3T 2019 (Agg) | MEX-A3T 2019 (author profiling) |
+|--------------------|--------------|--------------|-----------------|-------------------|--------------------------------|
+| **Task**           | Toxicity detection | Paraphrase Identification | Non-contextual | Aggressiveness Detection | Author Profiling |
+| **Metric**         | F1 score     | F1 score     | F1 score        | F1 score          | Macro-averaged F1 score       |
+| **$n$**            | 891          | 2821         | 2182            | 3156              | 1500                          |
+| **$m$**            | 31           | 8            | 10              | 25                | 4                             |
+| **Ties w/ win.**   | 0/3/0/0      | 1/1/1/1      | 1/2/2/1         | 3/7/4/3           | 1/1/1/1                       |
+| **Poss. compars.** | 465          | 28           | 45              | 300               | 6                             |
+| **none/Bonf.**     | 80/135       | 6/6          | 7/9             | 70/91             | 2/2                           |
+| **Holm/BH**        | 112/85       | 6/6          | 8/7             | 80/63             | 2/2                           |
+| **$|win.-med|$**   | 0.223        | 0.061        | 0.078           | 0.098             | 0.164                         |
+| **$CV$**           | 42.600       | 4.722        | 16.070          | 19.620            | 46.491                        |
+| **PPI**            | 35.390       | 5.758        | 28.46           | 52.038            | 42.581                        |
+
+:  Results for the Various Challenges {#tbl-Results .striped .hover}
+
+
+
+
+## Some Examples {.smaller .scrollable transition="slide"}
+
+::: panel-tabset
+### MeOffendEs subtask3
+
+```{python}
+#| echo: false
+#| label: fig-MeOffendEs
+#| fig-cap: "Confidence intervals"
+#| fig-alt: "Confidence intervals"
+import pickle
+from CompStats import plot_performance_multiple, plot_difference_multiple, difference_multiple
+# Recuperar el objeto del archivo
+with open("datos/MeOffendEs_subtask3.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
+
+face_grid = plot_performance_multiple(perf)
+diff = difference_multiple(perf) 
+face_grid_diff = plot_difference_multiple(diff)
+
+```
+
+### DETOXIS 2021
+
+```{python}
+#| echo: false
+#| label: fig-detoxis
+#| fig-cap: "Confidence intervals"
+#| fig-alt: "Confidence intervals"
+
+import pickle
+from CompStats import plot_performance_multiple, plot_difference_multiple, difference_multiple
+# Recuperar el objeto del archivo
+with open("datos/detoxis_subtask1.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
+
+face_grid = plot_performance_multiple(perf)
+diff = difference_multiple(perf) 
+face_grid_diff = plot_difference_multiple(diff)
+
+```
+
+###  PAR-MEX 2022
+
+```{python}
+#| echo: false
+#| label: fig-parmex
+#| fig-cap: "Confidence intervals"
+#| fig-alt: "Confidence intervals"
+
+import pickle
+from CompStats import plot_performance_multiple, plot_difference_multiple, difference_multiple
+# Recuperar el objeto del archivo
+with open("datos/PARMEX_2022.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
+
+face_grid = plot_performance_multiple(perf)
+diff = difference_multiple(perf) 
+face_grid_diff = plot_difference_multiple(diff)
+
+```
+
+
+###  BoW
+
+
+![Confidence Intervals](figs/IC.png){#fig-BoW-IC width="300" height="300"}
+
+![Confidence Intervals of Differences](figs/ICD.png){#fig-BoW-ICD width="300" height="300"}
+
+
+
+:::
+
+
+## CompStats {.smaller .scrollable transition="slide"}
+
+
+The package _CompStats_ [(compstats.readthedocs.org)](http://compstats.readthedocs.org) implements the ideas presented in this contribution.
+
+### Installation
+
+```python
+pip install CompStats
+```
+### libraries
+Once CompStats is installed, one must load a few libraries.
+
+```{python}
+#| echo: true
+from CompStats import performance, difference, plot_performance, plot_difference, difference_p_value
+from statsmodels.stats.multitest import multipletests
+from sklearn.metrics import f1_score
+import pandas as pd
+```
+
+### Data
+Let us assume *PARMEX_2022.csv* is a csv file where the column $y$ has the ground truth, and the other columns are the systems'outputs.
+
+```{python}
+#| echo: true
+DATA = 'PARMEX_2022.csv'
+df = pd.read_csv(DATA)
+```
+The performance metric used is the F1 score.
+
+
+
+### Metric
+```{python}
+#| echo: true
+score = lambda y, hy: f1_score(y, hy)
+```
+
+### Performance
+```{python}
+#| echo: true
+perf = performance(df, score=score)
+ins = plot_performance(perf)
+```
+
+
+
+### Performance Differences Against the Winner
+```{python}
+#| echo: true
+diff = difference(perf)
+ins = plot_difference(diff)
+```
+
+
+
+### Performance Differences Against the Winner
+```{python}
+#| echo: true
+p_values = difference_p_value(diff)
+p_values
+```
+
+### Bonferroni Correction
+```{python}
+#| echo: true
+result = multipletests(list(p_values.values()), method='bonferroni')
+p_valuesC = dict(zip(p_values.keys(), result[1]))
+p_valuesC
+
+```
+
+## Summary of Research
+- **Objectives**: 
+  - Analyze existing methodologies for comparing algorithms.
+  - Develop a framework for evaluating algorithmic performance.
+  - Validate framework in real-world competitions.
+  
+- **Key Findings**:
+  - Statistical tests like Wilcoxon and Friedman are effective.
+  - Introduced tools for fair competition result comparison.
+  - Developed a structured evaluation framework for competitions.
+
+---
+
+## Contributions to Knowledge
+- **Theoretical**:
+  - Formalization of competition-based algorithm evaluation.
+  - Expanded understanding of statistical tests and competition comparison.
+
+- **Practical**:
+  - Toolkit for statistical evaluation.
+  - Actionable feedback for participants in algorithmic competitions.
+
+---
+
+## Limitations and Future Work
+- **Limitations**:
+  - Data availability and external validity.
+  - Focus on classification competitions.
+  
+- **Future Work**:
+  - Expand to other competition types (e.g., regression).
+  - Develop refined evaluation metrics.
+  - Integrate statistical tools in a more consistent manner.
+
+---
