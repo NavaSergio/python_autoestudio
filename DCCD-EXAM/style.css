@@ -11,21 +11,17 @@ $presentation-heading-font-weight: bold !default;
 $presentation-heading-text-align: center !default;
 $presentation-heading-text-transform: uppercase !default;
 
-#TOC {
-  font-size: 3em;
-}
-/*-- scss:rules --*/
-.small-table {
-  font-size: .6em
-}
 
 .custom-small table {
   font-size: .6em
 }
+.custom-tiny table {
+  font-size: .5em
+}
 .slide-background-content{
   background-image: url("/figs/DCCD.png");
-  background-size: 33% 33%;
-  background-position: right;
+  background-size: 100% 100%;
+  background-position: left;
 }
 .reveal .slide-logo {
   display: block;
@@ -39,11 +35,4 @@ $presentation-heading-text-transform: uppercase !default;
   max-width: unset !important;
   max-height: unset !important;
 }
-.figure-caption {
-  margin: auto;
-  text-align: center;
-}
-.figcaption {
-  margin: auto;
-  text-align: center;
-}
+

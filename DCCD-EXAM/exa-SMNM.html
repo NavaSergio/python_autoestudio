@@ -9,8 +9,9 @@
 <link href="exa-SMNM_files/libs/quarto-html/quarto-syntax-highlighting-3a01e2046221230fdceeea94b1ec5d67.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.30">
 
-  <meta name="author" content="Sergio Nava-Muñoz">
-  <meta name="dcterms.date" content="2024-11-01">
+  <meta name="author" content="Sergio M. Nava Muñoz">
+  <meta name="author" content="PhD Mario Graff Guerrero">
+  <meta name="dcterms.date" content="2024-11-27">
   <title>Analysis of Systems’ Performance in Competitions Challenges</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -95,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="exa-SMNM_files/libs/revealjs/dist/theme/quarto-2ff78e2e6999b6200d15f6cb181d00bd.css">
+  <link rel="stylesheet" href="exa-SMNM_files/libs/revealjs/dist/theme/quarto-2d5e57dd1c944d7aab7932d27f276b50.css">
   <link rel="stylesheet" href="style.css">
   <link href="exa-SMNM_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="exa-SMNM_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -399,15 +400,35 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Sergio Nava-Muñoz 
+Sergio M. Nava Muñoz 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:nava@cimat.mx">nava@cimat.mx</a>
 </div>
         <p class="quarto-title-affiliation">
             CIMAT
           </p>
+        <p class="quarto-title-affiliation">
+            INFOTEC
+          </p>
+        <p class="quarto-title-affiliation">
+            Doctorado en Ciencias en Ciencia de Datos
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+PhD Mario Graff Guerrero 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:mario.graff@infotec.edu.mx">mario.graff@infotec.edu.mx</a>
+</div>
+        <p class="quarto-title-affiliation">
+            INFOTEC
+          </p>
     </div>
 </div>
 
-  <p class="date">2024-11-01</p>
+  <p class="date">November 27, 2024</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
@@ -421,7 +442,7 @@ Sergio Nava-Muñoz
 <ul>
 <li><a href="#/bootstrapping" id="/toc-bootstrapping">Bootstrapping</a></li>
 <li><a href="#/comparison-of-classifiers" id="/toc-comparison-of-classifiers">Comparison of Classifiers</a></li>
-
+<li><a href="#/difference-against-winner" id="/toc-difference-against-winner">Difference against winner</a></li>
 <li><a href="#/hypothesis-testing" id="/toc-hypothesis-testing">Hypothesis Testing</a></li>
 <li><a href="#/multiple-testing" id="/toc-multiple-testing">Multiple Testing</a></li>
 
@@ -444,7 +465,7 @@ Sergio Nava-Muñoz
 <h1>Introduction</h1>
 
 </section>
-<section id="challenge" class="slide level2 smaller">
+<section id="challenge" class="slide level2">
 <h2>Challenge</h2>
 <div id="fig-Challenge" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
@@ -456,6 +477,8 @@ Figure&nbsp;1: Challenge
 </figcaption>
 </figure>
 </div>
+<div class="fragment">
+<h3 id="restrictions">Restrictions</h3>
 <ul>
 <li>Comparison of multiple participants (systems)</li>
 <li>Selected performance metrics</li>
@@ -463,6 +486,7 @@ Figure&nbsp;1: Challenge
 <li>A limited number of submissions per participant</li>
 <li>The Reference (Gold Standard) is known just for the organizers</li>
 </ul>
+</div>
 </section>
 <section id="results-for-vaxxstance-close-track---contextual" class="slide level2 smaller">
 <h2>Results for VaxxStance Close track - contextual</h2>
@@ -535,6 +559,7 @@ Table&nbsp;1: Results for VaxxStance Close track - contextual
 </div>
 </div>
 <div class="fragment fade-in-then-out">
+<h3 id="leaderboard">Leaderboard</h3>
 <div class="custom-small">
 <div id="tbl-VaxxStance2" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
@@ -583,7 +608,7 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 <h1>Proposed methodology</h1>
 
 </section>
-<section id="bootstrapping" class="slide level2 smaller">
+<section id="bootstrapping" class="slide level2">
 <h2>Bootstrapping</h2>
 <p>In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size</p>
 <div id="fig-bootstrap" class="quarto-float quarto-figure quarto-figure-center">
@@ -597,7 +622,7 @@ Figure&nbsp;2: Bootstrapping
 </figure>
 </div>
 </section>
-<section id="comparison-of-classifiers" class="slide level2 smaller">
+<section id="comparison-of-classifiers" class="slide level2">
 <h2>Comparison of Classifiers</h2>
 <div class="custom-small">
 <div id="tbl-independent" class="striped hover quarto-float quarto-figure quarto-figure-center">
@@ -715,8 +740,8 @@ Figure&nbsp;3: Independent Samples
 </figure>
 </div>
 </section>
-<section id="section" class="slide level2 smaller">
-<h2></h2>
+<section id="difference-against-winner" class="slide level2">
+<h2>Difference against winner</h2>
 <div class="custom-small">
 <div id="tbl-Paired" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
@@ -822,11 +847,25 @@ Figure&nbsp;4: Paired Samples
 </div>
 </div>
 </section>
-<section id="hypothesis-testing" class="slide level2 smaller">
+<section id="hypothesis-testing" class="slide level2">
 <h2>Hypothesis Testing</h2>
-<div class="footer">
-<p><em>Note: † p&lt;.1, </em> p&lt;.05, ** p&lt;.1, and *** p&lt;.001.*</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Given the test dataset <span class="math inline">\(x=x_1, \ldots , x_n\)</span>, in which <span class="math inline">\(A\)</span> beats <span class="math inline">\(B\)</span> by a magnitude <span class="math inline">\(\delta(x)=\theta_A (x) - \theta_B (x)&gt;0\)</span> <span class="math display">\[H_0:\theta_A \leq \theta_B;\;\;H_1:\theta_A &gt; \theta_B\]</span></p>
+<p>Estimate: <span class="math display">\[p-value(x)=p(\delta(X)&gt;\delta(x)|H_0,x)\]</span></p>
+</div><div class="column fragment" style="width:40%;">
+<div id="fig-histogram" class="border-thick quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="figs/histogram2.png" class="border border-thick">
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: histogram of differences
+</figcaption>
+</figure>
+</div>
+</div></div>
+<div class="fragment">
 <div class="custom-small">
 <div id="tbl-Basque" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
@@ -885,30 +924,24 @@ Table&nbsp;5: Differences of F₁ score for Basque
 </div>
 </figure>
 </div>
-<div id="fig-histogram" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="figs/histogram2.png" width="600" height="250">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: histogram of differences
-</figcaption>
-</figure>
+<div class="footer">
+<p><em>Note: † p&lt;.1, </em> p&lt;.05, ** p&lt;.1, and *** p&lt;.001.*</p>
 </div>
 </div>
 </section>
-<section id="multiple-testing" class="slide level2 smaller">
+<section id="multiple-testing" class="slide level2">
 <h2>Multiple Testing</h2>
 <h3 id="risk-of-multiple-testing">Risk of Multiple Testing</h3>
 <p>Multiple hypothesis testing increases the risk of Type I errors—the false rejection of a true null hypothesis.</p>
-<h3 class="smaller" id="correction-methods">Correction Methods</h3>
+<h3 id="correction-methods">Correction Methods</h3>
 <ul>
 <li><strong>Bonferroni correction</strong>: Divides the significance level by the number of comparisons.</li>
 <li><strong>Holm’s step-down procedure</strong>: Adjusts p-values sequentially.</li>
 <li><strong>Benjamini-Hochberg (BH) procedure</strong>: Controls the false discovery rate (FDR).</li>
 </ul>
 </section>
-<section id="section-1" class="slide level2 smaller">
+<section id="section" class="slide level2">
 <h2></h2>
 <p><strong>Estimated p-values for F1 difference </strong></p>
 <div class="custom-small">
@@ -1276,119 +1309,98 @@ Table&nbsp;8: Results for the Various Challenges
 </div>
 </div>
 </section>
-<section id="some-examples" class="slide level2 smaller scrollable" data-transition="slide">
+<section id="some-examples" class="slide level2 scrollable" data-transition="slide">
 <h2>Some Examples</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">MeOffendEs subtask3</a></li><li><a href="#tabset-1-2">DETOXIS 2021</a></li><li><a href="#tabset-1-3">PAR-MEX 2022</a></li><li><a href="#tabset-1-4">BoW</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="cell" data-execution_count="1">
-<div id="fig-meoffendes" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
+<div id="cell-fig-MeOffendEs" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div id="fig-meoffendes" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-meoffendes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes-output-1.png" alt="Confidence intervals" width="485" height="473">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meoffendes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Confidence intervals
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-MeOffendEs2" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
-<div id="fig-meoffendes-1" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-meoffendes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes-output-1.png" data-ref-parent="fig-meoffendes" alt="Confidence intervals" width="485" height="473">
+<div id="fig-meoffendes2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence Intervals of Differences">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-meoffendes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes2-output-1.png" alt="Confidence Intervals of Differences" width="559" height="488">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-meoffendes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Confidence intervals
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meoffendes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Confidence Intervals of Differences
 </figcaption>
 </figure>
 </div>
-</div>
-<div class="cell-output cell-output-display">
-<div id="fig-meoffendes-2" class="quarto-float quarto-figure quarto-figure-center" width="559" alt="Confidence intervals" height="488">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-meoffendes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes-output-2.png" id="fig-meoffendes-2" data-ref-parent="fig-meoffendes" alt="Confidence intervals" width="559" height="488">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-meoffendes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-meoffendes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6
-</figcaption>
-</figure>
 </div>
 </div>
 </div>
 <div id="tabset-1-2">
-<div class="cell" data-execution_count="2">
-<div id="fig-detoxis" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="2">
+<div id="cell-fig-detoxis" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div id="fig-detoxis" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-detoxis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis-output-1.png" alt="Confidence intervals" width="483" height="473">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-detoxis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Confidence intervals
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-detoxis2" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
-<div id="fig-detoxis-1" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-detoxis-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis-output-1.png" data-ref-parent="fig-detoxis" alt="Confidence intervals" width="483" height="473">
+<div id="fig-detoxis2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-detoxis2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis2-output-1.png" alt="Confidence intervals of differences" width="558" height="488">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-detoxis-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Confidence intervals
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-detoxis2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Confidence intervals of differences
 </figcaption>
 </figure>
 </div>
-</div>
-<div class="cell-output cell-output-display">
-<div id="fig-detoxis-2" class="quarto-float quarto-figure quarto-figure-center" width="558" alt="Confidence intervals" height="488">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-detoxis-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis-output-2.png" id="fig-detoxis-2" data-ref-parent="fig-detoxis" alt="Confidence intervals" width="558" height="488">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-detoxis-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-detoxis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7
-</figcaption>
-</figure>
 </div>
 </div>
 </div>
 <div id="tabset-1-3">
-<div class="cell" data-execution_count="3">
-<div id="fig-parmex" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="3">
+<div id="cell-fig-parmex" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-parmex" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-parmex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex-output-1.png" alt="Confidence intervals" width="486" height="473">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Confidence intervals
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-fig-parmex2" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
-<div id="fig-parmex-1" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-parmex-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex-output-1.png" data-ref-parent="fig-parmex" alt="Confidence intervals" width="486" height="473">
+<div id="fig-parmex2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-parmex2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex2-output-1.png" alt="Confidence intervals of differences" width="559" height="488">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Confidence intervals
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Confidence intervals of differences
 </figcaption>
 </figure>
 </div>
-</div>
-<div class="cell-output cell-output-display">
-<div id="fig-parmex-2" class="quarto-float quarto-figure quarto-figure-center" width="559" alt="Confidence intervals" height="488">
-<figure class="quarto-float quarto-subfloat-fig">
-<div aria-describedby="fig-parmex-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex-output-2.png" id="fig-parmex-2" data-ref-parent="fig-parmex" alt="Confidence intervals" width="559" height="488">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-parmex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8
-</figcaption>
-</figure>
 </div>
 </div>
 </div>
@@ -1399,7 +1411,7 @@ Figure&nbsp;8
 <img data-src="figs/IC.png" width="300" height="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BoW-IC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Confidence Intervals
+Figure&nbsp;12: Confidence Intervals
 </figcaption>
 </figure>
 </div>
@@ -1409,7 +1421,7 @@ Figure&nbsp;9: Confidence Intervals
 <img data-src="figs/ICD.png" width="300" height="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BoW-ICD-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Confidence Intervals of Differences
+Figure&nbsp;13: Confidence Intervals of Differences
 </figcaption>
 </figure>
 </div>
@@ -1424,7 +1436,7 @@ Figure&nbsp;10: Confidence Intervals of Differences
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>pip install CompStats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="libraries">libraries</h3>
 <p>Once CompStats is installed, one must load a few libraries.</p>
-<div id="0d7032e0" class="cell" data-execution_count="4">
+<div id="910a8418" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> CompStats <span class="im">import</span> performance, difference, plot_performance, plot_difference, difference_p_value</span>
 <span id="cb2-2"><a href=""></a><span class="im">from</span> statsmodels.stats.multitest <span class="im">import</span> multipletests</span>
 <span id="cb2-3"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> f1_score</span>
@@ -1432,59 +1444,59 @@ Figure&nbsp;10: Confidence Intervals of Differences
 </div>
 <h3 id="data">Data</h3>
 <p>Let us assume <em>PARMEX_2022.csv</em> is a csv file where the column <span class="math inline">\(y\)</span> has the ground truth, and the other columns are the systems’outputs.</p>
-<div id="321dfc54" class="cell" data-execution_count="5">
+<div id="3512ed9a" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>DATA <span class="op">=</span> <span class="st">'PARMEX_2022.csv'</span></span>
 <span id="cb3-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The performance metric used is the F1 score.</p>
 <h3 id="metric">Metric</h3>
-<div id="4a0a7806" class="cell" data-execution_count="6">
+<div id="5bc3c61d" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>score <span class="op">=</span> <span class="kw">lambda</span> y, hy: f1_score(y, hy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="performance">Performance</h3>
-<div id="768fbedb" class="cell" data-execution_count="7">
+<div id="4937100d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>perf <span class="op">=</span> performance(df, score<span class="op">=</span>score)</span>
 <span id="cb5-2"><a href=""></a>ins <span class="op">=</span> plot_performance(perf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="exa-SMNM_files/figure-revealjs/cell-8-output-1.png" width="487" height="468"></p>
+<p><img data-src="exa-SMNM_files/figure-revealjs/cell-11-output-1.png" width="485" height="468"></p>
 </figure>
 </div>
 </div>
 </div>
 <h3 id="performance-differences-against-the-winner">Performance Differences Against the Winner</h3>
-<div id="46a17765" class="cell" data-execution_count="8">
+<div id="f097730d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>diff <span class="op">=</span> difference(perf)</span>
 <span id="cb6-2"><a href=""></a>ins <span class="op">=</span> plot_difference(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="exa-SMNM_files/figure-revealjs/cell-9-output-1.png" width="559" height="488"></p>
+<p><img data-src="exa-SMNM_files/figure-revealjs/cell-12-output-1.png" width="559" height="488"></p>
 </figure>
 </div>
 </div>
 </div>
 <h3 id="performance-differences-against-the-winner-1">Performance Differences Against the Winner</h3>
-<div id="4efff8db" class="cell" data-execution_count="9">
+<div id="d2e9f647" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>p_values <span class="op">=</span> difference_p_value(diff)</span>
 <span id="cb7-2"><a href=""></a>p_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="129">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
  'FRSCIC': 0.0,
  'Abu': 0.0,
  'Thang CIC': 0.0,
- 'Tü Par': 0.258}</code></pre>
+ 'Tü Par': 0.23}</code></pre>
 </div>
 </div>
 <h3 id="bonferroni-correction">Bonferroni Correction</h3>
-<div id="bd5a546e" class="cell" data-execution_count="10">
+<div id="e1dbb121" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>result <span class="op">=</span> multipletests(<span class="bu">list</span>(p_values.values()), method<span class="op">=</span><span class="st">'bonferroni'</span>)</span>
 <span id="cb9-2"><a href=""></a>p_valuesC <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(p_values.keys(), result[<span class="dv">1</span>]))</span>
 <span id="cb9-3"><a href=""></a>p_valuesC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="130">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
@@ -1702,14 +1714,14 @@ Figure&nbsp;10: Confidence Intervals of Differences
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,

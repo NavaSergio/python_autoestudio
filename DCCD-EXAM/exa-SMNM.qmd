@@ -1,16 +1,39 @@
 ---
 title: "Analysis of Systems’ Performance in Competitions Challenges"
-author: "Sergio Nava-Muñoz"
-institute:  "CIMAT"
-date: "November 2024"
+author:
+  - name: Sergio M. Nava Muñoz
+    id: sn
+    email: nava@cimat.mx
+    affiliation: 
+        - id: cimat
+          name: CIMAT
+          city: Aguascalientes
+          state: Ags
+        - name: INFOTEC
+          city: Aguascalientes
+          state: Ags
+  - name: PhD Mario Graff Guerrero
+    id: mgg
+    degrees: PhD
+    email: mario.graff@infotec.edu.mx
+    affiliation: 
+      - name: INFOTEC
+        city: Aguascalientes
+        state: Ags
+institute:  "Doctorado en Ciencias en Ciencia de Datos"
+date: 2024-11-27
+date-format: long
 format: 
   revealjs:
     slide-number: true
     theme: default
+    fontsize: 1.5em
     logo: figs/logo-infotec.jpeg
     css: style.css
     chalkboard: true
     menu: TRUE
+    transition: slide
+    background-transition: fade
     title-slide-attributes:
       data-background-image: /figs/DCCD1.png
       data-background-size: contain 
@@ -23,11 +46,17 @@ toc-depth: 2
 
 ---
 
-## Challenge {.smaller}
+## Challenge 
+
+
 
 ![Challenge](figs/scheme.png){#fig-Challenge width="600" height="250"}
 
 
+
+:::: {.fragment }
+
+###  Restrictions
 
 - Comparison of multiple participants (systems)
 - Selected performance metrics
@@ -35,10 +64,10 @@ toc-depth: 2
 - A limited number of submissions per participant
 - The Reference (Gold Standard) is known just for the organizers
 
+::::
 
 
-
-## Results for VaxxStance Close track - contextual {.smaller }
+## Results for VaxxStance Close track - contextual {.smaller}
 
 
 :::: {.fragment }
@@ -60,6 +89,9 @@ toc-depth: 2
 ::::
 
 :::: {.fragment .fade-in-then-out}
+
+### Leaderboard
+
 ::: custom-small  
 | System              | Basque  |
 |---------------------|---------|
@@ -76,13 +108,13 @@ toc-depth: 2
 
 # Proposed methodology
 
-## Bootstrapping {.smaller}
+## Bootstrapping 
 
 In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size 
 
 ![Bootstrapping](figs/bootstrap.png){#fig-bootstrap width="600" height="300"}
 
-## Comparison of Classifiers {.smaller}
+## Comparison of Classifiers 
 
 
 
@@ -110,8 +142,7 @@ In statistics refers to drawing conclusions about a statistics’ sampling distr
 
 ---
 
-##   {.smaller}
-
+##  Difference against winner
 
 ::: custom-small
 
@@ -130,13 +161,32 @@ In statistics refers to drawing conclusions about a statistics’ sampling distr
 
 :::
 
-## Hypothesis Testing {.smaller}
+## Hypothesis Testing 
 
 
 
-::: footer
-*Note: † p<.1, * p<.05, ** p<.1, and *** p<.001.*
+::: columns
+
+::: {.column width="60%" }
+
+
+Given the test dataset $x=x_1, \ldots , x_n$, in which $A$ beats $B$ by a magnitude $\delta(x)=\theta_A (x) - \theta_B (x)>0$
+$$H_0:\theta_A \leq \theta_B;\;\;H_1:\theta_A > \theta_B$$
+
+Estimate:
+$$p-value(x)=p(\delta(X)>\delta(x)|H_0,x)$$
+
+
+
 :::
+::: {.column width="40%" .fragment}
+![histogram of differences ](figs/histogram2.png){#fig-histogram .border .border-thick}
+:::
+
+
+:::
+
+:::: {.fragment}
 
 ::: custom-small
 
@@ -150,12 +200,16 @@ In statistics refers to drawing conclusions about a statistics’ sampling distr
 
 :  Differences of F₁ score for Basque {#tbl-Basque .striped .hover}
 
-![histogram of differences ](figs/histogram2.png){#fig-histogram width="600" height="250"}
-
 :::
 
 
-## Multiple Testing {.smaller}
+:::: footer
+*Note: † p<.1, * p<.05, ** p<.1, and *** p<.001.*
+::::
+
+::::
+
+## Multiple Testing 
 
 ### Risk of Multiple Testing
 
@@ -163,7 +217,7 @@ In statistics refers to drawing conclusions about a statistics’ sampling distr
 Multiple hypothesis testing increases the risk of Type I errors—the false rejection of a true null hypothesis.
 
 
-### Correction Methods {.smaller}
+### Correction Methods 
 
 
 - **Bonferroni correction**: Divides the significance level by the number of comparisons.
@@ -172,7 +226,7 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 
 ---
 
-## {.smaller}
+## 
 
 **Estimated p-values for F1 difference **
 
@@ -252,7 +306,7 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 :::
 
 
-## Some Examples {.smaller .scrollable transition="slide"}
+## Some Examples { .scrollable transition="slide"}
 
 ::: panel-tabset
 ### MeOffendEs subtask3
@@ -269,10 +323,22 @@ with open("datos/MeOffendEs_subtask3.dat", "rb") as archivo:
     perf = pickle.load(archivo)
 
 face_grid = plot_performance_multiple(perf)
+
+
+```
+
+
+```{python}
+#| echo: false
+#| label: fig-MeOffendEs2
+#| fig-cap: "Confidence Intervals of Differences"
+#| fig-alt: "Confidence Intervals of Differences"
 diff = difference_multiple(perf) 
 face_grid_diff = plot_difference_multiple(diff)
 
 ```
+
+
 
 ### DETOXIS 2021
 
@@ -289,6 +355,17 @@ with open("datos/detoxis_subtask1.dat", "rb") as archivo:
     perf = pickle.load(archivo)
 
 face_grid = plot_performance_multiple(perf)
+
+
+```
+
+
+```{python}
+#| echo: false
+#| label: fig-detoxis2
+#| fig-cap: "Confidence intervals of differences"
+#| fig-alt: "Confidence intervals of differences"
+
 diff = difference_multiple(perf) 
 face_grid_diff = plot_difference_multiple(diff)
 
@@ -309,6 +386,16 @@ with open("datos/PARMEX_2022.dat", "rb") as archivo:
     perf = pickle.load(archivo)
 
 face_grid = plot_performance_multiple(perf)
+
+
+```
+
+```{python}
+#| echo: false
+#| label: fig-parmex2
+#| fig-cap: "Confidence intervals of differences"
+#| fig-alt: "Confidence intervals of differences"
+
 diff = difference_multiple(perf) 
 face_grid_diff = plot_difference_multiple(diff)
 
