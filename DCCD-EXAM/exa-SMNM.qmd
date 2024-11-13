@@ -6,10 +6,7 @@ author:
     email: nava@cimat.mx
     affiliation: 
         - id: cimat
-          name: CIMAT
-          city: Aguascalientes
-          state: Ags
-        - name: INFOTEC
+          name: CIMAT/INFOTEC
           city: Aguascalientes
           state: Ags
   - name: PhD Mario Graff Guerrero
@@ -106,11 +103,14 @@ toc-depth: 2
 
 ::::
 
-## Objective
+## Objectives
 
 ### General objective
 
 To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.
+
+
+:::: {.fragment }
 
 ### Specific objectives
 
@@ -120,20 +120,25 @@ To investigate and implement an evaluation scheme based on robust statistical me
 2. **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.
 3. **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.
 
-
+::::
 
 # Proposed methodology
 
 ## Bootstrapping 
 
-In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size 
+In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size, see @fig-bootstrap
+
+
+:::: {.fragment }
 
 ![Bootstrapping](figs/bootstrap.png){#fig-bootstrap width="600" height="300"}
+
+::::
 
 ## Comparison of Classifiers 
 
 
-
+@tbl-independent provides the ordered confidence interval estimates obtained through bootstrapping, while  @fig-independent-samples displays these estimates in a plot.
 
 ::: custom-small
 
@@ -159,6 +164,8 @@ In statistics refers to drawing conclusions about a statistics’ sampling distr
 ---
 
 ##  Difference against winner
+
+@tbl-Paired provides the confidence intervals comparing the top team with lower-ranking teams, while @fig-paired-samples displays these intervals in a plot.
 
 ::: custom-small
 
@@ -208,9 +215,9 @@ As shown in Berg-Kirkpatrick (2012) \cite{Berg-Kirkpatrick2012}, the $p$-value$(
 |                     | WordUp.01  | WordUp.02  | MultiAztertest.01 | SQYQP.01  |
 |---------------------|------------|------------|-------------------|-----------|
 | **WordUp.02**        | 0.027      |            |                   |           |
-| MultiAztertest.01    | 0.071 †    | 0.044      |                   |           |
+| **MultiAztertest.01** | 0.071 †    | 0.044      |                   |           |
 | **SQYQP.01**         | 0.148 ***  | 0.121 **   | 0.077 *           |           |
-| MultiAztertest.02    | 0.231 ***  | 0.204 ***  | 0.160 ***         | 0.083 *   |
+| **MultiAztertest.02**    | 0.231 ***  | 0.204 ***  | 0.160 ***         | 0.083 *   |
 
 
 :  Differences of F₁ score for Basque {#tbl-Basque .striped .hover}
@@ -232,12 +239,17 @@ As shown in Berg-Kirkpatrick (2012) \cite{Berg-Kirkpatrick2012}, the $p$-value$(
 Multiple hypothesis testing increases the risk of Type I errors—the false rejection of a true null hypothesis.
 
 
+
+:::: {.fragment }
+
 ### Correction Methods 
 
 
 - **Bonferroni correction**: Divides the significance level by the number of comparisons.
 - **Holm's step-down procedure**: Adjusts p-values sequentially.
 - **Benjamini-Hochberg (BH) procedure**: Controls the false discovery rate (FDR).
+
+::::
 
 ---
 
@@ -517,6 +529,8 @@ p_valuesC
 
 ```
 
+# Discussion and Conclusions
+
 ## Summary of Research
 - **Objectives**: 
 
@@ -528,12 +542,13 @@ To investigate and implement an evaluation scheme based on robust statistical me
 2. **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**
 3. **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** 
 
-  
+:::: {.fragment}  
 - **Key Findings**:
   - Non-parametric Statistics are suitable for evaluating classification algorithms.
   - Introduced tools for fair competition result comparison.
   - Developed a structured evaluation framework for competitions.
 
+::::
 ---
 
 ## Contributions to Knowledge

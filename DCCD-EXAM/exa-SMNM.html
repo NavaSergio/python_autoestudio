@@ -406,10 +406,7 @@ Sergio M. Nava Muñoz
 <a href="mailto:nava@cimat.mx">nava@cimat.mx</a>
 </div>
         <p class="quarto-title-affiliation">
-            CIMAT
-          </p>
-        <p class="quarto-title-affiliation">
-            INFOTEC
+            CIMAT/INFOTEC
           </p>
         <p class="quarto-title-affiliation">
             Doctorado en Ciencias en Ciencia de Datos
@@ -437,7 +434,7 @@ PhD Mario Graff Guerrero
 <ul>
 <li><a href="#/challenge" id="/toc-challenge">Challenge</a></li>
 <li><a href="#/results-for-vaxxstance-close-track---contextual" id="/toc-results-for-vaxxstance-close-track---contextual">Results for VaxxStance Close track - contextual</a></li>
-<li><a href="#/objective" id="/toc-objective">Objective</a></li>
+<li><a href="#/objectives" id="/toc-objectives">Objectives</a></li>
 </ul></li>
 <li><a href="#/proposed-methodology" id="/toc-proposed-methodology">Proposed methodology</a>
 <ul>
@@ -454,6 +451,9 @@ PhD Mario Graff Guerrero
 <li><a href="#/results-for-the-various-challenges" id="/toc-results-for-the-various-challenges">Results for the Various Challenges</a></li>
 <li><a href="#/some-examples" id="/toc-some-examples">Some Examples</a></li>
 <li><a href="#/compstats" id="/toc-compstats">CompStats</a></li>
+</ul></li>
+<li><a href="#/discussion-and-conclusions" id="/toc-discussion-and-conclusions">Discussion and Conclusions</a>
+<ul>
 <li><a href="#/summary-of-research" id="/toc-summary-of-research">Summary of Research</a></li>
 <li><a href="#/contributions-to-knowledge" id="/toc-contributions-to-knowledge">Contributions to Knowledge</a></li>
 <li><a href="#/acknowledgments" id="/toc-acknowledgments">Acknowledgments</a></li>
@@ -605,16 +605,18 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 </div>
 </div>
 </section>
-<section id="objective" class="slide level2">
-<h2>Objective</h2>
+<section id="objectives" class="slide level2">
+<h2>Objectives</h2>
 <h3 id="general-objective">General objective</h3>
 <p>To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.</p>
+<div class="fragment">
 <h3 id="specific-objectives">Specific objectives</h3>
 <ol type="1">
 <li><strong>Thoroughly review the different elements used in evaluating learning algorithms</strong>, including performance metrics, statistical methods used to infer significance, and test configurations. This review will focus on identifying the most common practices and their limitations to establish a theoretical framework that supports the design of new evaluation schemes.</li>
 <li><strong>Examine in detail the characteristics and criteria used by the main Machine Learning competitions</strong>, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.</li>
 <li><strong>Design evaluation schemes for learning algorithms that integrate advanced statistical tools</strong> based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.</li>
 </ol>
+</div>
 </section></section>
 <section>
 <section id="proposed-methodology" class="title-slide slide level1 center">
@@ -623,7 +625,8 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 </section>
 <section id="bootstrapping" class="slide level2">
 <h2>Bootstrapping</h2>
-<p>In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size</p>
+<p>In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size, see <a href="#/fig-bootstrap" class="quarto-xref">Figure&nbsp;2</a></p>
+<div class="fragment">
 <div id="fig-bootstrap" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-bootstrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -634,9 +637,11 @@ Figure&nbsp;2: Bootstrapping
 </figcaption>
 </figure>
 </div>
+</div>
 </section>
 <section id="comparison-of-classifiers" class="slide level2">
 <h2>Comparison of Classifiers</h2>
+<p><a href="#/tbl-independent" class="quarto-xref">Table&nbsp;3</a> provides the ordered confidence interval estimates obtained through bootstrapping, while <a href="#/fig-independent-samples" class="quarto-xref">Figure&nbsp;3</a> displays these estimates in a plot.</p>
 <div class="custom-small">
 <div id="tbl-independent" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
@@ -755,6 +760,7 @@ Figure&nbsp;3: Independent Samples
 </section>
 <section id="difference-against-winner" class="slide level2">
 <h2>Difference against winner</h2>
+<p><a href="#/tbl-Paired" class="quarto-xref">Table&nbsp;4</a> provides the confidence intervals comparing the top team with lower-ranking teams, while <a href="#/fig-paired-samples" class="quarto-xref">Figure&nbsp;4</a> displays these intervals in a plot.</p>
 <div class="custom-small">
 <div id="tbl-Paired" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
@@ -913,7 +919,7 @@ Table&nbsp;5: Differences of F₁ score for Basque
 <td></td>
 </tr>
 <tr class="even">
-<td>MultiAztertest.01</td>
+<td><strong>MultiAztertest.01</strong></td>
 <td>0.071 †</td>
 <td>0.044</td>
 <td></td>
@@ -927,7 +933,7 @@ Table&nbsp;5: Differences of F₁ score for Basque
 <td></td>
 </tr>
 <tr class="even">
-<td>MultiAztertest.02</td>
+<td><strong>MultiAztertest.02</strong></td>
 <td>0.231 ***</td>
 <td>0.204 ***</td>
 <td>0.160 ***</td>
@@ -948,12 +954,14 @@ Table&nbsp;5: Differences of F₁ score for Basque
 <h2>Multiple Testing</h2>
 <h3 id="risk-of-multiple-testing">Risk of Multiple Testing</h3>
 <p>Multiple hypothesis testing increases the risk of Type I errors—the false rejection of a true null hypothesis.</p>
+<div class="fragment">
 <h3 id="correction-methods">Correction Methods</h3>
 <ul>
 <li><strong>Bonferroni correction</strong>: Divides the significance level by the number of comparisons.</li>
 <li><strong>Holm’s step-down procedure</strong>: Adjusts p-values sequentially.</li>
 <li><strong>Benjamini-Hochberg (BH) procedure</strong>: Controls the false discovery rate (FDR).</li>
 </ul>
+</div>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -1505,14 +1513,14 @@ Figure&nbsp;15: Confidence intervals of differences
 <div id="cell-p-value_difference" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>p_values <span class="op">=</span> difference_p_value(diff)</span>
 <span id="cb7-2"><a href=""></a>p_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="p-value_difference" class="cell-output cell-output-display" data-execution_count="38">
+<div id="p-value_difference" class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
  'FRSCIC': 0.0,
  'Abu': 0.0,
  'Thang CIC': 0.0,
- 'Tü Par': 0.22}</code></pre>
+ 'Tü Par': 0.268}</code></pre>
 </div>
 </div>
 <h3 id="bonferroni-correction">Bonferroni Correction</h3>
@@ -1520,7 +1528,7 @@ Figure&nbsp;15: Confidence intervals of differences
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>result <span class="op">=</span> multipletests(<span class="bu">list</span>(p_values.values()), method<span class="op">=</span><span class="st">'bonferroni'</span>)</span>
 <span id="cb9-2"><a href=""></a>p_valuesC <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(p_values.keys(), result[<span class="dv">1</span>]))</span>
 <span id="cb9-3"><a href=""></a>p_valuesC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="p-value_difference_bonferroni" class="cell-output cell-output-display" data-execution_count="39">
+<div id="p-value_difference_bonferroni" class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
@@ -1530,6 +1538,11 @@ Figure&nbsp;15: Confidence intervals of differences
  'Tü Par': 1.0}</code></pre>
 </div>
 </div>
+</section></section>
+<section>
+<section id="discussion-and-conclusions" class="title-slide slide level1 center">
+<h1>Discussion and Conclusions</h1>
+
 </section>
 <section id="summary-of-research" class="slide level2">
 <h2>Summary of Research</h2>
@@ -1542,6 +1555,7 @@ Figure&nbsp;15: Confidence intervals of differences
 <li><strong>Examine in detail the characteristics and criteria used by the main Machine Learning competitions</strong></li>
 <li><strong>Design evaluation schemes for learning algorithms that integrate advanced statistical tools</strong></li>
 </ol>
+<div class="fragment">
 <ul>
 <li><strong>Key Findings</strong>:
 <ul>
@@ -1550,6 +1564,7 @@ Figure&nbsp;15: Confidence intervals of differences
 <li>Developed a structured evaluation framework for competitions.</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="contributions-to-knowledge" class="slide level2">
 <h2>Contributions to Knowledge</h2>
