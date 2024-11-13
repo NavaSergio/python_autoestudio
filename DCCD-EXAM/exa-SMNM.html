@@ -437,6 +437,7 @@ PhD Mario Graff Guerrero
 <ul>
 <li><a href="#/challenge" id="/toc-challenge">Challenge</a></li>
 <li><a href="#/results-for-vaxxstance-close-track---contextual" id="/toc-results-for-vaxxstance-close-track---contextual">Results for VaxxStance Close track - contextual</a></li>
+<li><a href="#/objective" id="/toc-objective">Objective</a></li>
 </ul></li>
 <li><a href="#/proposed-methodology" id="/toc-proposed-methodology">Proposed methodology</a>
 <ul>
@@ -455,7 +456,8 @@ PhD Mario Graff Guerrero
 <li><a href="#/compstats" id="/toc-compstats">CompStats</a></li>
 <li><a href="#/summary-of-research" id="/toc-summary-of-research">Summary of Research</a></li>
 <li><a href="#/contributions-to-knowledge" id="/toc-contributions-to-knowledge">Contributions to Knowledge</a></li>
-<li><a href="#/limitations" id="/toc-limitations">Limitations</a></li>
+<li><a href="#/acknowledgments" id="/toc-acknowledgments">Acknowledgments</a></li>
+<li><a href="#/thank-you-for-your-attention" id="/toc-thank-you-for-your-attention">Thank you for your attention!</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -602,6 +604,17 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 </div>
 </div>
 </div>
+</section>
+<section id="objective" class="slide level2">
+<h2>Objective</h2>
+<h3 id="general-objective">General objective</h3>
+<p>To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.</p>
+<h3 id="specific-objectives">Specific objectives</h3>
+<ol type="1">
+<li><strong>Thoroughly review the different elements used in evaluating learning algorithms</strong>, including performance metrics, statistical methods used to infer significance, and test configurations. This review will focus on identifying the most common practices and their limitations to establish a theoretical framework that supports the design of new evaluation schemes.</li>
+<li><strong>Examine in detail the characteristics and criteria used by the main Machine Learning competitions</strong>, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.</li>
+<li><strong>Design evaluation schemes for learning algorithms that integrate advanced statistical tools</strong> based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.</li>
+</ol>
 </section></section>
 <section>
 <section id="proposed-methodology" class="title-slide slide level1 center">
@@ -853,6 +866,7 @@ Figure&nbsp;4: Paired Samples
 <div class="column" style="width:60%;">
 <p>Given the test dataset <span class="math inline">\(x=x_1, \ldots , x_n\)</span>, in which <span class="math inline">\(A\)</span> beats <span class="math inline">\(B\)</span> by a magnitude <span class="math inline">\(\delta(x)=\theta_A (x) - \theta_B (x)&gt;0\)</span> <span class="math display">\[H_0:\theta_A \leq \theta_B;\;\;H_1:\theta_A &gt; \theta_B\]</span></p>
 <p>Estimate: <span class="math display">\[p-value(x)=p(\delta(X)&gt;\delta(x)|H_0,x)\]</span></p>
+<p>As shown in Berg-Kirkpatrick (2012) , the <span class="math inline">\(p\)</span>-value<span class="math inline">\((x)\)</span> can be estimated by computing the fraction of times that this difference is greater than <span class="math inline">\(2\delta(x)\)</span>.</p>
 </div><div class="column fragment" style="width:40%;">
 <div id="fig-histogram" class="border-thick quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
@@ -1436,7 +1450,7 @@ Figure&nbsp;13: Confidence Intervals of Differences
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>pip install CompStats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="libraries">libraries</h3>
 <p>Once CompStats is installed, one must load a few libraries.</p>
-<div id="910a8418" class="cell" data-execution_count="7">
+<div id="lib-compstats" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> CompStats <span class="im">import</span> performance, difference, plot_performance, plot_difference, difference_p_value</span>
 <span id="cb2-2"><a href=""></a><span class="im">from</span> statsmodels.stats.multitest <span class="im">import</span> multipletests</span>
 <span id="cb2-3"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> f1_score</span>
@@ -1444,59 +1458,69 @@ Figure&nbsp;13: Confidence Intervals of Differences
 </div>
 <h3 id="data">Data</h3>
 <p>Let us assume <em>PARMEX_2022.csv</em> is a csv file where the column <span class="math inline">\(y\)</span> has the ground truth, and the other columns are the systems’outputs.</p>
-<div id="3512ed9a" class="cell" data-execution_count="8">
+<div id="read_data" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>DATA <span class="op">=</span> <span class="st">'PARMEX_2022.csv'</span></span>
 <span id="cb3-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The performance metric used is the F1 score.</p>
 <h3 id="metric">Metric</h3>
-<div id="5bc3c61d" class="cell" data-execution_count="9">
+<div id="metric" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>score <span class="op">=</span> <span class="kw">lambda</span> y, hy: f1_score(y, hy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="performance">Performance</h3>
-<div id="4937100d" class="cell" data-execution_count="10">
+<div id="cell-fig-parmex3" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>perf <span class="op">=</span> performance(df, score<span class="op">=</span>score)</span>
 <span id="cb5-2"><a href=""></a>ins <span class="op">=</span> plot_performance(perf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="exa-SMNM_files/figure-revealjs/cell-11-output-1.png" width="485" height="468"></p>
+<div id="fig-parmex3" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-parmex3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3-output-1.png" alt="Confidence intervals" width="485" height="468">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Confidence intervals
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <h3 id="performance-differences-against-the-winner">Performance Differences Against the Winner</h3>
-<div id="f097730d" class="cell" data-execution_count="11">
+<div id="cell-fig-parmex4" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>diff <span class="op">=</span> difference(perf)</span>
 <span id="cb6-2"><a href=""></a>ins <span class="op">=</span> plot_difference(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="exa-SMNM_files/figure-revealjs/cell-12-output-1.png" width="559" height="488"></p>
+<div id="fig-parmex4" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-parmex4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4-output-1.png" alt="Confidence intervals of differences" width="559" height="488">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Confidence intervals of differences
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <h3 id="performance-differences-against-the-winner-1">Performance Differences Against the Winner</h3>
-<div id="d2e9f647" class="cell" data-execution_count="12">
+<div id="cell-p-value_difference" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>p_values <span class="op">=</span> difference_p_value(diff)</span>
 <span id="cb7-2"><a href=""></a>p_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="129">
+<div id="p-value_difference" class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
  'FRSCIC': 0.0,
  'Abu': 0.0,
  'Thang CIC': 0.0,
- 'Tü Par': 0.23}</code></pre>
+ 'Tü Par': 0.22}</code></pre>
 </div>
 </div>
 <h3 id="bonferroni-correction">Bonferroni Correction</h3>
-<div id="e1dbb121" class="cell" data-execution_count="13">
+<div id="cell-p-value_difference_bonferroni" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>result <span class="op">=</span> multipletests(<span class="bu">list</span>(p_values.values()), method<span class="op">=</span><span class="st">'bonferroni'</span>)</span>
 <span id="cb9-2"><a href=""></a>p_valuesC <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(p_values.keys(), result[<span class="dv">1</span>]))</span>
 <span id="cb9-3"><a href=""></a>p_valuesC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="130">
+<div id="p-value_difference_bonferroni" class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
@@ -1510,15 +1534,18 @@ Figure&nbsp;13: Confidence Intervals of Differences
 <section id="summary-of-research" class="slide level2">
 <h2>Summary of Research</h2>
 <ul>
-<li><strong>Objectives</strong>:
+<li><strong>Objectives</strong>:</li>
+</ul>
+<p>To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.</p>
+<ol type="1">
+<li><strong>Thoroughly review the different elements used in evaluating learning algorithms</strong></li>
+<li><strong>Examine in detail the characteristics and criteria used by the main Machine Learning competitions</strong></li>
+<li><strong>Design evaluation schemes for learning algorithms that integrate advanced statistical tools</strong></li>
+</ol>
 <ul>
-<li>Analyze existing methodologies for comparing algorithms.</li>
-<li>Develop a framework for evaluating algorithmic performance.</li>
-<li>Validate framework in real-world competitions.</li>
-</ul></li>
 <li><strong>Key Findings</strong>:
 <ul>
-<li>Statistical tests like Wilcoxon and Friedman are effective.</li>
+<li>Non-parametric Statistics are suitable for evaluating classification algorithms.</li>
 <li>Introduced tools for fair competition result comparison.</li>
 <li>Developed a structured evaluation framework for competitions.</li>
 </ul></li>
@@ -1537,17 +1564,20 @@ Figure&nbsp;13: Confidence Intervals of Differences
 <li>Toolkit for statistical evaluation.</li>
 <li>Actionable feedback for participants in algorithmic competitions.</li>
 </ul></li>
-</ul>
-</section>
-<section id="limitations" class="slide level2">
-<h2>Limitations</h2>
-<ul>
 <li><strong>Limitations</strong>:
 <ul>
 <li>Data availability and external validity.</li>
 <li>Focus on classification competitions.</li>
 </ul></li>
 </ul>
+</section>
+<section id="acknowledgments" class="slide level2">
+<h2>Acknowledgments</h2>
+<p>We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.</p>
+</section>
+<section id="thank-you-for-your-attention" class="slide level2">
+<h2>Thank you for your attention!</h2>
+<p>Please feel free to ask any questions.</p>
 
 </section></section>
     </div>

@@ -106,6 +106,22 @@ toc-depth: 2
 
 ::::
 
+## Objective
+
+### General objective
+
+To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.
+
+### Specific objectives
+
+
+
+1. **Thoroughly review the different elements used in evaluating learning algorithms**, including performance metrics, statistical methods used to infer significance, and test configurations. This review will focus on identifying the most common practices and their limitations to establish a theoretical framework that supports the design of new evaluation schemes.
+2. **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.
+3. **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.
+
+
+
 # Proposed methodology
 
 ## Bootstrapping 
@@ -170,13 +186,12 @@ In statistics refers to drawing conclusions about a statistics’ sampling distr
 ::: {.column width="60%" }
 
 
-Given the test dataset $x=x_1, \ldots , x_n$, in which $A$ beats $B$ by a magnitude $\delta(x)=\theta_A (x) - \theta_B (x)>0$
-$$H_0:\theta_A \leq \theta_B;\;\;H_1:\theta_A > \theta_B$$
+Given the test dataset $x=x_1, \ldots , x_n$, in which $A$ beats $B$ by a magnitude $\delta(x)=\theta_A (x) - \theta_B (x)>0$ $$H_0:\theta_A \leq \theta_B;\;\;H_1:\theta_A > \theta_B$$
 
-Estimate:
-$$p-value(x)=p(\delta(X)>\delta(x)|H_0,x)$$
+Estimate: $$p-value(x)=p(\delta(X)>\delta(x)|H_0,x)$$
 
 
+As shown in Berg-Kirkpatrick (2012) \cite{Berg-Kirkpatrick2012}, the $p$-value$(x)$ can be estimated by computing the fraction of times that this difference is greater than $2\delta(x)$.
 
 :::
 ::: {.column width="40%" .fragment}
@@ -430,6 +445,7 @@ Once CompStats is installed, one must load a few libraries.
 
 ```{python}
 #| echo: true
+#| label: lib-compstats
 from CompStats import performance, difference, plot_performance, plot_difference, difference_p_value
 from statsmodels.stats.multitest import multipletests
 from sklearn.metrics import f1_score
@@ -441,6 +457,7 @@ Let us assume *PARMEX_2022.csv* is a csv file where the column $y$ has the groun
 
 ```{python}
 #| echo: true
+#| label: read_data
 DATA = 'PARMEX_2022.csv'
 df = pd.read_csv(DATA)
 ```
@@ -451,12 +468,17 @@ The performance metric used is the F1 score.
 ### Metric
 ```{python}
 #| echo: true
+#| label: Metric
 score = lambda y, hy: f1_score(y, hy)
 ```
 
 ### Performance
 ```{python}
 #| echo: true
+#| label: fig-parmex3
+#| fig-cap: "Confidence intervals"
+#| fig-alt: "Confidence intervals"
+
 perf = performance(df, score=score)
 ins = plot_performance(perf)
 ```
@@ -466,6 +488,11 @@ ins = plot_performance(perf)
 ### Performance Differences Against the Winner
 ```{python}
 #| echo: true
+#| #| echo: false
+#| label: fig-parmex4
+#| fig-cap: "Confidence intervals of differences"
+#| fig-alt: "Confidence intervals of differences"
+
 diff = difference(perf)
 ins = plot_difference(diff)
 ```
@@ -475,6 +502,7 @@ ins = plot_difference(diff)
 ### Performance Differences Against the Winner
 ```{python}
 #| echo: true
+#| label: p-value_difference
 p_values = difference_p_value(diff)
 p_values
 ```
@@ -482,6 +510,7 @@ p_values
 ### Bonferroni Correction
 ```{python}
 #| echo: true
+#| label: p-value_difference_bonferroni
 result = multipletests(list(p_values.values()), method='bonferroni')
 p_valuesC = dict(zip(p_values.keys(), result[1]))
 p_valuesC
@@ -490,12 +519,18 @@ p_valuesC
 
 ## Summary of Research
 - **Objectives**: 
-  - Analyze existing methodologies for comparing algorithms.
-  - Develop a framework for evaluating algorithmic performance.
-  - Validate framework in real-world competitions.
+
+To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.
+
+
+
+1. **Thoroughly review the different elements used in evaluating learning algorithms**
+2. **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**
+3. **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** 
+
   
 - **Key Findings**:
-  - Statistical tests like Wilcoxon and Friedman are effective.
+  - Non-parametric Statistics are suitable for evaluating classification algorithms.
   - Introduced tools for fair competition result comparison.
   - Developed a structured evaluation framework for competitions.
 
@@ -510,10 +545,19 @@ p_valuesC
   - Toolkit for statistical evaluation.
   - Actionable feedback for participants in algorithmic competitions.
 
----
-
-## Limitations 
 - **Limitations**:
   - Data availability and external validity.
   - Focus on classification competitions.
   
+## Acknowledgments
+
+We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.
+
+
+
+
+## Thank you for your attention!
+
+
+
+Please feel free to ask any questions.
