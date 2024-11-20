@@ -36,71 +36,58 @@ format:
       data-background-size: contain 
 toc: TRUE
 toc-depth: 2
+jupyter: python3
 ---
-
 
 # Introduction
 
----
+------------------------------------------------------------------------
 
-## Challenge 
-
-
+## Challenge
 
 ![Challenge](figs/scheme.png){#fig-Challenge width="600" height="250"}
 
+::: fragment
+### Restrictions
 
-
-:::: {.fragment }
-
-###  Restrictions
-
-- Comparison of multiple participants (systems)
-- Selected performance metrics
-- A test dataset of fixed size \( $n$ \)
-- A limited number of submissions per participant
-- The Reference (Gold Standard) is known just for the organizers
-
-::::
-
-
-## Results for VaxxStance Close track - contextual {.smaller}
-
-
-:::: {.fragment }
-
-:::  custom-small
-| Obs  | Gold Standard | WordUp.01 | ...   | SQYQP.01 |
-|------|---------------|-----------|-------|----------|
-| 1    | favor         | favor     | ...   | favor    |
-| 2    | favor         | favor     | ...   | none     |
-| 3    | against       | none      | ...   | against  |
-| 4    | none          | none      | ...   | none     |
-| ...  | ...           | ...       | ...   | ...      |
-| $n_{test}$ | none    | favor     | ...   | against  |
-
-:  Results for VaxxStance Close track - contextual {#tbl-VaxxStance1 .striped .hover }
-
+-   Comparison of multiple participants (systems)
+-   Selected performance metrics
+-   A test dataset of fixed size ( $n$ )
+-   A limited number of submissions per participant
+-   The Reference (Gold Standard) is known just for the organizers
 :::
 
+## A case  study {.smaller}
+
+:::: fragment
+::: custom-small
+| Obs        | Gold Standard | WordUp.01 | ... | SQYQP.01 |
+|------------|---------------|-----------|-----|----------|
+| 1          | favor         | favor     | ... | favor    |
+| 2          | favor         | favor     | ... | none     |
+| 3          | against       | none      | ... | against  |
+| 4          | none          | none      | ... | none     |
+| ...        | ...           | ...       | ... | ...      |
+| $n_{test}$ | none          | favor     | ... | against  |
+
+: Results for VaxxStance Close track - contextual {#tbl-VaxxStance1 .striped .hover }
+:::
 ::::
 
 :::: {.fragment .fade-in-then-out}
-
 ### Leaderboard
 
-::: custom-small  
-| System              | Basque  |
-|---------------------|---------|
-| WordUp.01           | 0.5734  |
-| WordUp.02           | 0.5465  |
-| MultiAztertest.01   | 0.5024  |
-| SQYQP.01            | 0.4256  |
-| MultiAztertest.02   | 0.3428  |
+::: custom-small
+| System            | Basque |
+|-------------------|--------|
+| WordUp.01         | 0.5734 |
+| WordUp.02         | 0.5465 |
+| MultiAztertest.01 | 0.5024 |
+| SQYQP.01          | 0.4256 |
+| MultiAztertest.02 | 0.3428 |
 
-:  Results using Macro-averaged F1 Score for "favor" and "against". {#tbl-VaxxStance2 .striped .hover}
+: Results using Macro-averaged F1 Score for "favor" and "against". {#tbl-VaxxStance2 .striped .hover}
 :::
-
 ::::
 
 ## Objectives
@@ -109,235 +96,287 @@ toc-depth: 2
 
 To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.
 
-
-:::: {.fragment }
-
+::: fragment
 ### Specific objectives
 
+1.  **Thoroughly review the different elements used in evaluating learning algorithms**, including performance metrics, statistical methods used to infer significance, and test configurations. This review will focus on identifying the most common practices and their limitations to establish a theoretical framework that supports the design of new evaluation schemes.
+2.  **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.
+3.  **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.
+:::
+
+## literature review {  transition="slide"}
+
+::: custom-small
+| Author(s) | Title |
+|----|----|
+| Dietterich, T.G. (1998) | "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms" |
+| Demšar, J. (2006) | "Statistical Comparisons of Classifiers over Multiple Data Sets" |
+| García y Herrera (2008) | "An Extension on Statistical Comparisons of Classifiers over Multiple Data Sets" |
+| Lacoste et al. (2012) | "Bayesian Comparison of Machine Learning Algorithms on Single and Multiple Datasets" |
+| Wainer, J. (2016) | "Comparison of 14 Methods to Predict Employee Attrition" |
+| Raschka, S. (2020) | "Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning" |
+:::
+
+## {.smaller .scrollable transition="slide"}
 
 
-1. **Thoroughly review the different elements used in evaluating learning algorithms**, including performance metrics, statistical methods used to infer significance, and test configurations. This review will focus on identifying the most common practices and their limitations to establish a theoretical framework that supports the design of new evaluation schemes.
-2. **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.
-3. **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.
-
-::::
+::: custom-small
+| Author | Method or Test | Requires only predictions, not the algorithm | Allows multiple comparisons | Uses a single dataset | Uses the competition's given metric |
+|----|----|----|----|----|----|
+| Dietterich, T.G. | McNemar | X | O | X | O |
+| Dietterich, T.G. | A test for the difference of two proportions | X | O | X | O |
+| Dietterich, T.G. | Resampled Paired t-test | O | O | X | O |
+| Dietterich, T.G. | k-fold cv Paired t test | O | O | X | O |
+| Dietterich, T.G. | 5x2cv t-test | O | O | X | O |
+| Demšar, J. | Paired t-test | O | O | O | X |
+| Demšar, J. | Wilcoxon signed ranked test | O | O | O | X |
+| Demšar, J. | Counts of wins, losses and ties: signed test | O | O | O | X |
+| Demšar, J. | ANOVA | O | X | O | X |
+| Demšar, J. | Friedman test | O | X | O | X |
+| Demšar, J. | post-hoc test | O | X | O | X |
+| García & Herrera | Nemenyi | O | X | O | X |
+| García & Herrera | Holm | O | X | O | X |
+| García & Herrera | Hochberg | O | X | O | X |
+| Lacoste et al. | Bayesian Comparison | O | X | O | X |
+| Lacoste et al. | MCMC | O | X | O | X |
+| Wainer, J. | ANOVA | O | X | X | O |
+| Wainer, J. | Tukey | O | X | X | O |
+| Wainer, J. | Bonferroni | O | X | X | O |
+| Raschka, S. | 5x2cv | O | O | X | O |
+| Raschka, S. | McNemar | X | O | X | O |
+| Raschka, S. | F-test | O | X | X | O |
+:::
 
 # Proposed methodology
 
-## Bootstrapping 
-
+## Bootstrapping {.smaller  .scrollable transition="slide"}
+::::: columns
+::: {.column width="40%"}
 In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size, see @fig-bootstrap
-
-
-:::: {.fragment }
-
-![Bootstrapping](figs/bootstrap.png){#fig-bootstrap width="600" height="300"}
-
+:::
+:::  {.column width="60%"}
+![Bootstrapping](figs/bootstrap.png){#fig-bootstrap width="500" height="250"}
+:::
 ::::
 
-## Comparison of Classifiers 
+::: fragment 
+:::: custom-small
+```{python}
+#| echo: false
+#| label: tbl-VaxxStanceEU
+#| fig-cap: "VaxxStance_Textual_eu"
+#| fig-alt: "VaxxStance_Textual_eu"
+from IPython.display import display, Markdown
+import pickle
+import pandas as pd
+
+df = pd.read_csv('VaxxStance_Textual_eu_paper.csv')
+# Recuperar el objeto del archivo
+with open("datos/MeOffendEs_subtask3.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
+display(Markdown(df.head().to_markdown(index=True)))
+#print(df.head())
+```
+```{python}
+#| echo: false
+#| label: tabla-f1MeOffendEs
+#| fig-cap: "Macro-averaged F1 score (Pos, Neg) Sample distribution VaxxStance_Textual_eu"
+#| fig-alt: "Macro-averaged F1 score (Pos, Neg) Sample distribution VaxxStance_Textual_eu"
 
 
-@tbl-independent provides the ordered confidence interval estimates obtained through bootstrapping, while  @fig-independent-samples displays these estimates in a plot.
 
-::: custom-small
+# Recuperar el objeto del archivo
+with open("datos/VaxxStance_Textual_eu_paper.dat", "rb") as archivo:
+    perf = pickle.load(archivo)
 
-
-|                | LCI    | Score   | UCI    |        |                | LCI    | Score   | UCI    |
-|----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
-| **Basque**     |        |        |        |        | **Spanish**    |        |        |        |
-| **WordUp.01**  | 0.5031 | 0.5716 | 0.6401 |        | **WordUp.02**  | 0.7734 | 0.8086 | 0.8437 |
-| WordUp.02      | 0.4751 | 0.5444 | 0.6138 |        | WordUp.01      | 0.7537 | 0.7899 | 0.8261 |
-| **MultiAztertest.01** | 0.4287 | 0.5007 | 0.5726 |        | **MultiAztertest.01** | 0.6987 | 0.7400 | 0.7814 |
-| SQYQP.01       | 0.3497 | 0.4237 | 0.4976 |        | SQYQP.01       | 0.6310 | 0.6730 | 0.7149 |
-| **MultiAztertest.02** | 0.2664 | 0.3402 | 0.4139 |        | **MultiAztertest.02** | 0.5945 | 0.6391 | 0.6837 |
-
-:  Results Table for Basque and Spanish {#tbl-independent .striped .hover}
-
+#print(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head())
+display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head().to_markdown(index=True)))
+```
+::::
 :::
 
+## Comparison of Classifiers {.smaller}
 
+@tbl-independent provides the ordered confidence interval estimates obtained through bootstrapping, while @fig-independent-samples displays these estimates in a plot.
+
+::: custom-small
+|   | LCI | Score | UCI |   |   | LCI | Score | UCI |
+|----|----|----|----|----|----|----|----|----|
+| **Basque** |  |  |  |  | **Spanish** |  |  |  |
+| **WordUp.01** | 0.5031 | 0.5716 | 0.6401 |  | **WordUp.02** | 0.7734 | 0.8086 | 0.8437 |
+| WordUp.02 | 0.4751 | 0.5444 | 0.6138 |  | WordUp.01 | 0.7537 | 0.7899 | 0.8261 |
+| **MultiAztertest.01** | 0.4287 | 0.5007 | 0.5726 |  | **MultiAztertest.01** | 0.6987 | 0.7400 | 0.7814 |
+| SQYQP.01 | 0.3497 | 0.4237 | 0.4976 |  | SQYQP.01 | 0.6310 | 0.6730 | 0.7149 |
+| **MultiAztertest.02** | 0.2664 | 0.3402 | 0.4139 |  | **MultiAztertest.02** | 0.5945 | 0.6391 | 0.6837 |
+
+: Results Table for Basque and Spanish {#tbl-independent .striped .hover}
+:::
 
 
 ![Independent Samples](figs/ordenado2.png){#fig-independent-samples width="600" height="300"}
 
----
+------------------------------------------------------------------------
 
-##  Difference against winner
+## Difference against winner {.smaller}
 
 @tbl-Paired provides the confidence intervals comparing the top team with lower-ranking teams, while @fig-paired-samples displays these intervals in a plot.
 
 ::: custom-small
+|   | LCI | Diff | UCI |   |   | LCI | Diff | UCI |
+|----|----|----|----|----|----|----|----|----|
+| **Basque (WordUp.01)** |  |  |  |  | **Spanish (WordUp.02)** |  |  |  |
+| **WordUp.02** | -0.0371 | 0.0269 | 0.0910 |  | **WordUp.01** | -0.0120 | 0.0184 | 0.0488 |
+| MultiAztertest.01 | -0.0152 | 0.0713 | 0.1578 |  | MultiAztertest.01 | 0.0211 | 0.0680 | 0.1149 |
+| **SQYQP.01** | 0.0543 | 0.1485 | 0.2427 |  | **SQYQP.01** | 0.0877 | 0.1351 | 0.1825 |
+| MultiAztertest.02 | 0.1405 | 0.2314 | 0.3222 |  | MultiAztertest.02 | 0.1165 | 0.1687 | 0.2210 |
 
-
-|                | LCI    | Diff   | UCI    |        |                | LCI    | Diff   | UCI    |
-|----------------|--------|--------|--------|--------|----------------|--------|--------|--------|
-| **Basque (WordUp.01)** |        |        |        |        | **Spanish (WordUp.02)** |        |        |        |
-| **WordUp.02**  | -0.0371| 0.0269 | 0.0910 |        | **WordUp.01**  | -0.0120| 0.0184 | 0.0488 |
-| MultiAztertest.01 | -0.0152| 0.0713 | 0.1578 |        | MultiAztertest.01 | 0.0211 | 0.0680 | 0.1149 |
-| **SQYQP.01**   | 0.0543 | 0.1485 | 0.2427 |        | **SQYQP.01**   | 0.0877 | 0.1351 | 0.1825 |
-| MultiAztertest.02 | 0.1405 | 0.2314 | 0.3222 |        | MultiAztertest.02 | 0.1165 | 0.1687 | 0.2210 |
-
-:  Results Table for Basque (WordUp.01) and Spanish (WordUp.02) {#tbl-Paired .striped .hover}
+: Results Table for Basque (WordUp.01) and Spanish (WordUp.02) {#tbl-Paired .striped .hover}
 
 ![Paired Samples](figs/mejorordenado2.png){#fig-paired-samples width="600" height="300"}
-
 :::
 
-## Hypothesis Testing 
+## Hypothesis Testing
 
-
-
-::: columns
-
-::: {.column width="60%" }
-
-
+::::: columns
+::: {.column width="60%"}
 Given the test dataset $x=x_1, \ldots , x_n$, in which $A$ beats $B$ by a magnitude $\delta(x)=\theta_A (x) - \theta_B (x)>0$ $$H_0:\theta_A \leq \theta_B;\;\;H_1:\theta_A > \theta_B$$
 
 Estimate: $$p-value(x)=p(\delta(X)>\delta(x)|H_0,x)$$
 
-
 As shown in Berg-Kirkpatrick (2012) \cite{Berg-Kirkpatrick2012}, the $p$-value$(x)$ can be estimated by computing the fraction of times that this difference is greater than $2\delta(x)$.
-
-:::
-::: {.column width="40%" .fragment}
-![histogram of differences ](figs/histogram2.png){#fig-histogram .border .border-thick}
 :::
 
-
+::: {.column .fragment width="40%"}
+![histogram of differences](figs/histogram2.png){#fig-histogram .border .border-thick}
 :::
+:::::
 
-:::: {.fragment}
-
+::::: fragment
 ::: custom-small
+|                       | WordUp.01    | WordUp.02    | MultiAztertest.01 | SQYQP.01 |
+|-----------------------|--------------|--------------|-------------------|----------|
+| **WordUp.02**         | 0.027        |              |                   |          |
+| **MultiAztertest.01** | 0.071 †      | 0.044        |                   |          |
+| **SQYQP.01**          | 0.148 \*\*\* | 0.121 \*\*   | 0.077 \*          |          |
+| **MultiAztertest.02** | 0.231 \*\*\* | 0.204 \*\*\* | 0.160 \*\*\*      | 0.083 \* |
 
-|                     | WordUp.01  | WordUp.02  | MultiAztertest.01 | SQYQP.01  |
-|---------------------|------------|------------|-------------------|-----------|
-| **WordUp.02**        | 0.027      |            |                   |           |
-| **MultiAztertest.01** | 0.071 †    | 0.044      |                   |           |
-| **SQYQP.01**         | 0.148 ***  | 0.121 **   | 0.077 *           |           |
-| **MultiAztertest.02**    | 0.231 ***  | 0.204 ***  | 0.160 ***         | 0.083 *   |
-
-
-:  Differences of F₁ score for Basque {#tbl-Basque .striped .hover}
-
+: Differences of F₁ score for Basque {#tbl-Basque .striped .hover}
 :::
 
+::: footer
+*Note: † p\<.1,* p\<.05, \*\* p\<.1, and \*\*\* p\<.001.\*
+:::
+:::::
 
-:::: footer
-*Note: † p<.1, * p<.05, ** p<.1, and *** p<.001.*
-::::
-
-::::
-
-## Multiple Testing 
+## Multiple Testing
 
 ### Risk of Multiple Testing
 
-
 Multiple hypothesis testing increases the risk of Type I errors—the false rejection of a true null hypothesis.
 
+::: fragment
+### Correction Methods
 
+-   **Bonferroni correction**: Divides the significance level by the number of comparisons.
+-   **Holm's step-down procedure**: Adjusts p-values sequentially.
+-   **Benjamini-Hochberg (BH) procedure**: Controls the false discovery rate (FDR).
+:::
 
-:::: {.fragment }
-
-### Correction Methods 
-
-
-- **Bonferroni correction**: Divides the significance level by the number of comparisons.
-- **Holm's step-down procedure**: Adjusts p-values sequentially.
-- **Benjamini-Hochberg (BH) procedure**: Controls the false discovery rate (FDR).
-
-::::
-
----
+------------------------------------------------------------------------
 
 ## 
 
-**Estimated p-values for F1 difference **
-
-
+**Estimated p-values for F1 difference**
 
 ::: custom-small
+|   |   | Difference | $p-value$ | Bonferroni | Holm | BH |
+|----|----|----|----|----|----|----|
+| WordUp.01 | WordUp.02 | 0.027 | **0.2030** | **0.8120** | **0.2030** | **0.2030** |
+| WordUp.01 | MultiAztertest.01 | 0.071 | **0.0551** | **0.2204** | **0.1102** | **0.0735** |
+| WordUp.01 | SQYQP.01 | 0.148 | 0.0012 | 0.0048 | 0.0036 | 0.0024 |
+| WordUp.01 | MultiAztertest.02 | 0.231 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| WordUp.02 | MultiAztertest.01 | 0.044 | **0.1490** | **0.4470** | **0.1490** | **0.1490** |
+| WordUp.02 | SQYQP.01 | 0.121 | 0.0039 | 0.0117 | 0.0078 | 0.0058 |
+| WordUp.02 | MultiAztertest.02 | 0.204 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| MultiAztertest.01 | SQYQP.01 | 0.077 | 0.0330 | **0.0660** | 0.0330 | 0.0330 |
+| MultiAztertest.01 | MultiAztertest.02 | 0.160 | 0.0003 | 0.0006 | 0.0006 | 0.0006 |
+| SQYQP.01 | MultiAztertest.02 | 0.083 | 0.0427 | 0.0427 | 0.0427 | 0.0427 |
 
-
-|                   |                   | Difference | $p-value$  | Bonferroni | Holm     | BH       |
-|-------------------|-------------------|------------|----------|------------|----------|----------|
-| WordUp.01         | WordUp.02          | 0.027      | **0.2030** | **0.8120** | **0.2030** | **0.2030** |
-| WordUp.01         | MultiAztertest.01  | 0.071      | **0.0551** | **0.2204** | **0.1102** | **0.0735** |
-| WordUp.01         | SQYQP.01           | 0.148      | 0.0012   | 0.0048     | 0.0036   | 0.0024   |
-| WordUp.01         | MultiAztertest.02  | 0.231      | 0.0000   | 0.0000     | 0.0000   | 0.0000   |
-| WordUp.02         | MultiAztertest.01  | 0.044      | **0.1490** | **0.4470** | **0.1490** | **0.1490** |
-| WordUp.02         | SQYQP.01           | 0.121      | 0.0039   | 0.0117     | 0.0078   | 0.0058   |
-| WordUp.02         | MultiAztertest.02  | 0.204      | 0.0000   | 0.0000     | 0.0000   | 0.0000   |
-| MultiAztertest.01 | SQYQP.01           | 0.077      | 0.0330   | **0.0660** | 0.0330   | 0.0330   |
-| MultiAztertest.01 | MultiAztertest.02  | 0.160      | 0.0003   | 0.0006     | 0.0006   | 0.0006   |
-| SQYQP.01          | MultiAztertest.02  | 0.083      | 0.0427   | 0.0427     | 0.0427   | 0.0427   |
-
-: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments. {#tbl-p-values  .striped .hover}
-
+: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments. {#tbl-p-values .striped .hover}
 :::
+
+## Competitions Comparison
+
+::: custom-small
+| Name | Description | 
+|------|-------------|
+| $n$ | Test data size |
+| $m$ | Number of participants or runs |
+| Ties w/ win | Number of ties with the winner (corrections: none/Bonferroni/Holm/BH) |
+| Poss. compars. | Total possible comparisons  ($m \times (m-1)/2$) |
+| none/Bonf./Holm/BH | Number of ties between competitors with corrections with Adjusted p-value (corrections: none/Bonferroni/Holm/BH)|
+| $|win.-med|$ | Performance difference between the winner and the competitor in the middle of the table |
+|  CV | Coefficient of variation of competitors' performance. $(CV=100\times \frac{s_x}{\overline{x}}$, where $\overline{x}$  is the mean of $x$ and $s_x$ is the standard deviation of $x)$|
+| PPI | Possible Percentage Improvement, e.g., for F1 score, it's calculated as $100\times(1-F_1^{winner})$ |
+
+
+: Metrics Used for Comparison. {#tbl-info-summary  .striped .hover}
+:::
+
+
 
 # Analysed Competitions
 
-## Analysis of NLP Competitions  {.smaller .scrollable transition="slide"}
-
+## Analysis of NLP Competitions {.smaller .scrollable transition="slide"}
 
 ::: custom-small
+| Competition | Subtask / Language | Metric Used | Data Considered |
+|----|----|----|----|
+| MEX-A3T 2019 | Author Profiling (Spanish, text and images) | Macro-averaged F1 Score | All participants |
+|  | Aggressiveness Detection (Spanish) | F1 Score | All participants |
+| TASS 2020 | General Polarity (Spanish) | Macro-averaged F1 Score | All participants (Best Runs) |
+| **VaxxStance 2021** | **Stance Detection (Basque, Spanish)** | **Macro-averaged F1 Score for "favor" and "against"** | **All participants** |
+| EXIST 2021 | Sexism Identification (English, Spanish) | Accuracy | Top 10 for each language (Best Runs) |
+|  | Sexism Categorization (English, Spanish) | Macro-averaged F1 Score | Top 10 for each language (Best Runs) |
+| DETOXIS 2021 | Toxicity Detection (Spanish) | F1 Score | All participants (Best Runs) |
+| MeOffendEs 2021 | Offensive Language Identification (Mexican Spanish) | F1 Score (offensive class) | All participants (Best Runs) |
+| REST-MEX 2021 | Recommendation System (Mexican Spanish) | MAE | All participants (baseline) |
+|  | Sentiment Analysis (Mexican Spanish) | MAE | All participants (baseline) |
+| REST-MEX 2022 | Sentiment Analysis (Mexican Spanish) | $Measure_S$ | All participants (majority class) |
+|  | Epidemiological Semaphore (Mexican Spanish) | $Measure_C$ | All participants (majority class) |
+| PAR-MEX 2022 | Paraphrase Identification (Mexican Spanish) | F1 Score | All participants (Best Runs) |
 
-| Competition        | Subtask / Language                                       | Metric Used                              | Data Considered                          |
-|--------------------|----------------------------------------------------------|------------------------------------------|------------------------------------------|
-| MEX-A3T 2019       | Author Profiling (Spanish, text and images)               | Macro-averaged F1 Score                  | All participants                         |
-|                    | Aggressiveness Detection (Spanish)                       | F1 Score                                 | All participants                         |
-| TASS 2020          | General Polarity (Spanish)                               | Macro-averaged F1 Score                  | All participants (Best Runs)             |
-| **VaxxStance 2021**| **Stance Detection (Basque, Spanish)**                   | **Macro-averaged F1 Score for "favor" and "against"** | **All participants** |
-| EXIST 2021         | Sexism Identification (English, Spanish)                 | Accuracy                                 | Top 10 for each language (Best Runs)     |
-|                    | Sexism Categorization (English, Spanish)                 | Macro-averaged F1 Score                  | Top 10 for each language (Best Runs)     |
-| DETOXIS 2021       | Toxicity Detection (Spanish)                             | F1 Score                                 | All participants (Best Runs)             |
-| MeOffendEs 2021    | Offensive Language Identification (Mexican Spanish)      | F1 Score (offensive class)               | All participants (Best Runs)             |
-| REST-MEX 2021      | Recommendation System (Mexican Spanish)                  | MAE                                      | All participants (baseline)              |
-|                    | Sentiment Analysis (Mexican Spanish)                     | MAE                                      | All participants (baseline)              |
-| REST-MEX 2022      | Sentiment Analysis (Mexican Spanish)                     | $Measure_S$                                | All participants (majority class)        |
-|                    | Epidemiological Semaphore (Mexican Spanish)              | $Measure_C$                                | All participants (majority class)        |
-| PAR-MEX 2022       | Paraphrase Identification (Mexican Spanish)              | F1 Score                                 | All participants (Best Runs)             |
-
-:  Table Metrics and data considered across various competitions {#tbl-Competitions .striped .hover}
-
+: Table Metrics and data considered across various competitions {#tbl-Competitions .striped .hover}
 :::
 
----
-
+------------------------------------------------------------------------
 
 ## Results for the Various Challenges {.smaller .scrollable transition="slide"}
 
-
 ::: custom-small
+| Challenge | DETOXIS 2021 | PAR-MEX 2022 | MeOffendEs 2021 | MEX-A3T 2019 (Agg) | MEX-A3T 2019 (author profiling) |
+|----|----|----|----|----|----|
+| **Task** | Toxicity detection | Paraphrase Identification | Non-contextual | Aggressiveness Detection | Author Profiling |
+| **Metric** | F1 score | F1 score | F1 score | F1 score | Macro-averaged F1 score |
+| $n$ | 891 | 2821 | 2182 | 3156 | 1500 |
+| $m$ | 31 | 8 | 10 | 25 | 4 |
+| **Ties w/ win.** | 0/3/0/0 | 1/1/1/1 | 1/2/2/1 | 3/7/4/3 | 1/1/1/1 |
+| **Poss. compars.** | 465 | 28 | 45 | 300 | 6 |
+| **none/Bonf.** | 80/135 | 6/6 | 7/9 | 70/91 | 2/2 |
+| **Holm/BH** | 112/85 | 6/6 | 8/7 | 80/63 | 2/2 |
+| $|win.-med|$ | 0.223 | 0.061 | 0.078 | 0.098 | 0.164 |
+| $CV$ | 42.600 | 4.722 | 16.070 | 19.620 | 46.491 |
+| **PPI** | 35.390 | 5.758 | 28.46 | 52.038 | 42.581 |
 
-| Challenge          | DETOXIS 2021 | PAR-MEX 2022 | MeOffendEs 2021 | MEX-A3T 2019 (Agg) | MEX-A3T 2019 (author profiling) |
-|--------------------|--------------|--------------|-----------------|-------------------|--------------------------------|
-| **Task**           | Toxicity detection | Paraphrase Identification | Non-contextual | Aggressiveness Detection | Author Profiling |
-| **Metric**         | F1 score     | F1 score     | F1 score        | F1 score          | Macro-averaged F1 score       |
-| **$n$**            | 891          | 2821         | 2182            | 3156              | 1500                          |
-| **$m$**            | 31           | 8            | 10              | 25                | 4                             |
-| **Ties w/ win.**   | 0/3/0/0      | 1/1/1/1      | 1/2/2/1         | 3/7/4/3           | 1/1/1/1                       |
-| **Poss. compars.** | 465          | 28           | 45              | 300               | 6                             |
-| **none/Bonf.**     | 80/135       | 6/6          | 7/9             | 70/91             | 2/2                           |
-| **Holm/BH**        | 112/85       | 6/6          | 8/7             | 80/63             | 2/2                           |
-| **$|win.-med|$**   | 0.223        | 0.061        | 0.078           | 0.098             | 0.164                         |
-| **$CV$**           | 42.600       | 4.722        | 16.070          | 19.620            | 46.491                        |
-| **PPI**            | 35.390       | 5.758        | 28.46           | 52.038            | 42.581                        |
-
-:  Results for the Various Challenges {#tbl-Results .striped .hover}
-
+: Results for the Various Challenges {#tbl-Results .striped .hover}
 :::
 
-
-## Some Examples { .scrollable transition="slide"}
+## Some Examples {.scrollable transition="slide"}
 
 ::: panel-tabset
 ### MeOffendEs subtask3
 
+::: {layout-ncol="2"}
 ```{python}
 #| echo: false
 #| label: fig-MeOffendEs
@@ -354,7 +393,6 @@ face_grid = plot_performance_multiple(perf)
 
 ```
 
-
 ```{python}
 #| echo: false
 #| label: fig-MeOffendEs2
@@ -364,11 +402,11 @@ diff = difference_multiple(perf)
 face_grid_diff = plot_difference_multiple(diff)
 
 ```
-
-
+:::
 
 ### DETOXIS 2021
 
+::: {layout-ncol="2"}
 ```{python}
 #| echo: false
 #| label: fig-detoxis
@@ -386,7 +424,6 @@ face_grid = plot_performance_multiple(perf)
 
 ```
 
-
 ```{python}
 #| echo: false
 #| label: fig-detoxis2
@@ -397,9 +434,12 @@ diff = difference_multiple(perf)
 face_grid_diff = plot_difference_multiple(diff)
 
 ```
+:::
 
-###  PAR-MEX 2022
 
+### PAR-MEX 2022
+
+::: {layout-ncol="2"}
 ```{python}
 #| echo: false
 #| label: fig-parmex
@@ -427,31 +467,30 @@ diff = difference_multiple(perf)
 face_grid_diff = plot_difference_multiple(diff)
 
 ```
+:::
 
+### BoW
+::: {layout-ncol="2"}
+![Confidence Intervals](figs/IC.png){#fig-BoW-IC width="400" height="400"}
 
-###  BoW
-
-
-![Confidence Intervals](figs/IC.png){#fig-BoW-IC width="300" height="300"}
-
-![Confidence Intervals of Differences](figs/ICD.png){#fig-BoW-ICD width="300" height="300"}
-
-
+![Confidence Intervals of Differences](figs/ICD.png){#fig-BoW-ICD width="400" height="400"}
+:::
 
 :::
 
-
 ## CompStats {.smaller .scrollable transition="slide"}
 
+::: panel-tabset
+###  Single metric
+The package *CompStats* [(compstats.readthedocs.org)](http://compstats.readthedocs.org) implements the ideas presented in this contribution.
 
-The package _CompStats_ [(compstats.readthedocs.org)](http://compstats.readthedocs.org) implements the ideas presented in this contribution.
+#### Installation
 
-### Installation
-
-```python
+``` python
 pip install CompStats
 ```
-### libraries
+
+#### libraries
 
 Once CompStats is installed, one must load a few libraries.
 
@@ -464,7 +503,8 @@ from sklearn.metrics import f1_score
 import pandas as pd
 ```
 
-### Data
+#### Data
+
 Let us assume *PARMEX_2022.csv* is a csv file where the column $y$ has the ground truth, and the other columns are the systems'outputs.
 
 ```{python}
@@ -473,18 +513,19 @@ Let us assume *PARMEX_2022.csv* is a csv file where the column $y$ has the groun
 DATA = 'PARMEX_2022.csv'
 df = pd.read_csv(DATA)
 ```
+
 The performance metric used is the F1 score.
 
+#### Metric
 
-
-### Metric
 ```{python}
 #| echo: true
 #| label: Metric
 score = lambda y, hy: f1_score(y, hy)
 ```
 
-### Performance
+#### Performance
+
 ```{python}
 #| echo: true
 #| label: fig-parmex3
@@ -495,9 +536,8 @@ perf = performance(df, score=score)
 ins = plot_performance(perf)
 ```
 
+#### Performance Differences Against the Winner
 
-
-### Performance Differences Against the Winner
 ```{python}
 #| echo: true
 #| #| echo: false
@@ -509,9 +549,8 @@ diff = difference(perf)
 ins = plot_difference(diff)
 ```
 
+#### Performance Differences Against the Winner
 
-
-### Performance Differences Against the Winner
 ```{python}
 #| echo: true
 #| label: p-value_difference
@@ -519,7 +558,8 @@ p_values = difference_p_value(diff)
 p_values
 ```
 
-### Bonferroni Correction
+#### Bonferroni Correction
+
 ```{python}
 #| echo: true
 #| label: p-value_difference_bonferroni
@@ -529,50 +569,161 @@ p_valuesC
 
 ```
 
+### Multimetric
+
+#### More Libraries
+
+```{python}
+#| echo: true
+#| label: lib-compstatsM
+from CompStats import performance_multiple_metrics, plot_performance_multiple, difference_multiple, plot_difference_multiple
+from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score
+import seaborn as sns
+```
+
+The performance metrics used are macro-averaged F1 score and accuracy. 
+
+#### Metric
+
+```{python}
+#| echo: true
+#| label: MultiMetric
+
+metrics = [
+  {"func": f1_score, "args": {"average": "macro"}, 'BiB': True},
+  {"func": accuracy_score, 'BiB': True},
+  {"func": precision_score, 'BiB': True},
+  {"func": recall_score, 'BiB': True}
+  ]
+```
+
+#### Performance
+
+```{python}
+#| echo: true
+#| label: fig-parmex3M
+#| layout-ncol: 2
+
+
+perf = performance_multiple_metrics(df, "y", metrics)
+face_grid = plot_performance_multiple(perf)
+```
+
+#### Performance Differences Against the Winner
+
+```{python}
+#| echo: true
+#| #| echo: false
+#| label: fig-parmex4M
+#| layout-ncol: 2
+
+diff = difference_multiple(perf) 
+face_grid_diff = plot_difference_multiple(diff)
+```
+
+#### Performance Differences Against the Winner
+
+```{python}
+#| echo: true
+#| label: p-value_differenceM
+for metric, diffs in diff['winner'].items():
+    print(f"\nFor the metric {metric} the best is {diffs['best']}")
+    for key, value in diffs['p_value'].items():
+        print(f"p-value for the difference with {key} {value}")
+```
+
+
+#### Bonferroni Correction
+
+```{python}
+#| echo: true
+#| label: p-value_difference_bonferroniM
+correction = 'bonferroni'
+for metric, diffs in diff['winner'].items():
+    print(f"\nFor the metric {metric} the best is {diffs['best']}")
+    result = multipletests(list(diffs['p_value'].values()), method=correction)
+    p_valuesC = dict(zip(diffs['p_value'].keys(),result[1])) 
+    for key, value in p_valuesC.items():
+        print(f'{key}, p-value corrected by {correction} = {value}')
+
+```
+
+```{python}
+#| echo: false
+# Supongamos que perf_recuperado['samples'] es tu lista de listas
+#lista_de_listas = perf_recuperado['samples']
+#print(lista_de_listas)
+
+def dict_to_wide_format_df_dynamic(data_dict):
+    # Extraer los nombres de las métricas del diccionario
+    metrics = list(data_dict.keys())
+    # Determinar la cantidad de iteraciones (número de valores) desde la primera métrica y primer equipo
+    num_iterations = len(next(iter(data_dict[metrics[0]].values())))
+
+    # Crear una lista para almacenar los datos en formato adecuado
+    data = []
+    for team in data_dict[metrics[0]].keys():
+        # Agregar una fila para cada iteración
+        for i in range(num_iterations):  
+            row = [team]
+            for metric in metrics:
+                row.append(data_dict[metric][team][i])
+            data.append(row)
+    
+    # Crear el DataFrame en formato ancho con una columna por métrica
+    columns = ['team'] + metrics
+    df_wide_format = pd.DataFrame(data, columns=columns)
+    return df_wide_format
+
+# Generar el DataFrame en formato ancho dinámico
+df_wide_format_dynamic = dict_to_wide_format_df_dynamic(perf['samples'])
+```
+
+```{python}
+#| echo: true
+#| label: scatterM
+sns.set_theme(style="ticks")
+sns.pairplot(df_wide_format_dynamic, hue='team', corner= True)
+```
+:::
+
 # Discussion and Conclusions
 
 ## Summary of Research
-- **Objectives**: 
+
+-   **Objectives**:
 
 To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.
 
+1.  **Thoroughly review the different elements used in evaluating learning algorithms**
+2.  **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**
+3.  **Design evaluation schemes for learning algorithms that integrate advanced statistical tools**
 
+::: fragment
+-   **Key Findings**:
+    -   Non-parametric Statistics are suitable for evaluating classification algorithms.
+    -   Introduced tools for fair competition result comparison.
+    -   Developed a structured evaluation framework for competitions.
+:::
 
-1. **Thoroughly review the different elements used in evaluating learning algorithms**
-2. **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**
-3. **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** 
-
-:::: {.fragment}  
-- **Key Findings**:
-  - Non-parametric Statistics are suitable for evaluating classification algorithms.
-  - Introduced tools for fair competition result comparison.
-  - Developed a structured evaluation framework for competitions.
-
-::::
----
+------------------------------------------------------------------------
 
 ## Contributions to Knowledge
-- **Theoretical**:
-  - Formalization of competition-based algorithm evaluation.
-  - Expanded understanding of statistical tests and competition comparison.
 
-- **Practical**:
-  - Toolkit for statistical evaluation.
-  - Actionable feedback for participants in algorithmic competitions.
+-   **Theoretical**:
+    -   Formalization of competition-based algorithm evaluation.
+    -   Expanded understanding of statistical tests and competition comparison.
+-   **Practical**:
+    -   Toolkit for statistical evaluation.
+    -   Actionable feedback for participants in algorithmic competitions.
+-   **Limitations**:
+    -   Data availability and external validity.
+    -   Focus on classification competitions.
 
-- **Limitations**:
-  - Data availability and external validity.
-  - Focus on classification competitions.
-  
 ## Acknowledgments
 
 We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.
 
-
-
-
-## Thank you for your attention!
-
-
+### Thank you for your attention!
 
 Please feel free to ask any questions.

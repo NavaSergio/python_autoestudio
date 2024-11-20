@@ -433,8 +433,10 @@ PhD Mario Graff Guerrero
 <li><a href="#/introduction" id="/toc-introduction">Introduction</a>
 <ul>
 <li><a href="#/challenge" id="/toc-challenge">Challenge</a></li>
-<li><a href="#/results-for-vaxxstance-close-track---contextual" id="/toc-results-for-vaxxstance-close-track---contextual">Results for VaxxStance Close track - contextual</a></li>
+<li><a href="#/a-case-study" id="/toc-a-case-study">A case study</a></li>
 <li><a href="#/objectives" id="/toc-objectives">Objectives</a></li>
+<li><a href="#/literature-review" id="/toc-literature-review">literature review</a></li>
+
 </ul></li>
 <li><a href="#/proposed-methodology" id="/toc-proposed-methodology">Proposed methodology</a>
 <ul>
@@ -444,6 +446,7 @@ PhD Mario Graff Guerrero
 <li><a href="#/hypothesis-testing" id="/toc-hypothesis-testing">Hypothesis Testing</a></li>
 <li><a href="#/multiple-testing" id="/toc-multiple-testing">Multiple Testing</a></li>
 
+<li><a href="#/competitions-comparison" id="/toc-competitions-comparison">Competitions Comparison</a></li>
 </ul></li>
 <li><a href="#/analysed-competitions" id="/toc-analysed-competitions">Analysed Competitions</a>
 <ul>
@@ -457,7 +460,6 @@ PhD Mario Graff Guerrero
 <li><a href="#/summary-of-research" id="/toc-summary-of-research">Summary of Research</a></li>
 <li><a href="#/contributions-to-knowledge" id="/toc-contributions-to-knowledge">Contributions to Knowledge</a></li>
 <li><a href="#/acknowledgments" id="/toc-acknowledgments">Acknowledgments</a></li>
-<li><a href="#/thank-you-for-your-attention" id="/toc-thank-you-for-your-attention">Thank you for your attention!</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -490,8 +492,8 @@ Figure&nbsp;1: Challenge
 </ul>
 </div>
 </section>
-<section id="results-for-vaxxstance-close-track---contextual" class="slide level2 smaller">
-<h2>Results for VaxxStance Close track - contextual</h2>
+<section id="a-case-study" class="slide level2 smaller">
+<h2>A case study</h2>
 <div class="fragment">
 <div class="custom-small">
 <div id="tbl-VaxxStance1" class="striped hover quarto-float quarto-figure quarto-figure-center">
@@ -617,29 +619,422 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 <li><strong>Design evaluation schemes for learning algorithms that integrate advanced statistical tools</strong> based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.</li>
 </ol>
 </div>
+</section>
+<section id="literature-review" class="slide level2" data-transition="slide">
+<h2>literature review</h2>
+<div class="custom-small">
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Author(s)</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dietterich, T.G. (1998)</td>
+<td>“Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms”</td>
+</tr>
+<tr class="even">
+<td>Demšar, J. (2006)</td>
+<td>“Statistical Comparisons of Classifiers over Multiple Data Sets”</td>
+</tr>
+<tr class="odd">
+<td>García y Herrera (2008)</td>
+<td>“An Extension on Statistical Comparisons of Classifiers over Multiple Data Sets”</td>
+</tr>
+<tr class="even">
+<td>Lacoste et al.&nbsp;(2012)</td>
+<td>“Bayesian Comparison of Machine Learning Algorithms on Single and Multiple Datasets”</td>
+</tr>
+<tr class="odd">
+<td>Wainer, J. (2016)</td>
+<td>“Comparison of 14 Methods to Predict Employee Attrition”</td>
+</tr>
+<tr class="even">
+<td>Raschka, S. (2020)</td>
+<td>“Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning”</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="section" class="slide level2 smaller scrollable" data-transition="slide">
+<h2></h2>
+<div class="custom-small">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Author</th>
+<th>Method or Test</th>
+<th>Requires only predictions, not the algorithm</th>
+<th>Allows multiple comparisons</th>
+<th>Uses a single dataset</th>
+<th>Uses the competition’s given metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dietterich, T.G.</td>
+<td>McNemar</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Dietterich, T.G.</td>
+<td>A test for the difference of two proportions</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="odd">
+<td>Dietterich, T.G.</td>
+<td>Resampled Paired t-test</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Dietterich, T.G.</td>
+<td>k-fold cv Paired t test</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="odd">
+<td>Dietterich, T.G.</td>
+<td>5x2cv t-test</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Demšar, J.</td>
+<td>Paired t-test</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>Demšar, J.</td>
+<td>Wilcoxon signed ranked test</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>Demšar, J.</td>
+<td>Counts of wins, losses and ties: signed test</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>Demšar, J.</td>
+<td>ANOVA</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>Demšar, J.</td>
+<td>Friedman test</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>Demšar, J.</td>
+<td>post-hoc test</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>García &amp; Herrera</td>
+<td>Nemenyi</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>García &amp; Herrera</td>
+<td>Holm</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>García &amp; Herrera</td>
+<td>Hochberg</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>Lacoste et al.</td>
+<td>Bayesian Comparison</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>Lacoste et al.</td>
+<td>MCMC</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>Wainer, J.</td>
+<td>ANOVA</td>
+<td>O</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Wainer, J.</td>
+<td>Tukey</td>
+<td>O</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="odd">
+<td>Wainer, J.</td>
+<td>Bonferroni</td>
+<td>O</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Raschka, S.</td>
+<td>5x2cv</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="odd">
+<td>Raschka, S.</td>
+<td>McNemar</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Raschka, S.</td>
+<td>F-test</td>
+<td>O</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section></section>
 <section>
 <section id="proposed-methodology" class="title-slide slide level1 center">
 <h1>Proposed methodology</h1>
 
 </section>
-<section id="bootstrapping" class="slide level2">
+<section id="bootstrapping" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>Bootstrapping</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
 <p>In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size, see <a href="#/fig-bootstrap" class="quarto-xref">Figure&nbsp;2</a></p>
-<div class="fragment">
+</div><div class="column" style="width:60%;">
 <div id="fig-bootstrap" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-bootstrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="figs/bootstrap.png" width="600" height="300">
+<img data-src="figs/bootstrap.png" width="500" height="250">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bootstrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Bootstrapping
 </figcaption>
 </figure>
 </div>
+</div></div>
+<div class="fragment">
+<div class="custom-small">
+<div id="tbl-vaxxstanceeu" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display cell-output-markdown">
+<table class="caption-top">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 9%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th style="text-align: left;">y</th>
+<th style="text-align: left;">MultiAztertest.01</th>
+<th style="text-align: left;">MultiAztertest.02</th>
+<th style="text-align: left;">SQYQP.01</th>
+<th style="text-align: left;">WordUp.01</th>
+<th style="text-align: left;">WordUp.02</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">FAVOR</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">FAVOR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">NONE</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">AGAINST</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">FAVOR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">NONE</td>
+<td style="text-align: left;">AGAINST</td>
+<td style="text-align: left;">FAVOR</td>
+<td style="text-align: left;">FAVOR</td>
+</tr>
+</tbody>
+</table>
+<p>VaxxStance_Textual_eu</p>
+</div>
+</div>
+<div id="cell-tabla-f1MeOffendEs" class="cell" data-execution_count="2">
+<div id="tabla-f1meoffendes" class="cell-output cell-output-display cell-output-markdown">
+<table class="caption-top">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th style="text-align: right;">MultiAztertest.01</th>
+<th style="text-align: right;">MultiAztertest.02</th>
+<th style="text-align: right;">SQYQP.01</th>
+<th style="text-align: right;">WordUp.01</th>
+<th style="text-align: right;">WordUp.02</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.49025</td>
+<td style="text-align: right;">0.308788</td>
+<td style="text-align: right;">0.482413</td>
+<td style="text-align: right;">0.617927</td>
+<td style="text-align: right;">0.550909</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.524976</td>
+<td style="text-align: right;">0.263587</td>
+<td style="text-align: right;">0.473899</td>
+<td style="text-align: right;">0.581218</td>
+<td style="text-align: right;">0.622033</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.535814</td>
+<td style="text-align: right;">0.366176</td>
+<td style="text-align: right;">0.50666</td>
+<td style="text-align: right;">0.593348</td>
+<td style="text-align: right;">0.592989</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.508311</td>
+<td style="text-align: right;">0.313008</td>
+<td style="text-align: right;">0.508253</td>
+<td style="text-align: right;">0.565969</td>
+<td style="text-align: right;">0.53524</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.552128</td>
+<td style="text-align: right;">0.353765</td>
+<td style="text-align: right;">0.431905</td>
+<td style="text-align: right;">0.59568</td>
+<td style="text-align: right;">0.557417</td>
+</tr>
+</tbody>
+</table>
+<p>Macro-averaged F1 score (Pos, Neg) Sample distribution VaxxStance_Textual_eu</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="comparison-of-classifiers" class="slide level2">
+<section id="comparison-of-classifiers" class="slide level2 smaller">
 <h2>Comparison of Classifiers</h2>
 <p><a href="#/tbl-independent" class="quarto-xref">Table&nbsp;3</a> provides the ordered confidence interval estimates obtained through bootstrapping, while <a href="#/fig-independent-samples" class="quarto-xref">Figure&nbsp;3</a> displays these estimates in a plot.</p>
 <div class="custom-small">
@@ -649,17 +1044,17 @@ Figure&nbsp;2: Bootstrapping
 Table&nbsp;3: Results Table for Basque and Spanish
 </figcaption>
 <div aria-describedby="tbl-independent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top">
+<table class="table-striped table-hover caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 18%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -758,7 +1153,7 @@ Figure&nbsp;3: Independent Samples
 </figure>
 </div>
 </section>
-<section id="difference-against-winner" class="slide level2">
+<section id="difference-against-winner" class="slide level2 smaller">
 <h2>Difference against winner</h2>
 <p><a href="#/tbl-Paired" class="quarto-xref">Table&nbsp;4</a> provides the confidence intervals comparing the top team with lower-ranking teams, while <a href="#/fig-paired-samples" class="quarto-xref">Figure&nbsp;4</a> displays these intervals in a plot.</p>
 <div class="custom-small">
@@ -768,17 +1163,17 @@ Figure&nbsp;3: Independent Samples
 Table&nbsp;4: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 </figcaption>
 <div aria-describedby="tbl-Paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top">
+<table class="table-striped table-hover caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 18%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -893,13 +1288,13 @@ Figure&nbsp;5: histogram of differences
 Table&nbsp;5: Differences of F₁ score for Basque
 </figcaption>
 <div aria-describedby="tbl-Basque-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top" style="width:100%;">
+<table class="table-striped table-hover caption-top">
 <colgroup>
-<col style="width: 27%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 25%">
-<col style="width: 14%">
+<col style="width: 28%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -946,7 +1341,7 @@ Table&nbsp;5: Differences of F₁ score for Basque
 </div>
 </div>
 <div class="footer">
-<p><em>Note: † p&lt;.1, </em> p&lt;.05, ** p&lt;.1, and *** p&lt;.001.*</p>
+<p><em>Note: † p&lt;.1,</em> p&lt;.05, ** p&lt;.1, and *** p&lt;.001.*</p>
 </div>
 </div>
 </section>
@@ -963,9 +1358,9 @@ Table&nbsp;5: Differences of F₁ score for Basque
 </ul>
 </div>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
-<p><strong>Estimated p-values for F1 difference </strong></p>
+<p><strong>Estimated p-values for F1 difference</strong></p>
 <div class="custom-small">
 <div id="tbl-p-values" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
@@ -973,15 +1368,15 @@ Table&nbsp;5: Differences of F₁ score for Basque
 Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.
 </figcaption>
 <div aria-describedby="tbl-p-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top">
+<table class="table-striped table-hover caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 13%">
-<col style="width: 10%">
-<col style="width: 13%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1091,6 +1486,66 @@ Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and w
 </figure>
 </div>
 </div>
+</section>
+<section id="competitions-comparison" class="slide level2">
+<h2>Competitions Comparison</h2>
+<div class="custom-small">
+<div id="tbl-info-summary" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Metrics Used for Comparison.
+</figcaption>
+<div aria-describedby="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>Test data size</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m\)</span></td>
+<td>Number of participants or runs</td>
+</tr>
+<tr class="odd">
+<td>Ties w/ win</td>
+<td>Number of ties with the winner (corrections: none/Bonferroni/Holm/BH)</td>
+</tr>
+<tr class="even">
+<td>Poss. compars.</td>
+<td>Total possible comparisons (<span class="math inline">\(m \times (m-1)/2\)</span>)</td>
+</tr>
+<tr class="odd">
+<td>none/Bonf./Holm/BH</td>
+<td>Number of ties between competitors with corrections with Adjusted p-value (corrections: none/Bonferroni/Holm/BH)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(|win.-med|\)</span></td>
+<td>Performance difference between the winner and the competitor in the middle of the table</td>
+</tr>
+<tr class="odd">
+<td>CV</td>
+<td>Coefficient of variation of competitors’ performance. <span class="math inline">\((CV=100\times \frac{s_x}{\overline{x}}\)</span>, where <span class="math inline">\(\overline{x}\)</span> is the mean of <span class="math inline">\(x\)</span> and <span class="math inline">\(s_x\)</span> is the standard deviation of <span class="math inline">\(x)\)</span></td>
+</tr>
+<tr class="even">
+<td>PPI</td>
+<td>Possible Percentage Improvement, e.g., for F1 score, it’s calculated as <span class="math inline">\(100\times(1-F_1^{winner})\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
 </section></section>
 <section>
 <section id="analysed-competitions" class="title-slide slide level1 center">
@@ -1103,13 +1558,13 @@ Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and w
 <div id="tbl-Competitions" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7: Table Metrics and data considered across various competitions
+Table&nbsp;8: Table Metrics and data considered across various competitions
 </figcaption>
 <div aria-describedby="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 35%">
+<col style="width: 25%">
+<col style="width: 25%">
 <col style="width: 25%">
 <col style="width: 25%">
 </colgroup>
@@ -1213,17 +1668,17 @@ Table&nbsp;7: Table Metrics and data considered across various competitions
 <div id="tbl-Results" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8: Results for the Various Challenges
+Table&nbsp;9: Results for the Various Challenges
 </figcaption>
 <div aria-describedby="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top">
+<table class="table-striped table-hover caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 14%">
 <col style="width: 16%">
-<col style="width: 27%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1253,7 +1708,7 @@ Table&nbsp;8: Results for the Various Challenges
 <td>Macro-averaged F1 score</td>
 </tr>
 <tr class="odd">
-<td><strong><span class="math inline">\(n\)</span></strong></td>
+<td><span class="math inline">\(n\)</span></td>
 <td>891</td>
 <td>2821</td>
 <td>2182</td>
@@ -1261,7 +1716,7 @@ Table&nbsp;8: Results for the Various Challenges
 <td>1500</td>
 </tr>
 <tr class="even">
-<td><strong><span class="math inline">\(m\)</span></strong></td>
+<td><span class="math inline">\(m\)</span></td>
 <td>31</td>
 <td>8</td>
 <td>10</td>
@@ -1301,7 +1756,7 @@ Table&nbsp;8: Results for the Various Challenges
 <td>2/2</td>
 </tr>
 <tr class="odd">
-<td><strong><span class="math inline">\(|win.-med|\)</span></strong></td>
+<td><span class="math inline">\(|win.-med|\)</span></td>
 <td>0.223</td>
 <td>0.061</td>
 <td>0.078</td>
@@ -1309,7 +1764,7 @@ Table&nbsp;8: Results for the Various Challenges
 <td>0.164</td>
 </tr>
 <tr class="even">
-<td><strong><span class="math inline">\(CV\)</span></strong></td>
+<td><span class="math inline">\(CV\)</span></td>
 <td>42.600</td>
 <td>4.722</td>
 <td>16.070</td>
@@ -1337,7 +1792,12 @@ Table&nbsp;8: Results for the Various Challenges
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">MeOffendEs subtask3</a></li><li><a href="#tabset-1-2">DETOXIS 2021</a></li><li><a href="#tabset-1-3">PAR-MEX 2022</a></li><li><a href="#tabset-1-4">BoW</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div id="cell-fig-MeOffendEs" class="cell" data-execution_count="1">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div id="cell-fig-MeOffendEs" class="cell quarto-layout-cell" data-execution_count="3" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div id="fig-meoffendes" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
@@ -1351,7 +1811,7 @@ Figure&nbsp;6: Confidence intervals
 </div>
 </div>
 </div>
-<div id="cell-fig-MeOffendEs2" class="cell" data-execution_count="2">
+<div id="cell-fig-MeOffendEs2" class="cell quarto-layout-cell" data-execution_count="4" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div id="fig-meoffendes2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence Intervals of Differences">
 <figure class="quarto-float quarto-float-fig">
@@ -1366,8 +1826,15 @@ Figure&nbsp;7: Confidence Intervals of Differences
 </div>
 </div>
 </div>
+</div>
+</div>
 <div id="tabset-1-2">
-<div id="cell-fig-detoxis" class="cell" data-execution_count="3">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div id="cell-fig-detoxis" class="cell quarto-layout-cell" data-execution_count="5" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div id="fig-detoxis" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
@@ -1381,7 +1848,7 @@ Figure&nbsp;8: Confidence intervals
 </div>
 </div>
 </div>
-<div id="cell-fig-detoxis2" class="cell" data-execution_count="4">
+<div id="cell-fig-detoxis2" class="cell quarto-layout-cell" data-execution_count="6" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div id="fig-detoxis2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
 <figure class="quarto-float quarto-float-fig">
@@ -1396,8 +1863,15 @@ Figure&nbsp;9: Confidence intervals of differences
 </div>
 </div>
 </div>
+</div>
+</div>
 <div id="tabset-1-3">
-<div id="cell-fig-parmex" class="cell" data-execution_count="5">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div id="cell-fig-parmex" class="cell quarto-layout-cell" data-execution_count="7" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div id="fig-parmex" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
@@ -1411,7 +1885,7 @@ Figure&nbsp;10: Confidence intervals
 </div>
 </div>
 </div>
-<div id="cell-fig-parmex2" class="cell" data-execution_count="6">
+<div id="cell-fig-parmex2" class="cell quarto-layout-cell" data-execution_count="8" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div id="fig-parmex2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
 <figure class="quarto-float quarto-float-fig">
@@ -1426,21 +1900,31 @@ Figure&nbsp;11: Confidence intervals of differences
 </div>
 </div>
 </div>
+</div>
+</div>
 <div id="tabset-1-4">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-BoW-IC" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-BoW-IC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="figs/IC.png" width="300" height="300">
+<img data-src="figs/IC.png" width="400" height="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BoW-IC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;12: Confidence Intervals
 </figcaption>
 </figure>
 </div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-BoW-ICD" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-BoW-ICD-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="figs/ICD.png" width="300" height="300">
+<img data-src="figs/ICD.png" width="400" height="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BoW-ICD-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;13: Confidence Intervals of Differences
@@ -1450,40 +1934,47 @@ Figure&nbsp;13: Confidence Intervals of Differences
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 </section>
 <section id="compstats" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>CompStats</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Single metric</a></li><li><a href="#tabset-2-2">Multimetric</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
 <p>The package <em>CompStats</em> <a href="http://compstats.readthedocs.org">(compstats.readthedocs.org)</a> implements the ideas presented in this contribution.</p>
-<h3 id="installation">Installation</h3>
+<h4 id="installation">Installation</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>pip install CompStats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="libraries">libraries</h3>
+<h4 id="libraries">libraries</h4>
 <p>Once CompStats is installed, one must load a few libraries.</p>
-<div id="lib-compstats" class="cell" data-execution_count="7">
+<div id="lib-compstats" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> CompStats <span class="im">import</span> performance, difference, plot_performance, plot_difference, difference_p_value</span>
 <span id="cb2-2"><a href=""></a><span class="im">from</span> statsmodels.stats.multitest <span class="im">import</span> multipletests</span>
 <span id="cb2-3"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> f1_score</span>
 <span id="cb2-4"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h3 id="data">Data</h3>
+<h4 id="data">Data</h4>
 <p>Let us assume <em>PARMEX_2022.csv</em> is a csv file where the column <span class="math inline">\(y\)</span> has the ground truth, and the other columns are the systems’outputs.</p>
-<div id="read_data" class="cell" data-execution_count="8">
+<div id="read_data" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>DATA <span class="op">=</span> <span class="st">'PARMEX_2022.csv'</span></span>
 <span id="cb3-2"><a href=""></a>df <span class="op">=</span> pd.read_csv(DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The performance metric used is the F1 score.</p>
-<h3 id="metric">Metric</h3>
-<div id="metric" class="cell" data-execution_count="9">
+<h4 id="metric">Metric</h4>
+<div id="metric" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>score <span class="op">=</span> <span class="kw">lambda</span> y, hy: f1_score(y, hy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h3 id="performance">Performance</h3>
-<div id="cell-fig-parmex3" class="cell" data-execution_count="10">
+<h4 id="performance">Performance</h4>
+<div id="cell-fig-parmex3" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>perf <span class="op">=</span> performance(df, score<span class="op">=</span>score)</span>
 <span id="cb5-2"><a href=""></a>ins <span class="op">=</span> plot_performance(perf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-parmex3" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-parmex3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3-output-1.png" alt="Confidence intervals" width="485" height="468">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3-output-1.png" alt="Confidence intervals" width="487" height="468">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14: Confidence intervals
@@ -1492,8 +1983,8 @@ Figure&nbsp;14: Confidence intervals
 </div>
 </div>
 </div>
-<h3 id="performance-differences-against-the-winner">Performance Differences Against the Winner</h3>
-<div id="cell-fig-parmex4" class="cell" data-execution_count="11">
+<h4 id="performance-differences-against-the-winner">Performance Differences Against the Winner</h4>
+<div id="cell-fig-parmex4" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>diff <span class="op">=</span> difference(perf)</span>
 <span id="cb6-2"><a href=""></a>ins <span class="op">=</span> plot_difference(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1509,26 +2000,26 @@ Figure&nbsp;15: Confidence intervals of differences
 </div>
 </div>
 </div>
-<h3 id="performance-differences-against-the-winner-1">Performance Differences Against the Winner</h3>
-<div id="cell-p-value_difference" class="cell" data-execution_count="12">
+<h4 id="performance-differences-against-the-winner-1">Performance Differences Against the Winner</h4>
+<div id="cell-p-value_difference" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>p_values <span class="op">=</span> difference_p_value(diff)</span>
 <span id="cb7-2"><a href=""></a>p_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="p-value_difference" class="cell-output cell-output-display" data-execution_count="12">
+<div id="p-value_difference" class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
  'FRSCIC': 0.0,
  'Abu': 0.0,
  'Thang CIC': 0.0,
- 'Tü Par': 0.268}</code></pre>
+ 'Tü Par': 0.252}</code></pre>
 </div>
 </div>
-<h3 id="bonferroni-correction">Bonferroni Correction</h3>
-<div id="cell-p-value_difference_bonferroni" class="cell" data-execution_count="13">
+<h4 id="bonferroni-correction">Bonferroni Correction</h4>
+<div id="cell-p-value_difference_bonferroni" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>result <span class="op">=</span> multipletests(<span class="bu">list</span>(p_values.values()), method<span class="op">=</span><span class="st">'bonferroni'</span>)</span>
 <span id="cb9-2"><a href=""></a>p_valuesC <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(p_values.keys(), result[<span class="dv">1</span>]))</span>
 <span id="cb9-3"><a href=""></a>p_valuesC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="p-value_difference_bonferroni" class="cell-output cell-output-display" data-execution_count="13">
+<div id="p-value_difference_bonferroni" class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
@@ -1536,6 +2027,260 @@ Figure&nbsp;15: Confidence intervals of differences
  'Abu': 0.0,
  'Thang CIC': 0.0,
  'Tü Par': 1.0}</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<h4 id="more-libraries">More Libraries</h4>
+<div id="lib-compstatsm" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="im">from</span> CompStats <span class="im">import</span> performance_multiple_metrics, plot_performance_multiple, difference_multiple, plot_difference_multiple</span>
+<span id="cb11-2"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> f1_score, accuracy_score, precision_score, recall_score</span>
+<span id="cb11-3"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The performance metrics used are macro-averaged F1 score and accuracy.</p>
+<h4 id="metric-1">Metric</h4>
+<div id="multimetric" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>metrics <span class="op">=</span> [</span>
+<span id="cb12-2"><a href=""></a>  {<span class="st">"func"</span>: f1_score, <span class="st">"args"</span>: {<span class="st">"average"</span>: <span class="st">"macro"</span>}, <span class="st">'BiB'</span>: <span class="va">True</span>},</span>
+<span id="cb12-3"><a href=""></a>  {<span class="st">"func"</span>: accuracy_score, <span class="st">'BiB'</span>: <span class="va">True</span>},</span>
+<span id="cb12-4"><a href=""></a>  {<span class="st">"func"</span>: precision_score, <span class="st">'BiB'</span>: <span class="va">True</span>},</span>
+<span id="cb12-5"><a href=""></a>  {<span class="st">"func"</span>: recall_score, <span class="st">'BiB'</span>: <span class="va">True</span>}</span>
+<span id="cb12-6"><a href=""></a>  ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<h4 id="performance-1">Performance</h4>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>perf <span class="op">=</span> performance_multiple_metrics(df, <span class="st">"y"</span>, metrics)</span>
+<span id="cb13-2"><a href=""></a>face_grid <span class="op">=</span> plot_performance_multiple(perf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-parmex3m" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-parmex3m-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex3m-1" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex3m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-1.png" id="fig-parmex3m-1" data-ref-parent="fig-parmex3m" width="485" height="473">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex3m-2" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex3m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-2.png" id="fig-parmex3m-2" data-ref-parent="fig-parmex3m" width="485" height="473">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex3m-3" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex3m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-3.png" id="fig-parmex3m-3" data-ref-parent="fig-parmex3m" width="485" height="473">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex3m-4" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex3m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-4.png" id="fig-parmex3m-4" data-ref-parent="fig-parmex3m" width="485" height="473">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-parmex3m-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16
+</figcaption>
+</figure>
+</div>
+<h4 id="performance-differences-against-the-winner-2">Performance Differences Against the Winner</h4>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>diff <span class="op">=</span> difference_multiple(perf) </span>
+<span id="cb14-2"><a href=""></a>face_grid_diff <span class="op">=</span> plot_difference_multiple(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-parmex4m" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-parmex4m-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex4m-1" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex4m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-1.png" id="fig-parmex4m-1" data-ref-parent="fig-parmex4m" width="559" height="488">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex4m-2" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex4m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-2.png" id="fig-parmex4m-2" data-ref-parent="fig-parmex4m" width="559" height="488">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex4m-3" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex4m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-3.png" id="fig-parmex4m-3" data-ref-parent="fig-parmex4m" width="559" height="488">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c)
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-parmex4m-4" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-parmex4m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-4.png" id="fig-parmex4m-4" data-ref-parent="fig-parmex4m" width="559" height="488">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-parmex4m-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17
+</figcaption>
+</figure>
+</div>
+<h4 id="performance-differences-against-the-winner-3">Performance Differences Against the Winner</h4>
+<div id="p-value_differencem" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="cf">for</span> metric, diffs <span class="kw">in</span> diff[<span class="st">'winner'</span>].items():</span>
+<span id="cb15-2"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">For the metric </span><span class="sc">{</span>metric<span class="sc">}</span><span class="ss"> the best is </span><span class="sc">{</span>diffs[<span class="st">'best'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-3"><a href=""></a>    <span class="cf">for</span> key, value <span class="kw">in</span> diffs[<span class="st">'p_value'</span>].items():</span>
+<span id="cb15-4"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"p-value for the difference with </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+For the metric f1_score_average=macro the best is NLP-CIC-TAGE
+p-value for the difference with UC3M-DEEPNLP 0.0
+p-value for the difference with Abu 0.0
+p-value for the difference with baseline 0.0
+p-value for the difference with FRSCIC 0.0
+p-value for the difference with Tü Par 0.22
+p-value for the difference with Thang CIC 0.0
+p-value for the difference with temu_bsc 0.0
+
+For the metric accuracy_score the best is NLP-CIC-TAGE
+p-value for the difference with UC3M-DEEPNLP 0.0
+p-value for the difference with Abu 0.0
+p-value for the difference with baseline 0.0
+p-value for the difference with FRSCIC 0.0
+p-value for the difference with Tü Par 0.166
+p-value for the difference with Thang CIC 0.0
+p-value for the difference with temu_bsc 0.0
+
+For the metric precision_score the best is NLP-CIC-TAGE
+p-value for the difference with UC3M-DEEPNLP 0.016
+p-value for the difference with Abu 0.0
+p-value for the difference with baseline 0.0
+p-value for the difference with FRSCIC 0.0
+p-value for the difference with Tü Par 0.0
+p-value for the difference with Thang CIC 0.0
+p-value for the difference with temu_bsc 0.0
+
+For the metric recall_score the best is baseline
+p-value for the difference with UC3M-DEEPNLP 0.0
+p-value for the difference with Abu 0.0
+p-value for the difference with NLP-CIC-TAGE 0.0
+p-value for the difference with FRSCIC 0.0
+p-value for the difference with Tü Par 0.0
+p-value for the difference with Thang CIC 0.0
+p-value for the difference with temu_bsc 0.112</code></pre>
+</div>
+</div>
+<h4 id="bonferroni-correction-1">Bonferroni Correction</h4>
+<div id="p-value_difference_bonferronim" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>correction <span class="op">=</span> <span class="st">'bonferroni'</span></span>
+<span id="cb17-2"><a href=""></a><span class="cf">for</span> metric, diffs <span class="kw">in</span> diff[<span class="st">'winner'</span>].items():</span>
+<span id="cb17-3"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">For the metric </span><span class="sc">{</span>metric<span class="sc">}</span><span class="ss"> the best is </span><span class="sc">{</span>diffs[<span class="st">'best'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-4"><a href=""></a>    result <span class="op">=</span> multipletests(<span class="bu">list</span>(diffs[<span class="st">'p_value'</span>].values()), method<span class="op">=</span>correction)</span>
+<span id="cb17-5"><a href=""></a>    p_valuesC <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(diffs[<span class="st">'p_value'</span>].keys(),result[<span class="dv">1</span>])) </span>
+<span id="cb17-6"><a href=""></a>    <span class="cf">for</span> key, value <span class="kw">in</span> p_valuesC.items():</span>
+<span id="cb17-7"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">, p-value corrected by </span><span class="sc">{</span>correction<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+For the metric f1_score_average=macro the best is NLP-CIC-TAGE
+UC3M-DEEPNLP, p-value corrected by bonferroni = 0.0
+Abu, p-value corrected by bonferroni = 0.0
+baseline, p-value corrected by bonferroni = 0.0
+FRSCIC, p-value corrected by bonferroni = 0.0
+Tü Par, p-value corrected by bonferroni = 1.0
+Thang CIC, p-value corrected by bonferroni = 0.0
+temu_bsc, p-value corrected by bonferroni = 0.0
+
+For the metric accuracy_score the best is NLP-CIC-TAGE
+UC3M-DEEPNLP, p-value corrected by bonferroni = 0.0
+Abu, p-value corrected by bonferroni = 0.0
+baseline, p-value corrected by bonferroni = 0.0
+FRSCIC, p-value corrected by bonferroni = 0.0
+Tü Par, p-value corrected by bonferroni = 1.0
+Thang CIC, p-value corrected by bonferroni = 0.0
+temu_bsc, p-value corrected by bonferroni = 0.0
+
+For the metric precision_score the best is NLP-CIC-TAGE
+UC3M-DEEPNLP, p-value corrected by bonferroni = 0.112
+Abu, p-value corrected by bonferroni = 0.0
+baseline, p-value corrected by bonferroni = 0.0
+FRSCIC, p-value corrected by bonferroni = 0.0
+Tü Par, p-value corrected by bonferroni = 0.0
+Thang CIC, p-value corrected by bonferroni = 0.0
+temu_bsc, p-value corrected by bonferroni = 0.0
+
+For the metric recall_score the best is baseline
+UC3M-DEEPNLP, p-value corrected by bonferroni = 0.0
+Abu, p-value corrected by bonferroni = 0.0
+NLP-CIC-TAGE, p-value corrected by bonferroni = 0.0
+FRSCIC, p-value corrected by bonferroni = 0.0
+Tü Par, p-value corrected by bonferroni = 0.0
+Thang CIC, p-value corrected by bonferroni = 0.0
+temu_bsc, p-value corrected by bonferroni = 0.784</code></pre>
+</div>
+</div>
+<div id="cell-scatterM" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>sns.set_theme(style<span class="op">=</span><span class="st">"ticks"</span>)</span>
+<span id="cb19-2"><a href=""></a></span>
+<span id="cb19-3"><a href=""></a>sns.pairplot(df_wide_format_dynamic, hue<span class="op">=</span><span class="st">'team'</span>, corner<span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="exa-SMNM_files/figure-revealjs/scatterm-output-1.png" id="scatterm" width="1119" height="943"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section></section>
@@ -1589,9 +2334,7 @@ Figure&nbsp;15: Confidence intervals of differences
 <section id="acknowledgments" class="slide level2">
 <h2>Acknowledgments</h2>
 <p>We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.</p>
-</section>
-<section id="thank-you-for-your-attention" class="slide level2">
-<h2>Thank you for your attention!</h2>
+<h3 id="thank-you-for-your-attention">Thank you for your attention!</h3>
 <p>Please feel free to ask any questions.</p>
 
 </section></section>
