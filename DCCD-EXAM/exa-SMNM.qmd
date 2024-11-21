@@ -647,9 +647,11 @@ for metric, diffs in diff['winner'].items():
         print(f'{key}, p-value corrected by {correction} = {value}')
 
 ```
+### More
 
 ```{python}
 #| echo: false
+#| label: p-value_difference_holmM
 # Supongamos que perf_recuperado['samples'] es tu lista de listas
 #lista_de_listas = perf_recuperado['samples']
 #print(lista_de_listas)
@@ -682,8 +684,10 @@ df_wide_format_dynamic = dict_to_wide_format_df_dynamic(perf['samples'])
 ```{python}
 #| echo: true
 #| label: scatterM
+#| out-width: 50%
+#| out-height: 50%
 sns.set_theme(style="ticks")
-sns.pairplot(df_wide_format_dynamic, hue='team', corner= True)
+sns.pairplot(df_wide_format_dynamic, hue='team', corner= True, height=1.8)
 ```
 :::
 
