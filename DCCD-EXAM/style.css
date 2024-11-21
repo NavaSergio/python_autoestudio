@@ -12,6 +12,7 @@ $presentation-heading-text-align: center !default;
 $presentation-heading-text-transform: uppercase !default;
 
 
+
 .custom-small table {
   font-size: .6em
 }
@@ -34,5 +35,25 @@ $presentation-heading-text-transform: uppercase !default;
   width: 100x !important;
   max-width: unset !important;
   max-height: unset !important;
+}
+
+.bigger {
+  font-size: 1.25em; /* Ajusta el tamaño según lo necesario */
+}
+
+.table-caption {
+  text-align: center;
+}
+
+#tbl-mytable .table-caption {
+  text-align: center;
+}
+
+.figure-caption {
+  text-align: center;
+}
+
+table {
+  background-color: white;
 }
 

@@ -60,7 +60,7 @@ jupyter: python3
 ## A case  study {.smaller}
 
 :::: fragment
-::: custom-small
+
 | Obs        | Gold Standard | WordUp.01 | ... | SQYQP.01 |
 |------------|---------------|-----------|-----|----------|
 | 1          | favor         | favor     | ... | favor    |
@@ -70,14 +70,13 @@ jupyter: python3
 | ...        | ...           | ...       | ... | ...      |
 | $n_{test}$ | none          | favor     | ... | against  |
 
-: Results for VaxxStance Close track - contextual {#tbl-VaxxStance1 .striped .hover }
-:::
+: Results for VaxxStance Close track - contextual (2021). {#tbl-VaxxStance1 .striped .hover }
+
 ::::
 
 :::: {.fragment .fade-in-then-out}
 ### Leaderboard
 
-::: custom-small
 | System            | Basque |
 |-------------------|--------|
 | WordUp.01         | 0.5734 |
@@ -86,8 +85,8 @@ jupyter: python3
 | SQYQP.01          | 0.4256 |
 | MultiAztertest.02 | 0.3428 |
 
-: Results using Macro-averaged F1 Score for "favor" and "against". {#tbl-VaxxStance2 .striped .hover}
-:::
+: Macro-averaged F1 Scores for "favor" and "against" in the VaxxStance Close Track (2021) - Contextual Evaluation. {#tbl-VaxxStance2 .striped .hover}
+
 ::::
 
 ## Objectives
@@ -106,7 +105,7 @@ To investigate and implement an evaluation scheme based on robust statistical me
 
 ## literature review {  transition="slide"}
 
-::: custom-small
+
 | Author(s) | Title |
 |----|----|
 | Dietterich, T.G. (1998) | "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms" |
@@ -115,12 +114,12 @@ To investigate and implement an evaluation scheme based on robust statistical me
 | Lacoste et al. (2012) | "Bayesian Comparison of Machine Learning Algorithms on Single and Multiple Datasets" |
 | Wainer, J. (2016) | "Comparison of 14 Methods to Predict Employee Attrition" |
 | Raschka, S. (2020) | "Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning" |
-:::
+
+:  List of key articles reviewed, including their authors and titles, providing foundational insights into statistical tests and evaluation methods in machine learning. {#tbl-LitReview .striped .hover}
 
 ## {.smaller .scrollable transition="slide"}
 
 
-::: custom-small
 | Author | Method or Test | Requires only predictions, not the algorithm | Allows multiple comparisons | Uses a single dataset | Uses the competition's given metric |
 |----|----|----|----|----|----|
 | Dietterich, T.G. | McNemar | X | O | X | O |
@@ -145,27 +144,30 @@ To investigate and implement an evaluation scheme based on robust statistical me
 | Raschka, S. | 5x2cv | O | O | X | O |
 | Raschka, S. | McNemar | X | O | X | O |
 | Raschka, S. | F-test | O | X | X | O |
-:::
+
+:  Comparison of methods and tests used in machine learning evaluation frameworks, highlighting their requirements and characteristics, including whether they require only predictions, allow multiple comparisons, use a single dataset, or rely on the competition's provided metric. {#tbl-LitReview2 .striped .hover}
+
 
 # Proposed methodology
 
 ## Bootstrapping {.smaller  .scrollable transition="slide"}
 ::::: columns
-::: {.column width="40%"}
+::: {.column .bigger width="40%"}
 In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size, see @fig-bootstrap
 :::
-:::  {.column width="60%"}
+:::  {.column .fragment  width="60%"}
 ![Bootstrapping](figs/bootstrap.png){#fig-bootstrap width="500" height="250"}
 :::
 ::::
 
-::: fragment 
-:::: custom-small
+::: {.fragment }
+
 ```{python}
 #| echo: false
 #| label: tbl-VaxxStanceEU
-#| fig-cap: "VaxxStance_Textual_eu"
-#| fig-alt: "VaxxStance_Textual_eu"
+#| fig-cap: "Top 5 entries from the 'Results for VaxxStance Close Track - Contextual (2021)'."
+#| fig-alt: "Top 5 entries from the 'Results for VaxxStance Close Track - Contextual (2021)'."
+#| fig-align: center
 from IPython.display import display, Markdown
 import pickle
 import pandas as pd
@@ -177,13 +179,16 @@ with open("datos/MeOffendEs_subtask3.dat", "rb") as archivo:
 display(Markdown(df.head().to_markdown(index=True)))
 #print(df.head())
 ```
+
+
+:::
+:::  {.fragment }
+
 ```{python}
 #| echo: false
-#| label: tabla-f1MeOffendEs
-#| fig-cap: "Macro-averaged F1 score (Pos, Neg) Sample distribution VaxxStance_Textual_eu"
-#| fig-alt: "Macro-averaged F1 score (Pos, Neg) Sample distribution VaxxStance_Textual_eu"
-
-
+#| label: tbl-f1VaxxStanceEU
+#| fig-cap: "Top 5 entries from the 'Results for VaxxStance Close Track - Contextual (2021)' using Macro-averaged F1 Score for 'favor' and 'against'."
+#| fig-alt: "Top 5 entries from the 'Results for VaxxStance Close Track - Contextual (2021)' using Macro-averaged F1 Score for 'favor' and 'against'."
 
 # Recuperar el objeto del archivo
 with open("datos/VaxxStance_Textual_eu_paper.dat", "rb") as archivo:
@@ -192,14 +197,14 @@ with open("datos/VaxxStance_Textual_eu_paper.dat", "rb") as archivo:
 #print(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head())
 display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head().to_markdown(index=True)))
 ```
-::::
+
 :::
 
 ## Comparison of Classifiers {.smaller}
 
 @tbl-independent provides the ordered confidence interval estimates obtained through bootstrapping, while @fig-independent-samples displays these estimates in a plot.
 
-::: custom-small
+
 |   | LCI | Score | UCI |   |   | LCI | Score | UCI |
 |----|----|----|----|----|----|----|----|----|
 | **Basque** |  |  |  |  | **Spanish** |  |  |  |
@@ -210,7 +215,7 @@ display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None'])
 | **MultiAztertest.02** | 0.2664 | 0.3402 | 0.4139 |  | **MultiAztertest.02** | 0.5945 | 0.6391 | 0.6837 |
 
 : Results Table for Basque and Spanish {#tbl-independent .striped .hover}
-:::
+
 
 
 ![Independent Samples](figs/ordenado2.png){#fig-independent-samples width="600" height="300"}
@@ -282,7 +287,6 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 -   **Benjamini-Hochberg (BH) procedure**: Controls the false discovery rate (FDR).
 :::
 
-------------------------------------------------------------------------
 
 ## 
 
@@ -329,7 +333,7 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 
 ## Analysis of NLP Competitions {.smaller .scrollable transition="slide"}
 
-::: custom-small
+
 | Competition | Subtask / Language | Metric Used | Data Considered |
 |----|----|----|----|
 | MEX-A3T 2019 | Author Profiling (Spanish, text and images) | Macro-averaged F1 Score | All participants |
@@ -347,7 +351,7 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 | PAR-MEX 2022 | Paraphrase Identification (Mexican Spanish) | F1 Score | All participants (Best Runs) |
 
 : Table Metrics and data considered across various competitions {#tbl-Competitions .striped .hover}
-:::
+
 
 ------------------------------------------------------------------------
 
@@ -728,6 +732,12 @@ To investigate and implement an evaluation scheme based on robust statistical me
 
 We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.
 
-### Thank you for your attention!
+##
+
+
+
+::: {.r-fit-text}
+Thank you for your attention!
+:::
 
 Please feel free to ask any questions.

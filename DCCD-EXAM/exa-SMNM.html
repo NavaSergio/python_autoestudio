@@ -460,6 +460,7 @@ PhD Mario Graff Guerrero
 <li><a href="#/summary-of-research" id="/toc-summary-of-research">Summary of Research</a></li>
 <li><a href="#/contributions-to-knowledge" id="/toc-contributions-to-knowledge">Contributions to Knowledge</a></li>
 <li><a href="#/acknowledgments" id="/toc-acknowledgments">Acknowledgments</a></li>
+
 </ul></li>
 </ul>
 </nav>
@@ -495,11 +496,10 @@ Figure&nbsp;1: Challenge
 <section id="a-case-study" class="slide level2 smaller">
 <h2>A case study</h2>
 <div class="fragment">
-<div class="custom-small">
 <div id="tbl-VaxxStance1" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-VaxxStance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Results for VaxxStance Close track - contextual
+Table&nbsp;1: Results for VaxxStance Close track - contextual (2021).
 </figcaption>
 <div aria-describedby="tbl-VaxxStance1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
@@ -561,14 +561,12 @@ Table&nbsp;1: Results for VaxxStance Close track - contextual
 </figure>
 </div>
 </div>
-</div>
 <div class="fragment fade-in-then-out">
 <h3 id="leaderboard">Leaderboard</h3>
-<div class="custom-small">
 <div id="tbl-VaxxStance2" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-VaxxStance2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “against”.
+Table&nbsp;2: Macro-averaged F1 Scores for “favor” and “against” in the VaxxStance Close Track (2021) - Contextual Evaluation.
 </figcaption>
 <div aria-describedby="tbl-VaxxStance2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
@@ -605,7 +603,6 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 </figure>
 </div>
 </div>
-</div>
 </section>
 <section id="objectives" class="slide level2">
 <h2>Objectives</h2>
@@ -622,8 +619,13 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 </section>
 <section id="literature-review" class="slide level2" data-transition="slide">
 <h2>literature review</h2>
-<div class="custom-small">
-<table class="caption-top">
+<div id="tbl-LitReview" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-LitReview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: List of key articles reviewed, including their authors and titles, providing foundational insights into statistical tests and evaluation methods in machine learning.
+</figcaption>
+<div aria-describedby="tbl-LitReview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -662,11 +664,18 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section>
 <section id="section" class="slide level2 smaller scrollable" data-transition="slide">
 <h2></h2>
-<div class="custom-small">
-<table class="caption-top" style="width:100%;">
+<div id="tbl-LitReview2" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-LitReview2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Comparison of methods and tests used in machine learning evaluation frameworks, highlighting their requirements and characteristics, including whether they require only predictions, allow multiple comparisons, use a single dataset, or rely on the competition’s provided metric.
+</figcaption>
+<div aria-describedby="tbl-LitReview2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -865,6 +874,8 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section></section>
 <section>
 <section id="proposed-methodology" class="title-slide slide level1 center">
@@ -874,9 +885,9 @@ Table&nbsp;2: Results using Macro-averaged F1 Score for “favor” and “again
 <section id="bootstrapping" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>Bootstrapping</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column bigger" style="width:40%;">
 <p>In statistics refers to drawing conclusions about a statistics’ sampling distribution by resampling the sample with replacement data as though it were a population with a fixed size, see <a href="#/fig-bootstrap" class="quarto-xref">Figure&nbsp;2</a></p>
-</div><div class="column" style="width:60%;">
+</div><div class="column fragment" style="width:60%;">
 <div id="fig-bootstrap" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-bootstrap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -889,7 +900,6 @@ Figure&nbsp;2: Bootstrapping
 </div>
 </div></div>
 <div class="fragment">
-<div class="custom-small">
 <div id="tbl-vaxxstanceeu" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display cell-output-markdown">
 <table class="caption-top">
@@ -961,11 +971,13 @@ Figure&nbsp;2: Bootstrapping
 </tr>
 </tbody>
 </table>
-<p>VaxxStance_Textual_eu</p>
+<p>Top 5 entries from the ‘Results for VaxxStance Close Track - Contextual (2021)’.</p>
 </div>
 </div>
-<div id="cell-tabla-f1MeOffendEs" class="cell" data-execution_count="2">
-<div id="tabla-f1meoffendes" class="cell-output cell-output-display cell-output-markdown">
+</div>
+<div class="fragment">
+<div id="tbl-f1vaxxstanceeu" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown">
 <table class="caption-top">
 <colgroup>
 <col style="width: 4%">
@@ -1028,20 +1040,18 @@ Figure&nbsp;2: Bootstrapping
 </tr>
 </tbody>
 </table>
-<p>Macro-averaged F1 score (Pos, Neg) Sample distribution VaxxStance_Textual_eu</p>
-</div>
+<p>Top 5 entries from the ‘Results for VaxxStance Close Track - Contextual (2021)’ using Macro-averaged F1 Score for ‘favor’ and ‘against’.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="comparison-of-classifiers" class="slide level2 smaller">
 <h2>Comparison of Classifiers</h2>
-<p><a href="#/tbl-independent" class="quarto-xref">Table&nbsp;3</a> provides the ordered confidence interval estimates obtained through bootstrapping, while <a href="#/fig-independent-samples" class="quarto-xref">Figure&nbsp;3</a> displays these estimates in a plot.</p>
-<div class="custom-small">
+<p><a href="#/tbl-independent" class="quarto-xref">Table&nbsp;5</a> provides the ordered confidence interval estimates obtained through bootstrapping, while <a href="#/fig-independent-samples" class="quarto-xref">Figure&nbsp;3</a> displays these estimates in a plot.</p>
 <div id="tbl-independent" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-independent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Results Table for Basque and Spanish
+Table&nbsp;5: Results Table for Basque and Spanish
 </figcaption>
 <div aria-describedby="tbl-independent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top" style="width:100%;">
@@ -1141,7 +1151,6 @@ Table&nbsp;3: Results Table for Basque and Spanish
 </div>
 </figure>
 </div>
-</div>
 <div id="fig-independent-samples" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-independent-samples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1155,12 +1164,12 @@ Figure&nbsp;3: Independent Samples
 </section>
 <section id="difference-against-winner" class="slide level2 smaller">
 <h2>Difference against winner</h2>
-<p><a href="#/tbl-Paired" class="quarto-xref">Table&nbsp;4</a> provides the confidence intervals comparing the top team with lower-ranking teams, while <a href="#/fig-paired-samples" class="quarto-xref">Figure&nbsp;4</a> displays these intervals in a plot.</p>
+<p><a href="#/tbl-Paired" class="quarto-xref">Table&nbsp;6</a> provides the confidence intervals comparing the top team with lower-ranking teams, while <a href="#/fig-paired-samples" class="quarto-xref">Figure&nbsp;4</a> displays these intervals in a plot.</p>
 <div class="custom-small">
 <div id="tbl-Paired" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
+Table&nbsp;6: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 </figcaption>
 <div aria-describedby="tbl-Paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top" style="width:100%;">
@@ -1285,7 +1294,7 @@ Figure&nbsp;5: histogram of differences
 <div id="tbl-Basque" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Basque-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5: Differences of F₁ score for Basque
+Table&nbsp;7: Differences of F₁ score for Basque
 </figcaption>
 <div aria-describedby="tbl-Basque-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
@@ -1365,7 +1374,7 @@ Table&nbsp;5: Differences of F₁ score for Basque
 <div id="tbl-p-values" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-p-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.
+Table&nbsp;8: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.
 </figcaption>
 <div aria-describedby="tbl-p-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top" style="width:100%;">
@@ -1493,7 +1502,7 @@ Table&nbsp;6: Estimated p-value for the F₁ difference without adjustment and w
 <div id="tbl-info-summary" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7: Metrics Used for Comparison.
+Table&nbsp;9: Metrics Used for Comparison.
 </figcaption>
 <div aria-describedby="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
@@ -1554,11 +1563,10 @@ Table&nbsp;7: Metrics Used for Comparison.
 </section>
 <section id="analysis-of-nlp-competitions" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>Analysis of NLP Competitions</h2>
-<div class="custom-small">
 <div id="tbl-Competitions" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8: Table Metrics and data considered across various competitions
+Table&nbsp;10: Table Metrics and data considered across various competitions
 </figcaption>
 <div aria-describedby="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
@@ -1660,7 +1668,6 @@ Table&nbsp;8: Table Metrics and data considered across various competitions
 </div>
 </figure>
 </div>
-</div>
 </section>
 <section id="results-for-the-various-challenges" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>Results for the Various Challenges</h2>
@@ -1668,7 +1675,7 @@ Table&nbsp;8: Table Metrics and data considered across various competitions
 <div id="tbl-Results" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9: Results for the Various Challenges
+Table&nbsp;11: Results for the Various Challenges
 </figcaption>
 <div aria-describedby="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top" style="width:100%;">
@@ -1802,7 +1809,7 @@ Table&nbsp;9: Results for the Various Challenges
 <div id="fig-meoffendes" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-meoffendes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes-output-1.png" alt="Confidence intervals" width="481" height="472">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes-output-1.png" alt="Confidence intervals" width="485" height="473">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meoffendes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Confidence intervals
@@ -1816,7 +1823,7 @@ Figure&nbsp;6: Confidence intervals
 <div id="fig-meoffendes2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence Intervals of Differences">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-meoffendes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes2-output-1.png" alt="Confidence Intervals of Differences" width="562" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-meoffendes2-output-1.png" alt="Confidence Intervals of Differences" width="559" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meoffendes2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Confidence Intervals of Differences
@@ -1839,7 +1846,7 @@ Figure&nbsp;7: Confidence Intervals of Differences
 <div id="fig-detoxis" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-detoxis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis-output-1.png" alt="Confidence intervals" width="480" height="472">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis-output-1.png" alt="Confidence intervals" width="483" height="473">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-detoxis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Confidence intervals
@@ -1853,7 +1860,7 @@ Figure&nbsp;8: Confidence intervals
 <div id="fig-detoxis2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-detoxis2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis2-output-1.png" alt="Confidence intervals of differences" width="560" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-detoxis2-output-1.png" alt="Confidence intervals of differences" width="558" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-detoxis2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9: Confidence intervals of differences
@@ -1876,7 +1883,7 @@ Figure&nbsp;9: Confidence intervals of differences
 <div id="fig-parmex" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-parmex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex-output-1.png" alt="Confidence intervals" width="482" height="472">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex-output-1.png" alt="Confidence intervals" width="486" height="473">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10: Confidence intervals
@@ -1890,7 +1897,7 @@ Figure&nbsp;10: Confidence intervals
 <div id="fig-parmex2" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-parmex2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex2-output-1.png" alt="Confidence intervals of differences" width="563" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex2-output-1.png" alt="Confidence intervals of differences" width="559" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11: Confidence intervals of differences
@@ -1974,7 +1981,7 @@ Figure&nbsp;13: Confidence Intervals of Differences
 <div id="fig-parmex3" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-parmex3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3-output-1.png" alt="Confidence intervals" width="482" height="464">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3-output-1.png" alt="Confidence intervals" width="485" height="468">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;14: Confidence intervals
@@ -1991,7 +1998,7 @@ Figure&nbsp;14: Confidence intervals
 <div id="fig-parmex4" class="quarto-float quarto-figure quarto-figure-center" alt="Confidence intervals of differences">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-parmex4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4-output-1.png" alt="Confidence intervals of differences" width="563" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4-output-1.png" alt="Confidence intervals of differences" width="559" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parmex4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15: Confidence intervals of differences
@@ -2004,14 +2011,14 @@ Figure&nbsp;15: Confidence intervals of differences
 <div id="cell-p-value_difference" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>p_values <span class="op">=</span> difference_p_value(diff)</span>
 <span id="cb7-2"><a href=""></a>p_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="p-value_difference" class="cell-output cell-output-display" data-execution_count="83">
+<div id="p-value_difference" class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
  'FRSCIC': 0.0,
  'Abu': 0.0,
  'Thang CIC': 0.0,
- 'Tü Par': 0.258}</code></pre>
+ 'Tü Par': 0.224}</code></pre>
 </div>
 </div>
 <h4 id="bonferroni-correction">Bonferroni Correction</h4>
@@ -2019,7 +2026,7 @@ Figure&nbsp;15: Confidence intervals of differences
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>result <span class="op">=</span> multipletests(<span class="bu">list</span>(p_values.values()), method<span class="op">=</span><span class="st">'bonferroni'</span>)</span>
 <span id="cb9-2"><a href=""></a>p_valuesC <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(p_values.keys(), result[<span class="dv">1</span>]))</span>
 <span id="cb9-3"><a href=""></a>p_valuesC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="p-value_difference_bonferroni" class="cell-output cell-output-display" data-execution_count="84">
+<div id="p-value_difference_bonferroni" class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>{'baseline': 0.0,
  'temu_bsc': 0.0,
  'UC3M-DEEPNLP': 0.0,
@@ -2055,10 +2062,10 @@ Figure&nbsp;15: Confidence intervals of differences
 <div aria-describedby="fig-parmex3m-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex3m-1" class="quarto-float quarto-figure quarto-figure-center" width="482" height="472">
+<div id="fig-parmex3m-1" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex3m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-1.png" id="fig-parmex3m-1" data-ref-parent="fig-parmex3m" width="482" height="472">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-1.png" id="fig-parmex3m-1" data-ref-parent="fig-parmex3m" width="485" height="473">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -2067,10 +2074,10 @@ Figure&nbsp;15: Confidence intervals of differences
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex3m-2" class="quarto-float quarto-figure quarto-figure-center" width="482" height="472">
+<div id="fig-parmex3m-2" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex3m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-2.png" id="fig-parmex3m-2" data-ref-parent="fig-parmex3m" width="482" height="472">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-2.png" id="fig-parmex3m-2" data-ref-parent="fig-parmex3m" width="485" height="473">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -2081,10 +2088,10 @@ Figure&nbsp;15: Confidence intervals of differences
 </div>
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex3m-3" class="quarto-float quarto-figure quarto-figure-center" width="482" height="472">
+<div id="fig-parmex3m-3" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex3m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-3.png" id="fig-parmex3m-3" data-ref-parent="fig-parmex3m" width="482" height="472">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-3.png" id="fig-parmex3m-3" data-ref-parent="fig-parmex3m" width="485" height="473">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c)
@@ -2093,10 +2100,10 @@ Figure&nbsp;15: Confidence intervals of differences
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex3m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex3m-4" class="quarto-float quarto-figure quarto-figure-center" width="482" height="472">
+<div id="fig-parmex3m-4" class="quarto-float quarto-figure quarto-figure-center" height="473" width="485">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex3m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-4.png" id="fig-parmex3m-4" data-ref-parent="fig-parmex3m" width="482" height="472">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex3m-output-4.png" id="fig-parmex3m-4" data-ref-parent="fig-parmex3m" width="485" height="473">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex3m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (d)
@@ -2119,10 +2126,10 @@ Figure&nbsp;16
 <div aria-describedby="fig-parmex4m-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex4m-1" class="quarto-float quarto-figure quarto-figure-center" width="563" height="484">
+<div id="fig-parmex4m-1" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex4m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-1.png" id="fig-parmex4m-1" data-ref-parent="fig-parmex4m" width="563" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-1.png" id="fig-parmex4m-1" data-ref-parent="fig-parmex4m" width="559" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a)
@@ -2131,10 +2138,10 @@ Figure&nbsp;16
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex4m-2" class="quarto-float quarto-figure quarto-figure-center" width="563" height="484">
+<div id="fig-parmex4m-2" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex4m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-2.png" id="fig-parmex4m-2" data-ref-parent="fig-parmex4m" width="563" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-2.png" id="fig-parmex4m-2" data-ref-parent="fig-parmex4m" width="559" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b)
@@ -2145,10 +2152,10 @@ Figure&nbsp;16
 </div>
 <div class="quarto-layout-row">
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex4m-3" class="quarto-float quarto-figure quarto-figure-center" width="560" height="484">
+<div id="fig-parmex4m-3" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex4m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-3.png" id="fig-parmex4m-3" data-ref-parent="fig-parmex4m" width="560" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-3.png" id="fig-parmex4m-3" data-ref-parent="fig-parmex4m" width="559" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c)
@@ -2157,10 +2164,10 @@ Figure&nbsp;16
 </div>
 </div>
 <div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-parmex4m" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-parmex4m-4" class="quarto-float quarto-figure quarto-figure-center" width="563" height="484">
+<div id="fig-parmex4m-4" class="quarto-float quarto-figure quarto-figure-center" height="488" width="559">
 <figure class="quarto-float quarto-subfloat-fig">
 <div aria-describedby="fig-parmex4m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-4.png" id="fig-parmex4m-4" data-ref-parent="fig-parmex4m" width="563" height="484">
+<img data-src="exa-SMNM_files/figure-revealjs/fig-parmex4m-output-4.png" id="fig-parmex4m-4" data-ref-parent="fig-parmex4m" width="559" height="488">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-parmex4m-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (d)
@@ -2188,7 +2195,7 @@ p-value for the difference with UC3M-DEEPNLP 0.0
 p-value for the difference with Abu 0.0
 p-value for the difference with baseline 0.0
 p-value for the difference with FRSCIC 0.0
-p-value for the difference with Tü Par 0.212
+p-value for the difference with Tü Par 0.234
 p-value for the difference with Thang CIC 0.0
 p-value for the difference with temu_bsc 0.0
 
@@ -2197,13 +2204,13 @@ p-value for the difference with UC3M-DEEPNLP 0.0
 p-value for the difference with Abu 0.0
 p-value for the difference with baseline 0.0
 p-value for the difference with FRSCIC 0.0
-p-value for the difference with Tü Par 0.176
+p-value for the difference with Tü Par 0.188
 p-value for the difference with Thang CIC 0.0
 p-value for the difference with temu_bsc 0.0
 
 For the metric precision_score the best is NLP-CIC-TAGE
-p-value for the difference with UC3M-DEEPNLP 0.018
-p-value for the difference with Abu 0.006
+p-value for the difference with UC3M-DEEPNLP 0.014
+p-value for the difference with Abu 0.002
 p-value for the difference with baseline 0.0
 p-value for the difference with FRSCIC 0.0
 p-value for the difference with Tü Par 0.0
@@ -2215,9 +2222,9 @@ p-value for the difference with UC3M-DEEPNLP 0.0
 p-value for the difference with Abu 0.0
 p-value for the difference with NLP-CIC-TAGE 0.0
 p-value for the difference with FRSCIC 0.0
-p-value for the difference with Tü Par 0.0
+p-value for the difference with Tü Par 0.002
 p-value for the difference with Thang CIC 0.0
-p-value for the difference with temu_bsc 0.098</code></pre>
+p-value for the difference with temu_bsc 0.096</code></pre>
 </div>
 </div>
 <h4 id="bonferroni-correction-1">Bonferroni Correction</h4>
@@ -2250,8 +2257,8 @@ Thang CIC, p-value corrected by bonferroni = 0.0
 temu_bsc, p-value corrected by bonferroni = 0.0
 
 For the metric precision_score the best is NLP-CIC-TAGE
-UC3M-DEEPNLP, p-value corrected by bonferroni = 0.126
-Abu, p-value corrected by bonferroni = 0.042
+UC3M-DEEPNLP, p-value corrected by bonferroni = 0.098
+Abu, p-value corrected by bonferroni = 0.014
 baseline, p-value corrected by bonferroni = 0.0
 FRSCIC, p-value corrected by bonferroni = 0.0
 Tü Par, p-value corrected by bonferroni = 0.0
@@ -2263,9 +2270,9 @@ UC3M-DEEPNLP, p-value corrected by bonferroni = 0.0
 Abu, p-value corrected by bonferroni = 0.0
 NLP-CIC-TAGE, p-value corrected by bonferroni = 0.0
 FRSCIC, p-value corrected by bonferroni = 0.0
-Tü Par, p-value corrected by bonferroni = 0.0
+Tü Par, p-value corrected by bonferroni = 0.014
 Thang CIC, p-value corrected by bonferroni = 0.0
-temu_bsc, p-value corrected by bonferroni = 0.686</code></pre>
+temu_bsc, p-value corrected by bonferroni = 0.672</code></pre>
 </div>
 </div>
 </div>
@@ -2335,7 +2342,12 @@ temu_bsc, p-value corrected by bonferroni = 0.686</code></pre>
 <section id="acknowledgments" class="slide level2">
 <h2>Acknowledgments</h2>
 <p>We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.</p>
-<h3 id="thank-you-for-your-attention">Thank you for your attention!</h3>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>Thank you for your attention!</p>
+</div>
 <p>Please feel free to ask any questions.</p>
 
 </section></section>
