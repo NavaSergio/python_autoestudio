@@ -9,8 +9,8 @@
 <link href="exa-SMNM_files/libs/quarto-html/quarto-syntax-highlighting-3a01e2046221230fdceeea94b1ec5d67.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.30">
 
-  <meta name="author" content="Sergio M. Nava Muñoz">
-  <meta name="author" content="PhD Mario Graff Guerrero">
+  <meta name="author" content="Ph.D.&nbsp;Candidate Sergio M. Nava Muñoz">
+  <meta name="author" content="(Advisor) Ph.D.&nbsp;Mario Graff Guerrero">
   <meta name="dcterms.date" content="2024-11-27">
   <title>Analysis of Systems’ Performance in Competitions Challenges</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="exa-SMNM_files/libs/revealjs/dist/theme/quarto-2d5e57dd1c944d7aab7932d27f276b50.css">
+  <link rel="stylesheet" href="exa-SMNM_files/libs/revealjs/dist/theme/quarto-93e7050e729d0d602019ff332ff51b93.css">
   <link rel="stylesheet" href="style.css">
   <link href="exa-SMNM_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="exa-SMNM_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -400,7 +400,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Sergio M. Nava Muñoz 
+Ph.D.&nbsp;Candidate Sergio M. Nava Muñoz 
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:nava@cimat.mx">nava@cimat.mx</a>
@@ -414,13 +414,13 @@ Sergio M. Nava Muñoz
     </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-PhD Mario Graff Guerrero 
+(Advisor) Ph.D.&nbsp;Mario Graff Guerrero 
 </div>
 <div class="quarto-title-author-email">
 <a href="mailto:mario.graff@infotec.edu.mx">mario.graff@infotec.edu.mx</a>
 </div>
         <p class="quarto-title-affiliation">
-            INFOTEC
+            CONAHCYT/INFOTEC
           </p>
     </div>
 </div>
@@ -430,38 +430,13 @@ PhD Mario Graff Guerrero
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/introduction" id="/toc-introduction">Introduction</a>
-<ul>
-<li><a href="#/challenge" id="/toc-challenge">Challenge</a></li>
-<li><a href="#/a-case-study" id="/toc-a-case-study">A case study</a></li>
-<li><a href="#/objectives" id="/toc-objectives">Objectives</a></li>
-<li><a href="#/literature-review" id="/toc-literature-review">literature review</a></li>
-
-</ul></li>
-<li><a href="#/proposed-methodology" id="/toc-proposed-methodology">Proposed methodology</a>
-<ul>
-<li><a href="#/bootstrapping" id="/toc-bootstrapping">Bootstrapping</a></li>
-<li><a href="#/comparison-of-classifiers" id="/toc-comparison-of-classifiers">Comparison of Classifiers</a></li>
-<li><a href="#/difference-against-winner" id="/toc-difference-against-winner">Difference against winner</a></li>
-<li><a href="#/hypothesis-testing" id="/toc-hypothesis-testing">Hypothesis Testing</a></li>
-<li><a href="#/multiple-testing" id="/toc-multiple-testing">Multiple Testing</a></li>
-
+<li><a href="#/introduction" id="/toc-introduction">Introduction</a></li>
+<li><a href="#/related-work" id="/toc-related-work">Related Work</a></li>
+<li><a href="#/theory-framework" id="/toc-theory-framework">Theory framework</a></li>
+<li><a href="#/performace-comparison-in-challenge-scheme" id="/toc-performace-comparison-in-challenge-scheme">Performace Comparison in Challenge Scheme</a></li>
 <li><a href="#/competitions-comparison" id="/toc-competitions-comparison">Competitions Comparison</a></li>
-</ul></li>
-<li><a href="#/analysed-competitions" id="/toc-analysed-competitions">Analysed Competitions</a>
-<ul>
-<li><a href="#/analysis-of-nlp-competitions" id="/toc-analysis-of-nlp-competitions">Analysis of NLP Competitions</a></li>
-<li><a href="#/results-for-the-various-challenges" id="/toc-results-for-the-various-challenges">Results for the Various Challenges</a></li>
-<li><a href="#/some-examples" id="/toc-some-examples">Some Examples</a></li>
-<li><a href="#/compstats" id="/toc-compstats">CompStats</a></li>
-</ul></li>
-<li><a href="#/discussion-and-conclusions" id="/toc-discussion-and-conclusions">Discussion and Conclusions</a>
-<ul>
-<li><a href="#/summary-of-research" id="/toc-summary-of-research">Summary of Research</a></li>
-<li><a href="#/contributions-to-knowledge" id="/toc-contributions-to-knowledge">Contributions to Knowledge</a></li>
-<li><a href="#/acknowledgments" id="/toc-acknowledgments">Acknowledgments</a></li>
-
-</ul></li>
+<li><a href="#/package" id="/toc-package">Package</a></li>
+<li><a href="#/discussion-and-conclusions" id="/toc-discussion-and-conclusions">Discussion and Conclusions</a></li>
 </ul>
 </nav>
 </section>
@@ -475,7 +450,7 @@ PhD Mario Graff Guerrero
 <div id="fig-Challenge" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-Challenge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="figs/scheme.png" width="600" height="250">
+<img data-src="figs/Competencia.png" width="600" height="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Challenge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Challenge
@@ -486,15 +461,16 @@ Figure&nbsp;1: Challenge
 <h3 id="restrictions">Restrictions</h3>
 <ul>
 <li>Comparison of multiple participants (systems)</li>
-<li>Selected performance metrics</li>
+<li>Performance metrics selected by the competition organizers</li>
 <li>A test dataset of fixed size ( <span class="math inline">\(n\)</span> )</li>
-<li>A limited number of submissions per participant</li>
 <li>The Reference (Gold Standard) is known just for the organizers</li>
+<li><em>A limited number of submissions per participant</em></li>
 </ul>
 </div>
 </section>
 <section id="a-case-study" class="slide level2 smaller">
 <h2>A case study</h2>
+<p>The <strong>VaxxStance 2021</strong> challenge aims to determine the stance expressed on the highly controversial topic of the anti-vaxxers movement in two languages: Basque and Spanish. The primary objective is identifying whether a given tweet conveys an <em>against</em>, <em>favor</em>, or <em>neutral</em> (none) stance regarding this predefined topic.</p>
 <div class="fragment">
 <div id="tbl-VaxxStance1" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
@@ -606,19 +582,24 @@ Table&nbsp;2: Macro-averaged F1 Scores for “favor” and “against” in the 
 </section>
 <section id="objectives" class="slide level2">
 <h2>Objectives</h2>
-<h3 id="general-objective">General objective</h3>
-<p>To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.</p>
+<h3 id="general-objective">General Objective</h3>
+<p>Develop a robust statistical evaluation scheme for learning algorithms in challenges, offering validated tools for informed decision-making.</p>
 <div class="fragment">
-<h3 id="specific-objectives">Specific objectives</h3>
+<h3 id="specific-objectives">Specific Objectives</h3>
 <ol type="1">
-<li><strong>Thoroughly review the different elements used in evaluating learning algorithms</strong>, including performance metrics, statistical methods used to infer significance, and test configurations. This review will focus on identifying the most common practices and their limitations to establish a theoretical framework that supports the design of new evaluation schemes.</li>
-<li><strong>Examine in detail the characteristics and criteria used by the main Machine Learning competitions</strong>, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.</li>
-<li><strong>Design evaluation schemes for learning algorithms that integrate advanced statistical tools</strong> based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.</li>
+<li>Review evaluation elements (metrics, statistical methods, configurations) to identify best practices and limitations.</li>
+<li>Analyze key ML competitions to assess validation processes, transparency, and fairness.</li>
+<li>Design advanced statistical evaluation schemes, validate through simulations or collaborations, and provide implementation guidelines.</li>
 </ol>
 </div>
+</section></section>
+<section>
+<section id="related-work" class="title-slide slide level1 smaller center">
+<h1>Related Work</h1>
+
 </section>
-<section id="literature-review" class="slide level2" data-transition="slide">
-<h2>literature review</h2>
+<section id="related-work-1" class="slide level2" data-transition="slide">
+<h2>Related work</h2>
 <div id="tbl-LitReview" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-LitReview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -654,10 +635,6 @@ Table&nbsp;3: List of key articles reviewed, including their authors and titles,
 <td>“Bayesian Comparison of Machine Learning Algorithms on Single and Multiple Datasets”</td>
 </tr>
 <tr class="odd">
-<td>Wainer, J. (2016)</td>
-<td>“Comparison of 14 Methods to Predict Employee Attrition”</td>
-</tr>
-<tr class="even">
 <td>Raschka, S. (2020)</td>
 <td>“Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning”</td>
 </tr>
@@ -667,15 +644,15 @@ Table&nbsp;3: List of key articles reviewed, including their authors and titles,
 </figure>
 </div>
 </section>
-<section id="section" class="slide level2 smaller scrollable" data-transition="slide">
-<h2></h2>
-<div id="tbl-LitReview2" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<section id="comparison-of-methods-and-tests-used-in-ml-evaluation-frameworks" class="slide level2 smaller scrollable" data-transition="slide">
+<h2>Comparison of methods and tests used in ML evaluation frameworks</h2>
+<div id="tbl-LitReview2" class="striped hover fixed-header-table quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-LitReview2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Comparison of methods and tests used in machine learning evaluation frameworks, highlighting their requirements and characteristics, including whether they require only predictions, allow multiple comparisons, use a single dataset, or rely on the competition’s provided metric.
 </figcaption>
 <div aria-describedby="tbl-LitReview2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top" style="width:100%;">
+<table class="table-striped table-hover fixed-header-table caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 16%">
@@ -824,30 +801,6 @@ Table&nbsp;4: Comparison of methods and tests used in machine learning evaluatio
 <td>X</td>
 </tr>
 <tr class="odd">
-<td>Wainer, J.</td>
-<td>ANOVA</td>
-<td>O</td>
-<td>X</td>
-<td>X</td>
-<td>O</td>
-</tr>
-<tr class="even">
-<td>Wainer, J.</td>
-<td>Tukey</td>
-<td>O</td>
-<td>X</td>
-<td>X</td>
-<td>O</td>
-</tr>
-<tr class="odd">
-<td>Wainer, J.</td>
-<td>Bonferroni</td>
-<td>O</td>
-<td>X</td>
-<td>X</td>
-<td>O</td>
-</tr>
-<tr class="even">
 <td>Raschka, S.</td>
 <td>5x2cv</td>
 <td>O</td>
@@ -855,7 +808,7 @@ Table&nbsp;4: Comparison of methods and tests used in machine learning evaluatio
 <td>X</td>
 <td>O</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Raschka, S.</td>
 <td>McNemar</td>
 <td>X</td>
@@ -863,7 +816,7 @@ Table&nbsp;4: Comparison of methods and tests used in machine learning evaluatio
 <td>X</td>
 <td>O</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Raschka, S.</td>
 <td>F-test</td>
 <td>O</td>
@@ -876,10 +829,14 @@ Table&nbsp;4: Comparison of methods and tests used in machine learning evaluatio
 </div>
 </figure>
 </div>
+<div class="footer">
+<p>X: Indicates that the feature is present in the method or test.<br>
+O: Indicates that the feature is not present in the method or test.</p>
+</div>
 </section></section>
 <section>
-<section id="proposed-methodology" class="title-slide slide level1 center">
-<h1>Proposed methodology</h1>
+<section id="theory-framework" class="title-slide slide level1 center">
+<h1>Theory framework</h1>
 
 </section>
 <section id="bootstrapping" class="slide level2 smaller scrollable" data-transition="slide">
@@ -1044,6 +1001,11 @@ Figure&nbsp;2: Bootstrapping
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="performace-comparison-in-challenge-scheme" class="title-slide slide level1 center">
+<h1>Performace Comparison in Challenge Scheme</h1>
+
 </section>
 <section id="comparison-of-classifiers" class="slide level2 smaller">
 <h2>Comparison of Classifiers</h2>
@@ -1051,7 +1013,7 @@ Figure&nbsp;2: Bootstrapping
 <div id="tbl-independent" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-independent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5: Results Table for Basque and Spanish
+Table&nbsp;5: Results for VaxxStance Close Track - Contextual (2021) for Basque and Spanish
 </figcaption>
 <div aria-describedby="tbl-independent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top" style="width:100%;">
@@ -1092,12 +1054,12 @@ Table&nbsp;5: Results Table for Basque and Spanish
 <td></td>
 </tr>
 <tr class="even">
-<td><strong>WordUp.01</strong></td>
+<td>WordUp.01</td>
 <td>0.5031</td>
 <td>0.5716</td>
 <td>0.6401</td>
 <td></td>
-<td><strong>WordUp.02</strong></td>
+<td>WordUp.02</td>
 <td>0.7734</td>
 <td>0.8086</td>
 <td>0.8437</td>
@@ -1114,12 +1076,12 @@ Table&nbsp;5: Results Table for Basque and Spanish
 <td>0.8261</td>
 </tr>
 <tr class="even">
-<td><strong>MultiAztertest.01</strong></td>
+<td>MultiAztertest.01</td>
 <td>0.4287</td>
 <td>0.5007</td>
 <td>0.5726</td>
 <td></td>
-<td><strong>MultiAztertest.01</strong></td>
+<td>MultiAztertest.01</td>
 <td>0.6987</td>
 <td>0.7400</td>
 <td>0.7814</td>
@@ -1136,12 +1098,12 @@ Table&nbsp;5: Results Table for Basque and Spanish
 <td>0.7149</td>
 </tr>
 <tr class="even">
-<td><strong>MultiAztertest.02</strong></td>
+<td>MultiAztertest.02</td>
 <td>0.2664</td>
 <td>0.3402</td>
 <td>0.4139</td>
 <td></td>
-<td><strong>MultiAztertest.02</strong></td>
+<td>MultiAztertest.02</td>
 <td>0.5945</td>
 <td>0.6391</td>
 <td>0.6837</td>
@@ -1169,7 +1131,7 @@ Figure&nbsp;3: Independent Samples
 <div id="tbl-Paired" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
+Table&nbsp;6: Results for VaxxStance Close Track - Contextual (2021) for Basque and Spanish. Tha table contains IC of the difference between the top team and the other teams, for Basque (WordUp.01) and Spanish (WordUp.02)
 </figcaption>
 <div aria-describedby="tbl-Paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top" style="width:100%;">
@@ -1186,12 +1148,12 @@ Table&nbsp;6: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th><strong>Basque (WordUp.01)</strong></th>
 <th>LCI</th>
 <th>Diff</th>
 <th>UCI</th>
 <th></th>
-<th></th>
+<th><strong>Spanish (WordUp.02)</strong></th>
 <th>LCI</th>
 <th>Diff</th>
 <th>UCI</th>
@@ -1199,28 +1161,17 @@ Table&nbsp;6: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Basque (WordUp.01)</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><strong>Spanish (WordUp.02)</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>WordUp.02</strong></td>
+<td>WordUp.02</td>
 <td>-0.0371</td>
 <td>0.0269</td>
 <td>0.0910</td>
 <td></td>
-<td><strong>WordUp.01</strong></td>
+<td>WordUp.01</td>
 <td>-0.0120</td>
 <td>0.0184</td>
 <td>0.0488</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>MultiAztertest.01</td>
 <td>-0.0152</td>
 <td>0.0713</td>
@@ -1231,18 +1182,18 @@ Table&nbsp;6: Results Table for Basque (WordUp.01) and Spanish (WordUp.02)
 <td>0.0680</td>
 <td>0.1149</td>
 </tr>
-<tr class="even">
-<td><strong>SQYQP.01</strong></td>
+<tr class="odd">
+<td>SQYQP.01</td>
 <td>0.0543</td>
 <td>0.1485</td>
 <td>0.2427</td>
 <td></td>
-<td><strong>SQYQP.01</strong></td>
+<td>SQYQP.01</td>
 <td>0.0877</td>
 <td>0.1351</td>
 <td>0.1825</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>MultiAztertest.02</td>
 <td>0.1405</td>
 <td>0.2314</td>
@@ -1270,14 +1221,55 @@ Figure&nbsp;4: Paired Samples
 </div>
 </div>
 </section>
-<section id="hypothesis-testing" class="slide level2">
-<h2>Hypothesis Testing</h2>
+<section id="statistical-hypothesis-testing" class="slide level2 smaller scrollable" data-transition="slide">
+<h2>Statistical Hypothesis Testing</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Given the test dataset <span class="math inline">\(x=x_1, \ldots , x_n\)</span>, in which <span class="math inline">\(A\)</span> beats <span class="math inline">\(B\)</span> by a magnitude <span class="math inline">\(\delta(x)=\theta_A (x) - \theta_B (x)&gt;0\)</span> <span class="math display">\[H_0:\theta_A \leq \theta_B;\;\;H_1:\theta_A &gt; \theta_B\]</span></p>
 <p>Estimate: <span class="math display">\[p-value(x)=p(\delta(X)&gt;\delta(x)|H_0,x)\]</span></p>
 <p>As shown in Berg-Kirkpatrick (2012) , the <span class="math inline">\(p\)</span>-value<span class="math inline">\((x)\)</span> can be estimated by computing the fraction of times that this difference is greater than <span class="math inline">\(2\delta(x)\)</span>.</p>
 </div><div class="column fragment" style="width:40%;">
+<div class="custom-tiny">
+<div id="tbl-VaxxStance3" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-VaxxStance3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Macro-averaged F1 Scores for “favor” and “against” in the VaxxStance Close Track (2021) - Contextual Evaluation.
+</figcaption>
+<div aria-describedby="tbl-VaxxStance3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Basque</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>WordUp.01</td>
+<td>0.5734</td>
+</tr>
+<tr class="even">
+<td>WordUp.02</td>
+<td>0.5465</td>
+</tr>
+<tr class="odd">
+<td>MultiAztertest.01</td>
+<td>0.5024</td>
+</tr>
+<tr class="even">
+<td>SQYQP.01</td>
+<td>0.4256</td>
+</tr>
+<tr class="odd">
+<td>MultiAztertest.02</td>
+<td>0.3428</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
 <div id="fig-histogram" class="border-thick quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1294,7 +1286,7 @@ Figure&nbsp;5: histogram of differences
 <div id="tbl-Basque" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Basque-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7: Differences of F₁ score for Basque
+Table&nbsp;8: Differences of F₁ score for Basque
 </figcaption>
 <div aria-describedby="tbl-Basque-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top">
@@ -1348,9 +1340,9 @@ Table&nbsp;7: Differences of F₁ score for Basque
 </div>
 </figure>
 </div>
-</div>
 <div class="footer">
-<p><em>Note: † p&lt;.1,</em> p&lt;.05, ** p&lt;.1, and *** p&lt;.001.*</p>
+<p>Note: † p&lt;.1, * p&lt;.05, ** p&lt;.01, and *** p&lt;.001.</p>
+</div>
 </div>
 </div>
 </section>
@@ -1367,14 +1359,14 @@ Table&nbsp;7: Differences of F₁ score for Basque
 </ul>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <p><strong>Estimated p-values for F1 difference</strong></p>
 <div class="custom-small">
 <div id="tbl-p-values" class="striped hover quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-tbl">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-p-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.
+Table&nbsp;9: Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments.
 </figcaption>
 <div aria-describedby="tbl-p-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-striped table-hover caption-top" style="width:100%;">
@@ -1488,303 +1480,6 @@ Table&nbsp;8: Estimated p-value for the F₁ difference without adjustment and w
 <td>0.0427</td>
 <td>0.0427</td>
 <td>0.0427</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</div>
-</section>
-<section id="competitions-comparison" class="slide level2">
-<h2>Competitions Comparison</h2>
-<div class="custom-small">
-<div id="tbl-info-summary" class="striped hover quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9: Metrics Used for Comparison.
-</figcaption>
-<div aria-describedby="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(n\)</span></td>
-<td>Test data size</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(m\)</span></td>
-<td>Number of participants or runs</td>
-</tr>
-<tr class="odd">
-<td>Ties w/ win</td>
-<td>Number of ties with the winner (corrections: none/Bonferroni/Holm/BH)</td>
-</tr>
-<tr class="even">
-<td>Poss. compars.</td>
-<td>Total possible comparisons (<span class="math inline">\(m \times (m-1)/2\)</span>)</td>
-</tr>
-<tr class="odd">
-<td>none/Bonf./Holm/BH</td>
-<td>Number of ties between competitors with corrections with Adjusted p-value (corrections: none/Bonferroni/Holm/BH)</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(|win.-med|\)</span></td>
-<td>Performance difference between the winner and the competitor in the middle of the table</td>
-</tr>
-<tr class="odd">
-<td>CV</td>
-<td>Coefficient of variation of competitors’ performance. <span class="math inline">\((CV=100\times \frac{s_x}{\overline{x}}\)</span>, where <span class="math inline">\(\overline{x}\)</span> is the mean of <span class="math inline">\(x\)</span> and <span class="math inline">\(s_x\)</span> is the standard deviation of <span class="math inline">\(x)\)</span></td>
-</tr>
-<tr class="even">
-<td>PPI</td>
-<td>Possible Percentage Improvement, e.g., for F1 score, it’s calculated as <span class="math inline">\(100\times(1-F_1^{winner})\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</div>
-</section></section>
-<section>
-<section id="analysed-competitions" class="title-slide slide level1 center">
-<h1>Analysed Competitions</h1>
-
-</section>
-<section id="analysis-of-nlp-competitions" class="slide level2 smaller scrollable" data-transition="slide">
-<h2>Analysis of NLP Competitions</h2>
-<div id="tbl-Competitions" class="striped hover quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10: Table Metrics and data considered across various competitions
-</figcaption>
-<div aria-describedby="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Competition</th>
-<th>Subtask / Language</th>
-<th>Metric Used</th>
-<th>Data Considered</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>MEX-A3T 2019</td>
-<td>Author Profiling (Spanish, text and images)</td>
-<td>Macro-averaged F1 Score</td>
-<td>All participants</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Aggressiveness Detection (Spanish)</td>
-<td>F1 Score</td>
-<td>All participants</td>
-</tr>
-<tr class="odd">
-<td>TASS 2020</td>
-<td>General Polarity (Spanish)</td>
-<td>Macro-averaged F1 Score</td>
-<td>All participants (Best Runs)</td>
-</tr>
-<tr class="even">
-<td><strong>VaxxStance 2021</strong></td>
-<td><strong>Stance Detection (Basque, Spanish)</strong></td>
-<td><strong>Macro-averaged F1 Score for “favor” and “against”</strong></td>
-<td><strong>All participants</strong></td>
-</tr>
-<tr class="odd">
-<td>EXIST 2021</td>
-<td>Sexism Identification (English, Spanish)</td>
-<td>Accuracy</td>
-<td>Top 10 for each language (Best Runs)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sexism Categorization (English, Spanish)</td>
-<td>Macro-averaged F1 Score</td>
-<td>Top 10 for each language (Best Runs)</td>
-</tr>
-<tr class="odd">
-<td>DETOXIS 2021</td>
-<td>Toxicity Detection (Spanish)</td>
-<td>F1 Score</td>
-<td>All participants (Best Runs)</td>
-</tr>
-<tr class="even">
-<td>MeOffendEs 2021</td>
-<td>Offensive Language Identification (Mexican Spanish)</td>
-<td>F1 Score (offensive class)</td>
-<td>All participants (Best Runs)</td>
-</tr>
-<tr class="odd">
-<td>REST-MEX 2021</td>
-<td>Recommendation System (Mexican Spanish)</td>
-<td>MAE</td>
-<td>All participants (baseline)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Sentiment Analysis (Mexican Spanish)</td>
-<td>MAE</td>
-<td>All participants (baseline)</td>
-</tr>
-<tr class="odd">
-<td>REST-MEX 2022</td>
-<td>Sentiment Analysis (Mexican Spanish)</td>
-<td><span class="math inline">\(Measure_S\)</span></td>
-<td>All participants (majority class)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Epidemiological Semaphore (Mexican Spanish)</td>
-<td><span class="math inline">\(Measure_C\)</span></td>
-<td>All participants (majority class)</td>
-</tr>
-<tr class="odd">
-<td>PAR-MEX 2022</td>
-<td>Paraphrase Identification (Mexican Spanish)</td>
-<td>F1 Score</td>
-<td>All participants (Best Runs)</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</section>
-<section id="results-for-the-various-challenges" class="slide level2 smaller scrollable" data-transition="slide">
-<h2>Results for the Various Challenges</h2>
-<div class="custom-small">
-<div id="tbl-Results" class="striped hover quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-tbl">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;11: Results for the Various Challenges
-</figcaption>
-<div aria-describedby="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table-striped table-hover caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Challenge</th>
-<th>DETOXIS 2021</th>
-<th>PAR-MEX 2022</th>
-<th>MeOffendEs 2021</th>
-<th>MEX-A3T 2019 (Agg)</th>
-<th>MEX-A3T 2019 (author profiling)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Task</strong></td>
-<td>Toxicity detection</td>
-<td>Paraphrase Identification</td>
-<td>Non-contextual</td>
-<td>Aggressiveness Detection</td>
-<td>Author Profiling</td>
-</tr>
-<tr class="even">
-<td><strong>Metric</strong></td>
-<td>F1 score</td>
-<td>F1 score</td>
-<td>F1 score</td>
-<td>F1 score</td>
-<td>Macro-averaged F1 score</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(n\)</span></td>
-<td>891</td>
-<td>2821</td>
-<td>2182</td>
-<td>3156</td>
-<td>1500</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(m\)</span></td>
-<td>31</td>
-<td>8</td>
-<td>10</td>
-<td>25</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td><strong>Ties w/ win.</strong></td>
-<td>0/3/0/0</td>
-<td>1/1/1/1</td>
-<td>1/2/2/1</td>
-<td>3/7/4/3</td>
-<td>1/1/1/1</td>
-</tr>
-<tr class="even">
-<td><strong>Poss. compars.</strong></td>
-<td>465</td>
-<td>28</td>
-<td>45</td>
-<td>300</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td><strong>none/Bonf.</strong></td>
-<td>80/135</td>
-<td>6/6</td>
-<td>7/9</td>
-<td>70/91</td>
-<td>2/2</td>
-</tr>
-<tr class="even">
-<td><strong>Holm/BH</strong></td>
-<td>112/85</td>
-<td>6/6</td>
-<td>8/7</td>
-<td>80/63</td>
-<td>2/2</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(|win.-med|\)</span></td>
-<td>0.223</td>
-<td>0.061</td>
-<td>0.078</td>
-<td>0.098</td>
-<td>0.164</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(CV\)</span></td>
-<td>42.600</td>
-<td>4.722</td>
-<td>16.070</td>
-<td>19.620</td>
-<td>46.491</td>
-</tr>
-<tr class="odd">
-<td><strong>PPI</strong></td>
-<td>35.390</td>
-<td>5.758</td>
-<td>28.46</td>
-<td>52.038</td>
-<td>42.581</td>
 </tr>
 </tbody>
 </table>
@@ -1944,13 +1639,461 @@ Figure&nbsp;13: Confidence Intervals of Differences
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="competitions-comparison" class="title-slide slide level1 center">
+<h1>Competitions Comparison</h1>
+
+</section>
+<section id="metrics-used-for-competitions-comparison" class="slide level2">
+<h2>Metrics used for competitions Comparison</h2>
+<div class="custom-small">
+<div id="tbl-info-summary" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10: Metrics used for competitions Comparison.
+</figcaption>
+<div aria-describedby="tbl-info-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>Test data size</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m\)</span></td>
+<td>Number of participants or runs</td>
+</tr>
+<tr class="odd">
+<td>Ties w/ win</td>
+<td>Number of ties with the winner (corrections: none/Bonferroni/Holm/BH)</td>
+</tr>
+<tr class="even">
+<td>Poss. compars.</td>
+<td>Total possible comparisons (<span class="math inline">\(m \times (m-1)/2\)</span>)</td>
+</tr>
+<tr class="odd">
+<td>none/Bonf./Holm/BH</td>
+<td>Number of ties between competitors with corrections with Adjusted p-value (corrections: none/Bonferroni/Holm/BH)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(|win.-med|\)</span></td>
+<td>Performance difference between the winner and the competitor in the middle of the table</td>
+</tr>
+<tr class="odd">
+<td>CV</td>
+<td>Coefficient of variation of competitors’ performance. <span class="math inline">\((CV=100\times \frac{s_x}{\overline{x}}\)</span>, where <span class="math inline">\(\overline{x}\)</span> is the mean of <span class="math inline">\(x\)</span> and <span class="math inline">\(s_x\)</span> is the standard deviation of <span class="math inline">\(x)\)</span></td>
+</tr>
+<tr class="even">
+<td>PPI</td>
+<td>Possible Percentage Improvement, e.g., for F1 score, it’s calculated as <span class="math inline">\(100\times(1-F_1^{winner})\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="analysis-of-nlp-competitions" class="slide level2 smaller scrollable" data-transition="slide">
+<h2>Analysis of NLP Competitions</h2>
+<div id="tbl-Competitions" class="striped hover fixed-header-table quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11: Table Metrics and data considered across various competitions
+</figcaption>
+<div aria-describedby="tbl-Competitions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover fixed-header-table caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Competition</th>
+<th>Subtask / Language</th>
+<th>Metric Used</th>
+<th>Data Considered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MEX-A3T 2019</td>
+<td>Author Profiling (Spanish, text and images)</td>
+<td>Macro-averaged F1 Score</td>
+<td>All participants</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Aggressiveness Detection (Spanish)</td>
+<td>F1 Score</td>
+<td>All participants</td>
+</tr>
+<tr class="odd">
+<td>TASS 2020</td>
+<td>General Polarity (Spanish)</td>
+<td>Macro-averaged F1 Score</td>
+<td>All participants (Best Runs)</td>
+</tr>
+<tr class="even">
+<td><strong>VaxxStance 2021</strong></td>
+<td><strong>Stance Detection (Basque, Spanish)</strong></td>
+<td><strong>Macro-averaged F1 Score for “favor” and “against”</strong></td>
+<td><strong>All participants</strong></td>
+</tr>
+<tr class="odd">
+<td>EXIST 2021</td>
+<td>Sexism Identification (English, Spanish)</td>
+<td>Accuracy</td>
+<td>Top 10 for each language (Best Runs)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Sexism Categorization (English, Spanish)</td>
+<td>Macro-averaged F1 Score</td>
+<td>Top 10 for each language (Best Runs)</td>
+</tr>
+<tr class="odd">
+<td>DETOXIS 2021</td>
+<td>Toxicity Detection (Spanish)</td>
+<td>F1 Score</td>
+<td>All participants (Best Runs)</td>
+</tr>
+<tr class="even">
+<td>MeOffendEs 2021</td>
+<td>Offensive Language Identification (Mexican Spanish)</td>
+<td>F1 Score (offensive class)</td>
+<td>All participants (Best Runs)</td>
+</tr>
+<tr class="odd">
+<td>REST-MEX 2021</td>
+<td>Recommendation System (Mexican Spanish)</td>
+<td>MAE</td>
+<td>All participants (baseline)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Sentiment Analysis (Mexican Spanish)</td>
+<td>MAE</td>
+<td>All participants (baseline)</td>
+</tr>
+<tr class="odd">
+<td>REST-MEX 2022</td>
+<td>Sentiment Analysis (Mexican Spanish)</td>
+<td><span class="math inline">\(Measure_S\)</span></td>
+<td>All participants (majority class)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Epidemiological Semaphore (Mexican Spanish)</td>
+<td><span class="math inline">\(Measure_C\)</span></td>
+<td>All participants (majority class)</td>
+</tr>
+<tr class="odd">
+<td>PAR-MEX 2022</td>
+<td>Paraphrase Identification (Mexican Spanish)</td>
+<td>F1 Score</td>
+<td>All participants (Best Runs)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="results-for-the-various-challenges" class="slide level2 smaller scrollable" data-transition="slide">
+<h2>Results for the Various Challenges</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Table 1</a></li><li><a href="#tabset-2-2">Table 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="custom-small">
+<div id="tbl-Results" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12: Summary of competitions, subtasks, languages, ranking metrics, and participant details for key Natural Language Processing challenges.
+</figcaption>
+<div aria-describedby="tbl-Results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Challenge</th>
+<th>DETOXIS 2021</th>
+<th>PAR-MEX 2022</th>
+<th>MeOffendEs 2021</th>
+<th>MEX-A3T 2019 (Agg)</th>
+<th>MEX-A3T 2019 (author profiling)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Task</strong></td>
+<td>Toxicity detection</td>
+<td>Paraphrase Identification</td>
+<td>Non-contextual</td>
+<td>Aggressiveness Detection</td>
+<td>Author Profiling</td>
+</tr>
+<tr class="even">
+<td><strong>Metric</strong></td>
+<td>F1 score</td>
+<td>F1 score</td>
+<td>F1 score</td>
+<td>F1 score</td>
+<td>Macro-averaged F1 score</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(n\)</span></td>
+<td>891</td>
+<td>2821</td>
+<td>2182</td>
+<td>3156</td>
+<td>1500</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m\)</span></td>
+<td>31</td>
+<td>8</td>
+<td>10</td>
+<td>25</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td><strong>Ties w/ win.</strong></td>
+<td>0/3/0/0</td>
+<td>1/1/1/1</td>
+<td>1/2/2/1</td>
+<td>3/7/4/3</td>
+<td>1/1/1/1</td>
+</tr>
+<tr class="even">
+<td><strong>Poss. compars.</strong></td>
+<td>465</td>
+<td>28</td>
+<td>45</td>
+<td>300</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td><strong>none/Bonf.</strong></td>
+<td>80/135</td>
+<td>6/6</td>
+<td>7/9</td>
+<td>70/91</td>
+<td>2/2</td>
+</tr>
+<tr class="even">
+<td><strong>Holm/BH</strong></td>
+<td>112/85</td>
+<td>6/6</td>
+<td>8/7</td>
+<td>80/63</td>
+<td>2/2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(|win.-med|\)</span></td>
+<td>0.223</td>
+<td>0.061</td>
+<td>0.078</td>
+<td>0.098</td>
+<td>0.164</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(CV\)</span></td>
+<td>42.600</td>
+<td>4.722</td>
+<td>16.070</td>
+<td>19.620</td>
+<td>46.491</td>
+</tr>
+<tr class="odd">
+<td><strong>PPI</strong></td>
+<td>35.390</td>
+<td>5.758</td>
+<td>28.46</td>
+<td>52.038</td>
+<td>42.581</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<p><strong>Metric</strong> Macro-averaged F1 score (FAVOR, AGAINST).</p>
+<div class="custom-small">
+<div id="tbl-CompVaxxStance" class="striped hover quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-CompVaxxStance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;13: Comparison of performance metrics and statistical outcomes for the Close Track (Textual and Contextual) in Spanish and Basque, including number of participants (<span class="math inline">\(m\)</span>), ties, and key statistical measures (<span class="math inline">\(|win.-med|\)</span>, <span class="math inline">\(CV\)</span>, and PPI).
+</figcaption>
+<div aria-describedby="tbl-CompVaxxStance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Close Track-Textual (Spanish)</th>
+<th>Close Track-Textual (Basque)</th>
+<th>Close Track-Contextual (Spanish)</th>
+<th>Close Track-Contextual (Basque)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Language</strong></td>
+<td>Spanish</td>
+<td>Basque</td>
+<td>Spanish</td>
+<td>Basque</td>
+</tr>
+<tr class="even">
+<td><strong><span class="math inline">\(n\)</span></strong></td>
+<td>694</td>
+<td>312</td>
+<td>694</td>
+<td>312</td>
+</tr>
+<tr class="odd">
+<td><strong><span class="math inline">\(m\)</span></strong></td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td><strong>Ties W/ Win. (None)</strong></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><strong>Ties W/ Win. (Bonf.)</strong></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><strong>Ties W/ Win. (Holm)</strong></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><strong>Ties W/ Win. (BH)</strong></td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><strong>Poss. Compars.</strong></td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td><strong>None</strong></td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><strong>Bonf.</strong></td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><strong>Holm</strong></td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><strong>BH</strong></td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td><strong><span class="math inline">\(|win.-med|\)</span></strong></td>
+<td>0.068</td>
+<td>0.071</td>
+<td>0.098</td>
+<td>0.410</td>
+</tr>
+<tr class="even">
+<td><strong><span class="math inline">\(CV\)</span></strong></td>
+<td>9.970</td>
+<td>19.680</td>
+<td>10.463</td>
+<td>64.766</td>
+</tr>
+<tr class="odd">
+<td><strong>PPI</strong></td>
+<td>19.084</td>
+<td>42.660</td>
+<td>10.871</td>
+<td>22.291</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="package" class="title-slide slide level1 center">
+<h1>Package</h1>
+
 </section>
 <section id="compstats" class="slide level2 smaller scrollable" data-transition="slide">
 <h2>CompStats</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Single metric</a></li><li><a href="#tabset-2-2">Multimetric</a></li><li><a href="#tabset-2-3">More</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Single metric</a></li><li><a href="#tabset-3-2">Multimetric</a></li><li><a href="#tabset-3-3">More</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-3-1">
 <p>The package <em>CompStats</em> <a href="http://compstats.readthedocs.org">(compstats.readthedocs.org)</a> implements the ideas presented in this contribution.</p>
 <h4 id="installation">Installation</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>pip install CompStats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2018,7 +2161,7 @@ Figure&nbsp;15: Confidence intervals of differences
  'FRSCIC': 0.0,
  'Abu': 0.0,
  'Thang CIC': 0.0,
- 'Tü Par': 0.224}</code></pre>
+ 'Tü Par': 0.242}</code></pre>
 </div>
 </div>
 <h4 id="bonferroni-correction">Bonferroni Correction</h4>
@@ -2037,7 +2180,7 @@ Figure&nbsp;15: Confidence intervals of differences
 </div>
 </div>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-3-2">
 <h4 id="more-libraries">More Libraries</h4>
 <div id="lib-compstatsm" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="im">from</span> CompStats <span class="im">import</span> performance_multiple_metrics, plot_performance_multiple, difference_multiple, plot_difference_multiple</span>
@@ -2195,7 +2338,7 @@ p-value for the difference with UC3M-DEEPNLP 0.0
 p-value for the difference with Abu 0.0
 p-value for the difference with baseline 0.0
 p-value for the difference with FRSCIC 0.0
-p-value for the difference with Tü Par 0.234
+p-value for the difference with Tü Par 0.214
 p-value for the difference with Thang CIC 0.0
 p-value for the difference with temu_bsc 0.0
 
@@ -2204,17 +2347,17 @@ p-value for the difference with UC3M-DEEPNLP 0.0
 p-value for the difference with Abu 0.0
 p-value for the difference with baseline 0.0
 p-value for the difference with FRSCIC 0.0
-p-value for the difference with Tü Par 0.188
+p-value for the difference with Tü Par 0.198
 p-value for the difference with Thang CIC 0.0
 p-value for the difference with temu_bsc 0.0
 
 For the metric precision_score the best is NLP-CIC-TAGE
-p-value for the difference with UC3M-DEEPNLP 0.014
-p-value for the difference with Abu 0.002
+p-value for the difference with UC3M-DEEPNLP 0.012
+p-value for the difference with Abu 0.006
 p-value for the difference with baseline 0.0
-p-value for the difference with FRSCIC 0.0
+p-value for the difference with FRSCIC 0.002
 p-value for the difference with Tü Par 0.0
-p-value for the difference with Thang CIC 0.0
+p-value for the difference with Thang CIC 0.002
 p-value for the difference with temu_bsc 0.0
 
 For the metric recall_score the best is baseline
@@ -2222,9 +2365,9 @@ p-value for the difference with UC3M-DEEPNLP 0.0
 p-value for the difference with Abu 0.0
 p-value for the difference with NLP-CIC-TAGE 0.0
 p-value for the difference with FRSCIC 0.0
-p-value for the difference with Tü Par 0.002
+p-value for the difference with Tü Par 0.0
 p-value for the difference with Thang CIC 0.0
-p-value for the difference with temu_bsc 0.096</code></pre>
+p-value for the difference with temu_bsc 0.112</code></pre>
 </div>
 </div>
 <h4 id="bonferroni-correction-1">Bonferroni Correction</h4>
@@ -2257,12 +2400,12 @@ Thang CIC, p-value corrected by bonferroni = 0.0
 temu_bsc, p-value corrected by bonferroni = 0.0
 
 For the metric precision_score the best is NLP-CIC-TAGE
-UC3M-DEEPNLP, p-value corrected by bonferroni = 0.098
-Abu, p-value corrected by bonferroni = 0.014
+UC3M-DEEPNLP, p-value corrected by bonferroni = 0.084
+Abu, p-value corrected by bonferroni = 0.042
 baseline, p-value corrected by bonferroni = 0.0
-FRSCIC, p-value corrected by bonferroni = 0.0
+FRSCIC, p-value corrected by bonferroni = 0.014
 Tü Par, p-value corrected by bonferroni = 0.0
-Thang CIC, p-value corrected by bonferroni = 0.0
+Thang CIC, p-value corrected by bonferroni = 0.014
 temu_bsc, p-value corrected by bonferroni = 0.0
 
 For the metric recall_score the best is baseline
@@ -2270,13 +2413,13 @@ UC3M-DEEPNLP, p-value corrected by bonferroni = 0.0
 Abu, p-value corrected by bonferroni = 0.0
 NLP-CIC-TAGE, p-value corrected by bonferroni = 0.0
 FRSCIC, p-value corrected by bonferroni = 0.0
-Tü Par, p-value corrected by bonferroni = 0.014
+Tü Par, p-value corrected by bonferroni = 0.0
 Thang CIC, p-value corrected by bonferroni = 0.0
-temu_bsc, p-value corrected by bonferroni = 0.672</code></pre>
+temu_bsc, p-value corrected by bonferroni = 0.784</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-2-3">
+<div id="tabset-3-3">
 <div id="cell-scatterM" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>sns.set_theme(style<span class="op">=</span><span class="st">"ticks"</span>)</span>
 <span id="cb19-2"><a href=""></a>sns.pairplot(df_wide_format_dynamic, hue<span class="op">=</span><span class="st">'team'</span>, corner<span class="op">=</span> <span class="va">True</span>, height<span class="op">=</span><span class="fl">1.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2299,16 +2442,19 @@ temu_bsc, p-value corrected by bonferroni = 0.672</code></pre>
 </section>
 <section id="summary-of-research" class="slide level2">
 <h2>Summary of Research</h2>
-<ul>
-<li><strong>Objectives</strong>:</li>
-</ul>
-<p>To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.</p>
-<ol type="1">
-<li><strong>Thoroughly review the different elements used in evaluating learning algorithms</strong></li>
-<li><strong>Examine in detail the characteristics and criteria used by the main Machine Learning competitions</strong></li>
-<li><strong>Design evaluation schemes for learning algorithms that integrate advanced statistical tools</strong></li>
-</ol>
+<h3 id="general-objective-1">General Objective</h3>
+<p>Develop a robust statistical evaluation scheme for learning algorithms in challenges, offering validated tools for informed decision-making.</p>
 <div class="fragment">
+<h3 id="specific-objectives-1">Specific Objectives</h3>
+<ol type="1">
+<li>Review evaluation elements (metrics, statistical methods, configurations) to identify best practices and limitations.</li>
+<li>Analyze key ML competitions to assess validation processes, transparency, and fairness.</li>
+<li>Design advanced statistical evaluation schemes, validate through simulations or collaborations, and provide implementation guidelines.</li>
+</ol>
+</div>
+</section>
+<section id="contributions-to-knowledge" class="slide level2">
+<h2>Contributions to Knowledge</h2>
 <ul>
 <li><strong>Key Findings</strong>:
 <ul>
@@ -2316,12 +2462,6 @@ temu_bsc, p-value corrected by bonferroni = 0.672</code></pre>
 <li>Introduced tools for fair competition result comparison.</li>
 <li>Developed a structured evaluation framework for competitions.</li>
 </ul></li>
-</ul>
-</div>
-</section>
-<section id="contributions-to-knowledge" class="slide level2">
-<h2>Contributions to Knowledge</h2>
-<ul>
 <li><strong>Theoretical</strong>:
 <ul>
 <li>Formalization of competition-based algorithm evaluation.</li>
@@ -2341,9 +2481,12 @@ temu_bsc, p-value corrected by bonferroni = 0.672</code></pre>
 </section>
 <section id="acknowledgments" class="slide level2">
 <h2>Acknowledgments</h2>
-<p>We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.</p>
+<p>I would like to express my gratitude to my Ph.D.&nbsp;thesis advisor, <strong>Ph.D.&nbsp;Mario Graff Guerrero</strong>, for their invaluable guidance and support throughout my research journey.</p>
+<div class="fragment">
+<p>We extend our sincere gratitude to the organizers of the competitions analyzed in this work. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.</p>
+</div>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="r-fit-text">
 <p>Thank you for your attention!</p>

@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Systems’ Performance in Competitions Challenges"
 author:
-  - name: Sergio M. Nava Muñoz
+  - name: Ph.D. Candidate Sergio M. Nava Muñoz
     id: sn
     email: nava@cimat.mx
     affiliation: 
@@ -9,12 +9,12 @@ author:
           name: CIMAT/INFOTEC
           city: Aguascalientes
           state: Ags
-  - name: PhD Mario Graff Guerrero
+  - name: (Advisor) Ph.D. Mario Graff Guerrero
     id: mgg
     degrees: PhD
     email: mario.graff@infotec.edu.mx
     affiliation: 
-      - name: INFOTEC
+      - name: CONAHCYT/INFOTEC
         city: Aguascalientes
         state: Ags
 institute:  "Doctorado en Ciencias en Ciencia de Datos"
@@ -23,7 +23,7 @@ date-format: long
 format: 
   revealjs:
     slide-number: true
-    theme: default
+    theme: simple
     fontsize: 1.5em
     logo: figs/logo-infotec.jpeg
     css: style.css
@@ -35,7 +35,7 @@ format:
       data-background-image: /figs/DCCD1.png
       data-background-size: contain 
 toc: TRUE
-toc-depth: 2
+toc-depth: 1
 jupyter: python3
 ---
 
@@ -45,19 +45,21 @@ jupyter: python3
 
 ## Challenge
 
-![Challenge](figs/scheme.png){#fig-Challenge width="600" height="250"}
+![Challenge](figs/Competencia.png){#fig-Challenge width="600" height="300"}
 
 ::: fragment
 ### Restrictions
 
 -   Comparison of multiple participants (systems)
--   Selected performance metrics
+-   Performance metrics selected by the competition organizers
 -   A test dataset of fixed size ( $n$ )
--   A limited number of submissions per participant
 -   The Reference (Gold Standard) is known just for the organizers
+-   *A limited number of submissions per participant*
 :::
 
 ## A case  study {.smaller}
+
+The **VaxxStance 2021** challenge aims to determine the stance expressed on the highly controversial topic of the anti-vaxxers movement in two languages: Basque and Spanish. The primary objective is identifying whether a given tweet conveys an *against*, *favor*, or *neutral* (none) stance regarding this predefined topic.  
 
 :::: fragment
 
@@ -88,22 +90,23 @@ jupyter: python3
 : Macro-averaged F1 Scores for "favor" and "against" in the VaxxStance Close Track (2021) - Contextual Evaluation. {#tbl-VaxxStance2 .striped .hover}
 
 ::::
-
 ## Objectives
 
-### General objective
+### General Objective
 
-To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.
+Develop a robust statistical evaluation scheme for learning algorithms in challenges, offering validated tools for informed decision-making.
 
 ::: fragment
-### Specific objectives
+### Specific Objectives
 
-1.  **Thoroughly review the different elements used in evaluating learning algorithms**, including performance metrics, statistical methods used to infer significance, and test configurations. This review will focus on identifying the most common practices and their limitations to establish a theoretical framework that supports the design of new evaluation schemes.
-2.  **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**, defining as main those with a high impact on the scientific community or pioneers in applying new evaluation methodologies. This objective will include an analysis of result validation processes, the transparency and fairness of evaluations, and the methodologies used for data handling and distribution.
-3.  **Design evaluation schemes for learning algorithms that integrate advanced statistical tools** based on the deficiencies identified in the previous objectives. This design will include prototype schemes evaluated through simulations or collaboration with existing competition organizers to validate their effectiveness and practicality. Clear guidelines for their implementation in different competition contexts will also be developed.
+1. Review evaluation elements (metrics, statistical methods, configurations) to identify best practices and limitations.
+2. Analyze key ML competitions to assess validation processes, transparency, and fairness.
+3. Design advanced statistical evaluation schemes, validate through simulations or collaborations, and provide implementation guidelines.
 :::
 
-## literature review {  transition="slide"}
+# Related Work {.smaller}
+
+## Related work {  transition="slide"}
 
 
 | Author(s) | Title |
@@ -112,12 +115,11 @@ To investigate and implement an evaluation scheme based on robust statistical me
 | Demšar, J. (2006) | "Statistical Comparisons of Classifiers over Multiple Data Sets" |
 | García y Herrera (2008) | "An Extension on Statistical Comparisons of Classifiers over Multiple Data Sets" |
 | Lacoste et al. (2012) | "Bayesian Comparison of Machine Learning Algorithms on Single and Multiple Datasets" |
-| Wainer, J. (2016) | "Comparison of 14 Methods to Predict Employee Attrition" |
 | Raschka, S. (2020) | "Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning" |
 
 :  List of key articles reviewed, including their authors and titles, providing foundational insights into statistical tests and evaluation methods in machine learning. {#tbl-LitReview .striped .hover}
 
-## {.smaller .scrollable transition="slide"}
+## Comparison of methods and tests used in ML evaluation frameworks {.smaller .scrollable transition="slide"  }
 
 
 | Author | Method or Test | Requires only predictions, not the algorithm | Allows multiple comparisons | Uses a single dataset | Uses the competition's given metric |
@@ -138,17 +140,17 @@ To investigate and implement an evaluation scheme based on robust statistical me
 | García & Herrera | Hochberg | O | X | O | X |
 | Lacoste et al. | Bayesian Comparison | O | X | O | X |
 | Lacoste et al. | MCMC | O | X | O | X |
-| Wainer, J. | ANOVA | O | X | X | O |
-| Wainer, J. | Tukey | O | X | X | O |
-| Wainer, J. | Bonferroni | O | X | X | O |
 | Raschka, S. | 5x2cv | O | O | X | O |
 | Raschka, S. | McNemar | X | O | X | O |
 | Raschka, S. | F-test | O | X | X | O |
 
-:  Comparison of methods and tests used in machine learning evaluation frameworks, highlighting their requirements and characteristics, including whether they require only predictions, allow multiple comparisons, use a single dataset, or rely on the competition's provided metric. {#tbl-LitReview2 .striped .hover}
+:  Comparison of methods and tests used in machine learning evaluation frameworks, highlighting their requirements and characteristics, including whether they require only predictions, allow multiple comparisons, use a single dataset, or rely on the competition's provided metric. {#tbl-LitReview2 .striped .hover .fixed-header-table}
 
-
-# Proposed methodology
+::: footer
+X: Indicates that the feature is present in the method or test.  
+O: Indicates that the feature is not present in the method or test.
+:::
+# Theory framework
 
 ## Bootstrapping {.smaller  .scrollable transition="slide"}
 ::::: columns
@@ -193,12 +195,13 @@ display(Markdown(df.head().to_markdown(index=True)))
 # Recuperar el objeto del archivo
 with open("datos/VaxxStance_Textual_eu_paper.dat", "rb") as archivo:
     perf = pickle.load(archivo)
-
 #print(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head())
 display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head().to_markdown(index=True)))
 ```
 
 :::
+
+# Performace Comparison in Challenge Scheme
 
 ## Comparison of Classifiers {.smaller}
 
@@ -208,13 +211,13 @@ display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None'])
 |   | LCI | Score | UCI |   |   | LCI | Score | UCI |
 |----|----|----|----|----|----|----|----|----|
 | **Basque** |  |  |  |  | **Spanish** |  |  |  |
-| **WordUp.01** | 0.5031 | 0.5716 | 0.6401 |  | **WordUp.02** | 0.7734 | 0.8086 | 0.8437 |
+| WordUp.01 | 0.5031 | 0.5716 | 0.6401 |  | WordUp.02 | 0.7734 | 0.8086 | 0.8437 |
 | WordUp.02 | 0.4751 | 0.5444 | 0.6138 |  | WordUp.01 | 0.7537 | 0.7899 | 0.8261 |
-| **MultiAztertest.01** | 0.4287 | 0.5007 | 0.5726 |  | **MultiAztertest.01** | 0.6987 | 0.7400 | 0.7814 |
+| MultiAztertest.01 | 0.4287 | 0.5007 | 0.5726 |  | MultiAztertest.01 | 0.6987 | 0.7400 | 0.7814 |
 | SQYQP.01 | 0.3497 | 0.4237 | 0.4976 |  | SQYQP.01 | 0.6310 | 0.6730 | 0.7149 |
-| **MultiAztertest.02** | 0.2664 | 0.3402 | 0.4139 |  | **MultiAztertest.02** | 0.5945 | 0.6391 | 0.6837 |
+| MultiAztertest.02 | 0.2664 | 0.3402 | 0.4139 |  | MultiAztertest.02 | 0.5945 | 0.6391 | 0.6837 |
 
-: Results Table for Basque and Spanish {#tbl-independent .striped .hover}
+: Results for VaxxStance Close Track - Contextual (2021) for Basque and Spanish {#tbl-independent .striped .hover}
 
 
 
@@ -227,20 +230,19 @@ display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None'])
 @tbl-Paired provides the confidence intervals comparing the top team with lower-ranking teams, while @fig-paired-samples displays these intervals in a plot.
 
 ::: custom-small
-|   | LCI | Diff | UCI |   |   | LCI | Diff | UCI |
+| **Basque (WordUp.01)**  | LCI | Diff | UCI |   | **Spanish (WordUp.02)**  | LCI | Diff | UCI |
 |----|----|----|----|----|----|----|----|----|
-| **Basque (WordUp.01)** |  |  |  |  | **Spanish (WordUp.02)** |  |  |  |
-| **WordUp.02** | -0.0371 | 0.0269 | 0.0910 |  | **WordUp.01** | -0.0120 | 0.0184 | 0.0488 |
+| WordUp.02 | -0.0371 | 0.0269 | 0.0910 |  | WordUp.01 | -0.0120 | 0.0184 | 0.0488 |
 | MultiAztertest.01 | -0.0152 | 0.0713 | 0.1578 |  | MultiAztertest.01 | 0.0211 | 0.0680 | 0.1149 |
-| **SQYQP.01** | 0.0543 | 0.1485 | 0.2427 |  | **SQYQP.01** | 0.0877 | 0.1351 | 0.1825 |
+| SQYQP.01 | 0.0543 | 0.1485 | 0.2427 |  | SQYQP.01 | 0.0877 | 0.1351 | 0.1825 |
 | MultiAztertest.02 | 0.1405 | 0.2314 | 0.3222 |  | MultiAztertest.02 | 0.1165 | 0.1687 | 0.2210 |
 
-: Results Table for Basque (WordUp.01) and Spanish (WordUp.02) {#tbl-Paired .striped .hover}
+: Results for VaxxStance Close Track - Contextual (2021) for Basque and Spanish. Tha table contains IC of the difference between the top team and the other teams, for Basque (WordUp.01) and Spanish (WordUp.02) {#tbl-Paired .striped .hover}
 
 ![Paired Samples](figs/mejorordenado2.png){#fig-paired-samples width="600" height="300"}
 :::
 
-## Hypothesis Testing
+## Statistical Hypothesis Testing  {.smaller .scrollable transition="slide"}
 
 ::::: columns
 ::: {.column width="60%"}
@@ -252,8 +254,20 @@ As shown in Berg-Kirkpatrick (2012) \cite{Berg-Kirkpatrick2012}, the $p$-value$(
 :::
 
 ::: {.column .fragment width="40%"}
+:::: custom-tiny
+| System            | Basque |
+|-------------------|--------|
+| WordUp.01         | 0.5734 |
+| WordUp.02         | 0.5465 |
+| MultiAztertest.01 | 0.5024 |
+| SQYQP.01          | 0.4256 |
+| MultiAztertest.02 | 0.3428 |
+
+: Macro-averaged F1 Scores for "favor" and "against" in the VaxxStance Close Track (2021) - Contextual Evaluation. {#tbl-VaxxStance3 .striped .hover}
+::::
 ![histogram of differences](figs/histogram2.png){#fig-histogram .border .border-thick}
 :::
+
 :::::
 
 ::::: fragment
@@ -266,11 +280,15 @@ As shown in Berg-Kirkpatrick (2012) \cite{Berg-Kirkpatrick2012}, the $p$-value$(
 | **MultiAztertest.02** | 0.231 \*\*\* | 0.204 \*\*\* | 0.160 \*\*\*      | 0.083 \* |
 
 : Differences of F₁ score for Basque {#tbl-Basque .striped .hover}
+
+
+:::: footer
+Note: † p\<.1, \* p\<.05, \*\* p\<.01, and \*\*\* p\<.001. 
+::::
+
 :::
 
-::: footer
-*Note: † p\<.1,* p\<.05, \*\* p\<.1, and \*\*\* p\<.001.\*
-:::
+
 :::::
 
 ## Multiple Testing
@@ -309,71 +327,6 @@ Multiple hypothesis testing increases the risk of Type I errors—the false reje
 : Estimated p-value for the F₁ difference without adjustment and with Bonferroni, FDR, Holm, and BH adjustments. {#tbl-p-values .striped .hover}
 :::
 
-## Competitions Comparison
-
-::: custom-small
-| Name | Description | 
-|------|-------------|
-| $n$ | Test data size |
-| $m$ | Number of participants or runs |
-| Ties w/ win | Number of ties with the winner (corrections: none/Bonferroni/Holm/BH) |
-| Poss. compars. | Total possible comparisons  ($m \times (m-1)/2$) |
-| none/Bonf./Holm/BH | Number of ties between competitors with corrections with Adjusted p-value (corrections: none/Bonferroni/Holm/BH)|
-| $|win.-med|$ | Performance difference between the winner and the competitor in the middle of the table |
-|  CV | Coefficient of variation of competitors' performance. $(CV=100\times \frac{s_x}{\overline{x}}$, where $\overline{x}$  is the mean of $x$ and $s_x$ is the standard deviation of $x)$|
-| PPI | Possible Percentage Improvement, e.g., for F1 score, it's calculated as $100\times(1-F_1^{winner})$ |
-
-
-: Metrics Used for Comparison. {#tbl-info-summary  .striped .hover}
-:::
-
-
-
-# Analysed Competitions
-
-## Analysis of NLP Competitions {.smaller .scrollable transition="slide"}
-
-
-| Competition | Subtask / Language | Metric Used | Data Considered |
-|----|----|----|----|
-| MEX-A3T 2019 | Author Profiling (Spanish, text and images) | Macro-averaged F1 Score | All participants |
-|  | Aggressiveness Detection (Spanish) | F1 Score | All participants |
-| TASS 2020 | General Polarity (Spanish) | Macro-averaged F1 Score | All participants (Best Runs) |
-| **VaxxStance 2021** | **Stance Detection (Basque, Spanish)** | **Macro-averaged F1 Score for "favor" and "against"** | **All participants** |
-| EXIST 2021 | Sexism Identification (English, Spanish) | Accuracy | Top 10 for each language (Best Runs) |
-|  | Sexism Categorization (English, Spanish) | Macro-averaged F1 Score | Top 10 for each language (Best Runs) |
-| DETOXIS 2021 | Toxicity Detection (Spanish) | F1 Score | All participants (Best Runs) |
-| MeOffendEs 2021 | Offensive Language Identification (Mexican Spanish) | F1 Score (offensive class) | All participants (Best Runs) |
-| REST-MEX 2021 | Recommendation System (Mexican Spanish) | MAE | All participants (baseline) |
-|  | Sentiment Analysis (Mexican Spanish) | MAE | All participants (baseline) |
-| REST-MEX 2022 | Sentiment Analysis (Mexican Spanish) | $Measure_S$ | All participants (majority class) |
-|  | Epidemiological Semaphore (Mexican Spanish) | $Measure_C$ | All participants (majority class) |
-| PAR-MEX 2022 | Paraphrase Identification (Mexican Spanish) | F1 Score | All participants (Best Runs) |
-
-: Table Metrics and data considered across various competitions {#tbl-Competitions .striped .hover}
-
-
-------------------------------------------------------------------------
-
-## Results for the Various Challenges {.smaller .scrollable transition="slide"}
-
-::: custom-small
-| Challenge | DETOXIS 2021 | PAR-MEX 2022 | MeOffendEs 2021 | MEX-A3T 2019 (Agg) | MEX-A3T 2019 (author profiling) |
-|----|----|----|----|----|----|
-| **Task** | Toxicity detection | Paraphrase Identification | Non-contextual | Aggressiveness Detection | Author Profiling |
-| **Metric** | F1 score | F1 score | F1 score | F1 score | Macro-averaged F1 score |
-| $n$ | 891 | 2821 | 2182 | 3156 | 1500 |
-| $m$ | 31 | 8 | 10 | 25 | 4 |
-| **Ties w/ win.** | 0/3/0/0 | 1/1/1/1 | 1/2/2/1 | 3/7/4/3 | 1/1/1/1 |
-| **Poss. compars.** | 465 | 28 | 45 | 300 | 6 |
-| **none/Bonf.** | 80/135 | 6/6 | 7/9 | 70/91 | 2/2 |
-| **Holm/BH** | 112/85 | 6/6 | 8/7 | 80/63 | 2/2 |
-| $|win.-med|$ | 0.223 | 0.061 | 0.078 | 0.098 | 0.164 |
-| $CV$ | 42.600 | 4.722 | 16.070 | 19.620 | 46.491 |
-| **PPI** | 35.390 | 5.758 | 28.46 | 52.038 | 42.581 |
-
-: Results for the Various Challenges {#tbl-Results .striped .hover}
-:::
 
 ## Some Examples {.scrollable transition="slide"}
 
@@ -481,6 +434,102 @@ face_grid_diff = plot_difference_multiple(diff)
 :::
 
 :::
+
+# Competitions Comparison
+
+## Metrics used for competitions Comparison
+
+::: custom-small
+| Name | Description | 
+|------|-------------|
+| $n$ | Test data size |
+| $m$ | Number of participants or runs |
+| Ties w/ win | Number of ties with the winner (corrections: none/Bonferroni/Holm/BH) |
+| Poss. compars. | Total possible comparisons  ($m \times (m-1)/2$) |
+| none/Bonf./Holm/BH | Number of ties between competitors with corrections with Adjusted p-value (corrections: none/Bonferroni/Holm/BH)|
+| $|win.-med|$ | Performance difference between the winner and the competitor in the middle of the table |
+|  CV | Coefficient of variation of competitors' performance. $(CV=100\times \frac{s_x}{\overline{x}}$, where $\overline{x}$  is the mean of $x$ and $s_x$ is the standard deviation of $x)$|
+| PPI | Possible Percentage Improvement, e.g., for F1 score, it's calculated as $100\times(1-F_1^{winner})$ |
+
+
+: Metrics used for competitions Comparison. {#tbl-info-summary  .striped .hover}
+:::
+
+
+## Analysis of NLP Competitions {.smaller .scrollable transition="slide" }
+
+
+| Competition | Subtask / Language | Metric Used | Data Considered |
+|----|----|----|----|
+| MEX-A3T 2019 | Author Profiling (Spanish, text and images) | Macro-averaged F1 Score | All participants |
+|  | Aggressiveness Detection (Spanish) | F1 Score | All participants |
+| TASS 2020 | General Polarity (Spanish) | Macro-averaged F1 Score | All participants (Best Runs) |
+| **VaxxStance 2021** | **Stance Detection (Basque, Spanish)** | **Macro-averaged F1 Score for "favor" and "against"** | **All participants** |
+| EXIST 2021 | Sexism Identification (English, Spanish) | Accuracy | Top 10 for each language (Best Runs) |
+|  | Sexism Categorization (English, Spanish) | Macro-averaged F1 Score | Top 10 for each language (Best Runs) |
+| DETOXIS 2021 | Toxicity Detection (Spanish) | F1 Score | All participants (Best Runs) |
+| MeOffendEs 2021 | Offensive Language Identification (Mexican Spanish) | F1 Score (offensive class) | All participants (Best Runs) |
+| REST-MEX 2021 | Recommendation System (Mexican Spanish) | MAE | All participants (baseline) |
+|  | Sentiment Analysis (Mexican Spanish) | MAE | All participants (baseline) |
+| REST-MEX 2022 | Sentiment Analysis (Mexican Spanish) | $Measure_S$ | All participants (majority class) |
+|  | Epidemiological Semaphore (Mexican Spanish) | $Measure_C$ | All participants (majority class) |
+| PAR-MEX 2022 | Paraphrase Identification (Mexican Spanish) | F1 Score | All participants (Best Runs) |
+
+: Table Metrics and data considered across various competitions {#tbl-Competitions .striped .hover .fixed-header-table}
+
+
+------------------------------------------------------------------------
+
+## Results for the Various Challenges {.smaller .scrollable transition="slide"}
+
+
+::: panel-tabset
+### Table 1
+::: custom-small
+| Challenge | DETOXIS 2021 | PAR-MEX 2022 | MeOffendEs 2021 | MEX-A3T 2019 (Agg) | MEX-A3T 2019 (author profiling) |
+|----|----|----|----|----|----|
+| **Task** | Toxicity detection | Paraphrase Identification | Non-contextual | Aggressiveness Detection | Author Profiling |
+| **Metric** | F1 score | F1 score | F1 score | F1 score | Macro-averaged F1 score |
+| $n$ | 891 | 2821 | 2182 | 3156 | 1500 |
+| $m$ | 31 | 8 | 10 | 25 | 4 |
+| **Ties w/ win.** | 0/3/0/0 | 1/1/1/1 | 1/2/2/1 | 3/7/4/3 | 1/1/1/1 |
+| **Poss. compars.** | 465 | 28 | 45 | 300 | 6 |
+| **none/Bonf.** | 80/135 | 6/6 | 7/9 | 70/91 | 2/2 |
+| **Holm/BH** | 112/85 | 6/6 | 8/7 | 80/63 | 2/2 |
+| $|win.-med|$ | 0.223 | 0.061 | 0.078 | 0.098 | 0.164 |
+| $CV$ | 42.600 | 4.722 | 16.070 | 19.620 | 46.491 |
+| **PPI** | 35.390 | 5.758 | 28.46 | 52.038 | 42.581 |
+
+: Summary of competitions, subtasks, languages, ranking metrics, and participant details for key Natural Language Processing challenges. {#tbl-Results .striped .hover}
+:::
+### Table 2
+
+**Metric** Macro-averaged F1 score (FAVOR, AGAINST).
+
+::: custom-small
+| Task                | Close Track-Textual (Spanish) | Close Track-Textual (Basque) | Close Track-Contextual (Spanish) | Close Track-Contextual (Basque) |
+|---------------------|------------------------------|------------------------------|----------------------------------|----------------------------------|
+| **Language**        | Spanish                     | Basque                       | Spanish                          | Basque                           |
+| **$n$**             | 694                         | 312                          | 694                              | 312                              |
+| **$m$**             | 5                           | 5                            | 5                                | 5                                |
+| **Ties W/ Win. (None)** | 1                       | 2                            | 1                                | 0                                |
+| **Ties W/ Win. (Bonf.)**| 1                       | 2                            | 1                                | 0                                |
+| **Ties W/ Win. (Holm)**| 1                        | 2                            | 1                                | 0                                |
+| **Ties W/ Win. (BH)** | 1                         | 2                            | 1                                | 0                                |
+| **Poss. Compars.**   | 10                          | 10                           | 10                               | 10                               |
+| **None**            | 2                           | 3                            | 2                                | 1                                |
+| **Bonf.**           | 2                           | 4                            | 2                                | 1                                |
+| **Holm**            | 2                           | 3                            | 2                                | 1                                |
+| **BH**              | 2                           | 3                            | 2                                | 1                                |
+| **$|win.-med|$**     | 0.068                       | 0.071                        | 0.098                            | 0.410                            |
+| **$CV$**            | 9.970                       | 19.680                       | 10.463                           | 64.766                           |
+| **PPI**             | 19.084                      | 42.660                       | 10.871                           | 22.291                           |
+:Comparison of performance metrics and statistical outcomes for the Close Track (Textual and Contextual) in Spanish and Basque, including number of participants ($m$), ties, and key statistical measures ($|win.-med|$, $CV$, and PPI). {#tbl-CompVaxxStance .striped .hover}
+:::
+
+:::
+
+# Package
 
 ## CompStats {.smaller .scrollable transition="slide"}
 
@@ -699,24 +748,29 @@ sns.pairplot(df_wide_format_dynamic, hue='team', corner= True, height=1.8)
 
 ## Summary of Research
 
--   **Objectives**:
+### General Objective
 
-To investigate and implement an evaluation scheme based on robust statistical methods for learning algorithms in the context of challenges, providing organizers and researchers with concrete and validated tools for more precise and well-founded decision-making.
-
-1.  **Thoroughly review the different elements used in evaluating learning algorithms**
-2.  **Examine in detail the characteristics and criteria used by the main Machine Learning competitions**
-3.  **Design evaluation schemes for learning algorithms that integrate advanced statistical tools**
+Develop a robust statistical evaluation scheme for learning algorithms in challenges, offering validated tools for informed decision-making.
 
 ::: fragment
--   **Key Findings**:
-    -   Non-parametric Statistics are suitable for evaluating classification algorithms.
-    -   Introduced tools for fair competition result comparison.
-    -   Developed a structured evaluation framework for competitions.
+### Specific Objectives
+
+1. Review evaluation elements (metrics, statistical methods, configurations) to identify best practices and limitations.
+2. Analyze key ML competitions to assess validation processes, transparency, and fairness.
+3. Design advanced statistical evaluation schemes, validate through simulations or collaborations, and provide implementation guidelines.
 :::
+
 
 ------------------------------------------------------------------------
 
 ## Contributions to Knowledge
+
+
+
+-   **Key Findings**:
+    -   Non-parametric Statistics are suitable for evaluating classification algorithms.
+    -   Introduced tools for fair competition result comparison.
+    -   Developed a structured evaluation framework for competitions.
 
 -   **Theoretical**:
     -   Formalization of competition-based algorithm evaluation.
@@ -730,7 +784,13 @@ To investigate and implement an evaluation scheme based on robust statistical me
 
 ## Acknowledgments
 
-We extend our sincere gratitude to the organizers of the competitions analyzed in this chapter. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.
+
+
+I would like to express my gratitude to my Ph.D. thesis advisor,  **Ph.D. Mario Graff Guerrero**,  for their invaluable guidance and support throughout my research journey.
+
+::: fragment
+We extend our sincere gratitude to the organizers of the competitions analyzed in this work. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.
+:::
 
 ##
 
