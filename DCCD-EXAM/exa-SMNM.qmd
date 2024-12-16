@@ -53,7 +53,8 @@ jupyter: python3
 -   Comparison of multiple participants (systems)
 -   Performance metrics selected by the competition organizers
 -   A test dataset of fixed size ( $n$ )
--   The Reference (Gold Standard) is known just for the organizers
+-   The evaluation is based on the participants' predictions
+-   *The Reference (Gold Standard) is known just for the organizers*
 -   *A limited number of submissions per participant*
 :::
 
@@ -200,6 +201,62 @@ display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None'])
 ```
 
 :::
+
+#  {.smaller  .scrollable transition="slide"}
+
+
+```{python}
+#| echo: false
+#| label: fig-f1VaxxStanceEUDensity
+
+import matplotlib.pyplot as plt
+
+# Recuperar el objeto del archivo
+#with open("datos/VaxxStance_Textual_eu_paper.dat", "rb") as archivo:
+#    perf = pickle.load(archivo)
+#print(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head())
+#display(Markdown(pd.DataFrame(perf['samples']['calcular_f1_score_average=None']).head().to_markdown(index=True)))
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Supongamos que 'perf' contiene los datos necesarios
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Supongamos que 'perf' contiene los datos necesarios
+df = pd.DataFrame(perf['samples']['calcular_f1_score_average=None'])
+fig, ax = plt.subplots(1, 1)
+
+# Lista para almacenar las leyendas de los puntos
+point_labels = []
+
+# Iterar sobre las columnas y trazar la densidad con el punto medio
+for s in df.columns:
+    # Graficar la densidad
+    density_plot = df[s].plot(kind='density', bw_method=0.5, ax=ax)  
+    # Calcular la media
+    mean_value = df[s].mean()
+    # Obtener el color de la línea actual
+    line_color = density_plot.get_lines()[-1].get_color()
+    # Añadir el punto en el valor medio
+    ax.scatter(mean_value, 0, color=line_color, s=100)
+    # Añadir la etiqueta del punto a la lista
+    #point_labels.append(s)
+
+# Añadir títulos y etiquetas
+plt.title('Density plot of Macro-averaged F1 Score for "favor" and "against"')
+plt.xlabel('Macro-averaged F1 Score')
+plt.ylabel('Density')
+
+# Crear una leyenda solo con los puntos
+for i, label in enumerate(point_labels):
+    ax.scatter([], [], color=density_plot.get_lines()[i].get_color(), s=100, label=label)
+
+plt.legend()
+plt.show()
+
+
+```
 
 # Performace Comparison in Challenge Scheme
 
@@ -529,12 +586,13 @@ face_grid_diff = plot_difference_multiple(diff)
 
 :::
 
-# Package
+# CompStats Package
 
 ## CompStats {.smaller .scrollable transition="slide"}
 
 ::: panel-tabset
-###  Single metric
+###  Single-Metric Performance Assessment
+
 The package *CompStats* [(compstats.readthedocs.org)](http://compstats.readthedocs.org) implements the ideas presented in this contribution.
 
 #### Installation
@@ -622,7 +680,7 @@ p_valuesC
 
 ```
 
-### Multimetric
+### Multi-Metric Performance Assessment
 
 #### More Libraries
 
@@ -634,7 +692,7 @@ from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_sc
 import seaborn as sns
 ```
 
-The performance metrics used are macro-averaged F1 score and accuracy. 
+The performance metrics used are macro-averaged F1 score, accuracy, precision and reall. 
 
 #### Metric
 
@@ -744,6 +802,33 @@ sns.pairplot(df_wide_format_dynamic, hue='team', corner= True, height=1.8)
 ```
 :::
 
+
+# Key Achievements of This Thesis
+
+---
+
+
+
+### Comparison of classifiers in challenge scheme (MCPR 2023)
+
+- Part of the book series: Lecture Notes in Computer Science (LNCS, volume 13902).
+- Included in the following conference series: Mexican Conference on Pattern Recognition (MCPR).
+- [More details available at DOI: https://doi.org/10.1007/978-3-031-33783-3_9](https://doi.org/10.1007/978-3-031-33783-3_9)
+- To propose tools that allow comparing the classification results of different competitors in a Challenge, in addition to performance metrics.
+
+
+::: fragment
+### Analysis of Systems' Performance in Natural Language Processing Competitions
+
+(Special Section on “MCPR-IAPR Best Paper Award and MCPR-IAPR Student Paper Award”)
+
+
+- Published in the journal **Pattern Recognition Letters**, focusing on contributions to natural language processing competitions.
+- [More details available at DOI: https://doi.org/10.1016/j.patrec.2024.03.010](https://doi.org/10.1016/j.patrec.2024.03.010)
+- To propose a methodology that allows the analysis of performance in competitions, designed to complement the standard process of winner selection.
+- To evaluate the degree of competitiveness among these challenges, considering their potential for improvement in future iterations.
+:::
+
 # Discussion and Conclusions
 
 ## Summary of Research
@@ -786,10 +871,16 @@ Develop a robust statistical evaluation scheme for learning algorithms in challe
 
 
 
-I would like to express my gratitude to my Ph.D. thesis advisor,  **Ph.D. Mario Graff Guerrero**,  for their invaluable guidance and support throughout my research journey.
+I extend my deepest gratitude to my Ph.D. advisor, *Ph.D. Mario Graff Guerrero*, for his unwavering guidance, insightful advice, and continuous support throughout my research journey. 
 
 ::: fragment
-We extend our sincere gratitude to the organizers of the competitions analyzed in this work. Their dedication and commitment to fostering innovation and excellence have created valuable platforms that inspire participants to achieve their highest potential. Without their efforts, this comparative analysis would not have been possible. Thank you for providing these opportunities and for promoting a spirit of healthy competition and creativity.
+
+Special thanks to *Ph.D. Hugo Jair Escalante* for his significant contributions to the development and writing of the papers. His leadership and recognition in the field were crucial in securing the datasets from the analyzed competitions, enabling the successful validation of the proposed methodologies. 
+
+:::
+
+::: fragment
+We sincerely thank the organizers of the competitions analyzed in this work. Their provision of the datasets was instrumental in enabling the validation and testing of the proposed framework. These datasets formed the foundation for rigorous analysis and evaluation, making it possible to demonstrate the effectiveness of our methodologies. We appreciate their support and commitment to advancing research by creating valuable resources.
 :::
 
 ##
